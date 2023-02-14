@@ -16,7 +16,7 @@
 			</div>
 	  		<div class="form-group">
 	  			<label><small><strong>EMAIL OR USERNAME</strong></small></label>
-	  			<input type="text" name="" class="form-control">
+	  			<input type="text" name="" class="form-control" placeholder="e.g. juan@gmail.com">
 	  		</div>
 	  		<div class="form-group">
 	  			<label><small><strong>PASSWORD</strong></small></label>
