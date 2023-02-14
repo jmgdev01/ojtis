@@ -12,7 +12,7 @@
 	<div class="card card_container">
 	  	<div class="card-body px-5 py-4">
 			<div class="form-group text-center">
-				<img src="assets/logo/logo-login-top.png" alt="">
+				<img src="assets/logo/logo-login.png" alt="">
 			</div>
 	  		<div class="form-group">
 	  			<label><small><strong>EMAIL OR USERNAME</strong></small></label>
@@ -23,8 +23,11 @@
 	  			<input type="password" name="" class="form-control">
 	  		</div>
 	  		<div class="form-group">
-	  			<button class="btn btn-primary btn-block btn-lg"><strong>LOGIN</strong></button>
+	  			<button class="form-btn form-btn-md btn-blue col-lg-12"><strong>LOGIN</strong></button>
 	  		</div>
+			<div class="form-group page_nav text-right">
+				<span>Not yet registered? <span class="page_nav_label" onclick="location.href='register.php'">Create an account.</span></span>
+			</div>
   		</div>
 	</div>
 </div>
