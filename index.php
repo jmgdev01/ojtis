@@ -10,8 +10,9 @@
 
 <div class="container_login">
 	<div class="card card_container">
-	  	<div class="card-body px-4 py-4">
+	  	<div class="card-body px-4 py-3">
 		  	<div class="form-group text-center pt-2">
+			  	<img src="assets/logo/logo-small.png" alt="">
 				<h1 class="card_header">LOGIN</h1>
 			</div>
 	  		<div class="form-group">

@@ -65,11 +65,13 @@
 	max-width: 500px;
 	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	border: none;
 }
 .card_container_2 {
 	max-width: 900px;
 	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	border: none;
 }
 .card_header {
 	font-family: 'Poppins', sans-serif;
@@ -80,12 +82,16 @@
 	.container_login {
 		height: 100%;
 	}
+	.card_container, .card_container_2 {
+		box-shadow: none;
+		border: none;
+	}
 }
 .card_container label, .card_container_2 label{
 	font-weight: 500;
 }
 .card_container img, .card_container_2 img {
-	max-width: 250px;
+	max-width: 80px;
 	width: 100%;
 }
 .page_nav span {
