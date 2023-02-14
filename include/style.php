@@ -3,6 +3,13 @@
 *{
 	box-sizing: border-box;
 }	
+
+/* Yellow - #fdbd41 */
+/* Blue - #0d9eed */
+/* Teal - #2d5972 */
+/* Dark - #282828 */
+/* White - #ffffff */
+
 .container_login{
 	display: flex;
 	flex-direction: column;
@@ -13,9 +20,12 @@
 	width: 100%;
 }
 .card_container{
-	width: 400px;
+	width: 500px;
 }
 .card_container label{
 	font-weight: 500;
+}
+.card_container img {
+	width: 280px;
 }
 </style>

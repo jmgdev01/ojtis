@@ -11,13 +11,15 @@
 <div class="container_login">
 	<div class="card card_container">
 	  	<div class="card-body px-5 py-4">
-	    	<h1 class="card-title text-center mb-3">LOGIN</h1>
+			<div class="form-group text-center">
+				<img src="assets/logo/logo-login-top.png" alt="">
+			</div>
 	  		<div class="form-group">
-	  			<label>EMAIL OR USERNAME</label>
+	  			<label><small><strong>EMAIL OR USERNAME</strong></small></label>
 	  			<input type="text" name="" class="form-control">
 	  		</div>
 	  		<div class="form-group">
-	  			<label>PASSWORD</label>
+	  			<label><small><strong>PASSWORD</strong></small></label>
 	  			<input type="password" name="" class="form-control">
 	  		</div>
 	  		<div class="form-group">
