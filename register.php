@@ -10,25 +10,25 @@
 
 <div class="container_login">
 	<div class="card card_container_2">
-	  	<div class="card-body px-4 py-4">
-			<div class="form-group text-center">
-				<img src="assets/logo/logo-top.png" alt="">
+	  	<div class="card-body px-5 py-4">
+			<div class="form-group text-center">2
+				<img src="assets/logo/logo-register.png" alt="">
 			</div>
 	  		
 			<div class="row">
-				<div class="form-group col-lg-4 col-md-4">
+				<div class="form-group col-lg-4">
 					<label><small><strong>FIRST NAME</strong></small></label>
-					<input type="text" name="" class="form-control" placeholder="e.g. Juan">
+					<input type="text" name="i_fname" class="form-control" placeholder="e.g. Juan">
 				</div>
-				<div class="form-group col-lg-3 col-md-3">
+				<div class="form-group col-lg-3">
 					<label><small><strong>MIDDLE NAME</strong></small></label>
-					<input type="text" name="" class="form-control" placeholder="e.g. Garcia">
+					<input type="text" name="i_mname" class="form-control" placeholder="e.g. Garcia">
 				</div>
-				<div class="form-group col-lg-3 col-md-3">
+				<div class="form-group col-lg-3">
 					<label><small><strong>LAST NAME</strong></small></label>
-					<input type="text" name="" class="form-control" placeholder="e.g. Cruz">
+					<input type="text" name="i_lname" class="form-control" placeholder="e.g. Cruz">
 				</div>
-				<div class="form-group col-lg-2 col-md-2">
+				<div class="form-group col-lg-2">
 					<label><small><strong>EXT.</strong></small></label>
 					<select class="form-control" id="exampleFormControlSelect1">
 						<option value="Jr.">Jr.</option>
@@ -38,15 +38,15 @@
 						<option value="V">V</option>
 					</select>
 				</div>
-				<div class="form-group col-lg-5 col-md-5">
+				<div class="form-group col-lg-5">
 					<label><small><strong>DATE OF BIRTH</strong></small></label>
-					<input type="date" name="" class="form-control" placeholder="">
+					<input type="date" name="i_bdate" class="form-control" placeholder="">
 				</div>
-				<div class="form-group col-lg-3 col-md-3">
+				<div class="form-group col-lg-3">
 					<label><small><strong>AGE</strong></small></label>
-					<input type="number" name="" class="form-control" placeholder="">
+					<input type="number" name="i_age" class="form-control" placeholder="">
 				</div>
-				<div class="form-group col-lg-4 col-md-4">
+				<div class="form-group col-lg-4">
 					<label><small><strong>SEX</strong></small></label>
 					<select class="form-control" id="exampleFormControlSelect1">
 						<option value="Male">Male</option>
@@ -54,13 +54,13 @@
 					</select>
 				</div>
 
-				<div class="form-group col-lg-12 text-center">
+				<div class="form-group col-lg-12">
 					<button class="form-btn form-btn-md btn-blue"><strong>REGISTER</strong></button>
 				</div>
 			</div>
 
-			  <div class="form-group page_nav text-center">
-				<span>Already have an account? <span class="page_nav_label" onclick="location.href='index.php'">Login</span></span>
+			  <div class="form-group page_nav text-left">
+				<span>Already have an account? <span class="page_nav_label" onclick="location.href='index.php'">Login.</span></span>
 			</div>
   		</div>
 	</div>
