@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login | OJT Information System</title>
+	<title>Register | OJT Information System</title>
 	<?php include('include/style.php'); ?>
 </head>
 <body>
