@@ -57,23 +57,29 @@
 
 	height: 100vh;
 	width: 100%;
+	padding: 10px;
 }
 .card_container{
-	width: 500px;
+	max-width: 500px;
+	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .card_container_2 {
-	width: 900px;
+	max-width: 900px;
+	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+@media screen and (max-width: 992px) {
+	.container_login {
+		height: 100%;
+	}
 }
 .card_container label, .card_container_2 label{
 	font-weight: 500;
 }
-.card_container img {
-	width: 320px;
-}
-.card_container_2 img {
-	width: 420px;
+.card_container img, .card_container_2 img {
+	max-width: 250px;
+	width: 100%;
 }
 .page_nav span {
 	font-weight: 500;

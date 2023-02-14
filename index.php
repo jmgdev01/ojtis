@@ -10,9 +10,9 @@
 
 <div class="container_login">
 	<div class="card card_container">
-	  	<div class="card-body px-5 py-4">
+	  	<div class="card-body px-4 py-4">
 			<div class="form-group text-center">
-				<img src="assets/logo/logo-login.png" alt="">
+				<img src="assets/logo/logo-top.png" alt="">
 			</div>
 	  		<div class="form-group">
 	  			<label><small><strong>EMAIL OR USERNAME</strong></small></label>
@@ -22,11 +22,11 @@
 	  			<label><small><strong>PASSWORD</strong></small></label>
 	  			<input type="password" name="" class="form-control">
 	  		</div>
-	  		<div class="form-group">
-	  			<button class="form-btn form-btn-md btn-blue col-lg-12"><strong>LOGIN</strong></button>
+	  		<div class="form-group text-center">
+	  			<button class="form-btn form-btn-md btn-blue"><strong>LOGIN</strong></button>
 	  		</div>
-			<div class="form-group page_nav text-right">
-				<span>Not yet registered? <span class="page_nav_label" onclick="location.href='register.php'">Create an account.</span></span>
+			<div class="form-group page_nav text-center">
+				<span>Not yet registered? <span class="page_nav_label" onclick="location.href='register.php'">Create an account</span></span>
 			</div>
   		</div>
 	</div>
