@@ -21,6 +21,7 @@
 }
 .card_container{
 	width: 500px;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .card_container label{
 	font-weight: 500;
@@ -28,4 +29,5 @@
 .card_container img {
 	width: 280px;
 }
+
 </style>
