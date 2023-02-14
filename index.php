@@ -11,8 +11,8 @@
 <div class="container_login">
 	<div class="card card_container">
 	  	<div class="card-body px-4 py-4">
-			<div class="form-group text-center">
-				<img src="assets/logo/logo-top.png" alt="">
+		  	<div class="form-group text-center pt-2">
+				<h1 class="card_header">LOGIN</h1>
 			</div>
 	  		<div class="form-group">
 	  			<label><small><strong>EMAIL OR USERNAME</strong></small></label>

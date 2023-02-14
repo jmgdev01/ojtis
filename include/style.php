@@ -1,6 +1,7 @@
-<link rel="icon" type="image/x-icon" href="assets/logo/logo-top.png">
+<link rel="icon" type="image/x-icon" href="assets/logo/logo-small.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style type="text/css">
 *{
 	box-sizing: border-box;
@@ -69,6 +70,11 @@
 	max-width: 900px;
 	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.card_header {
+	font-family: 'Poppins', sans-serif;
+	font-size: 40px;
+	font-weight: 700;
 }
 @media screen and (max-width: 992px) {
 	.container_login {
