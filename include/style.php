@@ -42,6 +42,11 @@
 		border: 1px solid #0d9eed;
 		color: #ffffff;
 	}
+	.btn-gray {
+		background-color: #282828;
+		border: 1px solid #282828;
+		color: #ffffff;
+	}
 /*  */
 
 .container_login{
