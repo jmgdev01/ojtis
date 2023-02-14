@@ -30,7 +30,28 @@
 				</div>
 				<div class="form-group col-lg-2">
 					<label><small><strong>EXT.</strong></small></label>
-					<input type="text" name="" class="form-control" placeholder="e.g. Cruz">
+					<select class="form-control" id="exampleFormControlSelect1">
+						<option value="Jr.">Jr.</option>
+						<option value="Sr.">Sr.</option>
+						<option value="III">III</option>
+						<option value="IV">IV</option>
+						<option value="V">V</option>
+					</select>
+				</div>
+				<div class="form-group col-lg-5">
+					<label><small><strong>DATE OF BIRTH</strong></small></label>
+					<input type="date" name="" class="form-control" placeholder="">
+				</div>
+				<div class="form-group col-lg-3">
+					<label><small><strong>AGE</strong></small></label>
+					<input type="number" name="" class="form-control" placeholder="">
+				</div>
+				<div class="form-group col-lg-4">
+					<label><small><strong>SEX</strong></small></label>
+					<select class="form-control" id="exampleFormControlSelect1">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
 				</div>
 
 				<div class="form-group col-lg-12">
@@ -38,7 +59,7 @@
 				</div>
 			</div>
 
-			  <div class="form-group page_nav text-right">
+			  <div class="form-group page_nav text-left">
 				<span>Already have an account? <span class="page_nav_label" onclick="location.href='index.php'">Login.</span></span>
 			</div>
   		</div>
