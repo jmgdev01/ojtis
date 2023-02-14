@@ -11,8 +11,8 @@
 <div class="container_login">
 	<div class="card card_container_2">
 	  	<div class="card-body px-5 py-4">
-			<div class="form-group text-center">2
-				<img src="assets/logo/logo-register.png" alt="">
+			<div class="form-group text-center">
+				<img src="assets/logo/logo-top.png" alt="">
 			</div>
 	  		
 			<div class="row">
