@@ -56,6 +56,38 @@
 						<option value="Female">Female</option>
 					</select>
 				</div>
+				<div class="form-group col-lg-3 col-md-6">
+					<label><small><strong>STATUS</strong></small></label>
+					<select class="form-control">
+						<option value="">- Select -</option>
+						<option value="Single">Single</option>
+						<option value="Married">Married</option>
+						<option value="Widow">Widow</option>
+					</select>
+				</div>
+				<div class="form-group col-lg-3	 col-md-6">
+					<label><small><strong>BLOODTYPE</strong></small></label>
+					<select class="form-control">
+						<option value="">- Select -</option>
+						<option value="A+">A+</option>
+						<option value="A-">A-</option>
+						<option value="B+">B+</option>
+						<option value="B-">B-</option>
+						<option value="O+">O+</option>
+						<option value="O-">O-</option>
+						<option value="AB+">AB+</option>
+						<option value="AB-">AB-</option>
+					</select>
+				</div>
+				<div class="form-group col-lg-3 col-md-3">
+					<label><small><strong>HEIGHT</strong></small></label>
+					<input type="number" name="i_height" class="form-control" placeholder="- cm -" min="1">
+				</div>
+				<div class="form-group col-lg-3 col-md-3">
+					<label><small><strong>WEIGHT</strong></small></label>
+					<input type="number" name="i_weight" class="form-control" placeholder="- kgs -" min="1">
+				</div>
+				
 
 				<div class="form-group col-lg-12 text-center">
 					<button class="form-btn form-btn-md btn-blue"><strong>REGISTER</strong></button>
