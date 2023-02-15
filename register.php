@@ -56,7 +56,7 @@
 						<option value="Female">Female</option>
 					</select>
 				</div>
-				<div class="form-group col-lg-3 col-md-6">
+				<div class="form-group col-lg-3 col-md-3">
 					<label><small><strong>STATUS</strong></small></label>
 					<select class="form-control">
 						<option value="">- Select -</option>
@@ -65,7 +65,7 @@
 						<option value="Widow">Widow</option>
 					</select>
 				</div>
-				<div class="form-group col-lg-3	 col-md-6">
+				<div class="form-group col-lg-3	 col-md-3">
 					<label><small><strong>BLOODTYPE</strong></small></label>
 					<select class="form-control">
 						<option value="">- Select -</option>
