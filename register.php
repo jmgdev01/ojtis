@@ -15,7 +15,7 @@
 				<img src="assets/logo/logo-small.png" alt="">
 				<h1 class="card_header">CREATE AN ACCOUNT</h1>
 			</div>
-	  		
+	  		<!-- personal info -->
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
 					<button 
@@ -24,8 +24,9 @@
 					data-target="#personal_info" 
 					type="button" 
 					role="tab" 
-					aria-selected="true"></button>
+					aria-selected="true"><i class="fa fa-user" aria-hidden="true"></i></i></button>
 				</li>
+				<!-- address & contact -->
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
@@ -33,7 +34,57 @@
 					data-target="#address_contact_info" 
 					type="button" 
 					role="tab" 
-					aria-selected="false"></button>
+					aria-selected="false"><i class="fa fa-address-book" aria-hidden="true"></i></button>
+				</li>
+				<!-- Cases -->
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
+					data-toggle="tab" 
+					data-target="#address_contact_info" 
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-wheelchair" aria-hidden="true"></i></button>
+				</li>
+				<!-- Parent info -->
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
+					data-toggle="tab" 
+					data-target="#address_contact_info" 
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-home" aria-hidden="true"></i></button>
+				</li>
+				<!-- educational background -->
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
+					data-toggle="tab" 
+					data-target="#address_contact_info" 
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-graduation-cap" aria-hidden="true"></i></button>
+				</li>
+				<!-- skills & trainings -->
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
+					data-toggle="tab" 
+					data-target="#address_contact_info" 
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-cogs" aria-hidden="true"></i></button>
+				</li>
+				<!-- emergency -->
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
+					data-toggle="tab" 
+					data-target="#address_contact_info" 
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-ambulance" aria-hidden="true"></i></button>
 				</li>
 			</ul>
 			<div class="tab-content" id="myTabContent">
@@ -117,7 +168,7 @@
 
 				</div>
 				<div class="tab-pane fade" id="address_contact_info" role="tabpanel">
-					2
+					
 				</div>
 			</div>
 
