@@ -117,11 +117,37 @@
 
 				</div>
 				<div class="tab-pane fade" id="address_contact_info" role="tabpanel">
-					2
+				
+				<div class="row">
+				<div class="form-group col-lg-12 pt-4">
+						<h3><strong>ADDRESS AND CONTACT INFORMATION</strong></h3>
+					</div>
+				<form>
+					<div class="form-row pt-3">
+						<div class="col-lg-3">
+						<label><small><strong>CONTACTS</strong></small></label>
+						<input type="text" class="form-control" placeholder="Contact">
+						</div>
+						<div class="col-lg-3">
+						<label><small><strong>ALTERNATIVE EMAIL</strong></small></label>
+						<input type="text" class="form-control" placeholder="Alternative Email">
+						</div>
+						<div class="col-lg-3">
+						<label><small><strong>ADDRESS</strong></small></label>
+						<input type="text" class="form-control" placeholder="Address">
+						</div>
+						<div class="col-lg-3">
+						<label><small><strong>PLACE OF BIRTH</strong></small></label>
+						<input type="text" class="form-control" placeholder="Place of Birth">
+						</div>
+					</div>
+					
 				</div>
 			</div>
 
 			<div class="col-lg-12">
+				</form>
+				</div>
 				<div class="form-group col-lg-12 text-center">
 					<button class="form-btn form-btn-md btn-blue"><strong>REGISTER</strong></button>
 				</div>
