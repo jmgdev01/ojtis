@@ -25,7 +25,7 @@ if(isset($_POST['btn_login'])=="POST") {
 		}
 	} else {
 		echo '
-		<div id="msg_alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+		<div id="msg_alert" class="alert bg-danger alert-dismissible fade show" role="alert">
 		  <strong>Invalid username or password!</strong>
 		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		    <span aria-hidden="true">&times;</span>
