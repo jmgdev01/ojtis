@@ -1,6 +1,6 @@
 <?php 
 
-	$host = "localhost";
+	$host = "100.102.0.6";
 	$username = "root";
 	$password = "";
 	$database = "ojtis";
