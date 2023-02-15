@@ -249,11 +249,13 @@ if (isset($_POST['btn_register'])) {
 				</div>
 				</div>
 				<div class="tab-pane fade" id="address_contact_info" role="tabpanel">
-					
+					2
 				</div>
 			</div>
 
 			<div class="col-lg-12">
+				</form>
+				</div>
 				<div class="form-group col-lg-12 text-center">
 					<button class="form-btn form-btn-md btn-blue" name="btn_register"><strong>REGISTER</strong></button>
 				</div>
