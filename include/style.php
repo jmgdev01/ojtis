@@ -51,6 +51,18 @@
 	}
 /*  */
 
+/* Alert */
+	#msg_alert {
+		width: 300px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #ffffff;
+		position: fixed;
+		top: 30px;
+		right: 30px;
+	}
+/*  */
+
 .container_login_register{
 	display: flex;
 	flex-direction: column;
@@ -60,6 +72,7 @@
 	height: 100vh;
 	width: 100%;
 	padding: 10px;
+	overflow-y: auto;
 	background-color: #0d9eed;
 }
 .card_container{

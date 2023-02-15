@@ -1,29 +1,27 @@
 <?php
 include("include/config.php");
 
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
-	$username=$_POST["acc_username"];
-	$password=$_POST["acc_password"];
+if(isset($_POST['btn_login'])=="POST") {
+	$acc_username = $_POST["acc_username"];
+	$acc_password = $_POST["acc_password"];
 
-	$sql = mysqli_query($connection, "SELECT * FROM accounts_tbl WHERE acc_username='$username' AND acc_password='$password'");
+	$sql = mysqli_query($conn, "SELECT * FROM accounts_tbl WHERE acc_username='$acc_username' AND acc_password='$acc_password'");
 
 	if(mysqli_num_rows($sql) > 0) {
-
 		$row = mysqli_fetch_assoc($sql);
 		
 		session_start();
 		$_SESSION['acc_id'] = $row['acc_id'];
-		$_SESSION['role'] = $row['role'];
+		$_SESSION['acc_role'] = $row['acc_role'];
 
-		if($row["role"]=="admin") {
-			header("location:");
+		if($row["role"]=="admin"){
+			header("location: ");
 		}
-		elseif ($row["role"]=="supervisor") {
-			header("location:");
+		elseif ($row["role"]=="supervisor"){
+			header("location: ");
 		}
-		elseif ($row["role"]=="intern") {
-			header("location:");
+		elseif ($row["acc_role"]=="intern"){
+			header("location: ");
 		}
 	} else {
 		echo '
@@ -36,8 +34,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 		';
 	}
 }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 			  	<img src="assets/logo/logo-small.png" alt="">
 				<h1 class="card_header">LOGIN</h1>
 			</div>
-			<form action="#" method="POST">
+			<form action="index.php" method="POST">
 				<div class="form-group">
 					<label><small><strong>EMAIL OR USERNAME</strong></small></label>
 					<input type="text" name="" class="form-control" placeholder="e.g. juan@gmail.com">
@@ -64,10 +62,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 					<label><small><strong>PASSWORD</strong></small></label>
 					<input type="password" name="" class="form-control">
 				</div>
+				<div class="form-group text-center">
+					<button class="form-btn form-btn-md btn-blue" type="submit" name="btn_login"><strong>LOGIN</strong></button>
+				</div>
 			</form>
-	  		<div class="form-group text-center">
-	  			<button class="form-btn form-btn-md btn-blue"><strong>LOGIN</strong></button>
-	  		</div>
 			<div class="form-group page_nav text-center">
 				<span>Not yet registered? <span class="page_nav_label" onclick="location.href='register.php'">Create an account</span></span>
 			</div>
