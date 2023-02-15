@@ -51,7 +51,7 @@
 	}
 /*  */
 
-.container_login{
+.container_login_register{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -60,18 +60,21 @@
 	height: 100vh;
 	width: 100%;
 	padding: 10px;
+	background-color: #0d9eed;
 }
 .card_container{
 	max-width: 500px;
 	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 	border: none;
+	border-radius: 16px;
 }
 .card_container_2 {
 	max-width: 900px;
 	width: 100%;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 	border: none;
+	border-radius: 16px;
 }
 .card_header {
 	font-family: 'Poppins', sans-serif;
@@ -79,8 +82,9 @@
 	font-weight: 700;
 }
 @media screen and (max-width: 992px) {
-	.container_login {
+	.container_login_register {
 		height: 100%;
+		background-color: transparent;
 	}
 	.card_container, .card_container_2 {
 		box-shadow: none;

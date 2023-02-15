@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="container_login">
+<div class="container_login_register">
 	<div class="card card_container_2">
 	  	<div class="card-body px-4 py-3">
 			<div class="form-group text-center pt-2">
@@ -31,7 +31,8 @@
 				</div>
 				<div class="form-group col-lg-2 col-md-5">
 					<label><small><strong>EXT.</strong></small></label>
-					<select class="form-control" id="exampleFormControlSelect1">
+					<select class="form-control">
+						<option value="">- Select -</option>
 						<option value="Jr.">Jr.</option>
 						<option value="Sr.">Sr.</option>
 						<option value="III">III</option>
@@ -49,7 +50,8 @@
 				</div>
 				<div class="form-group col-lg-4 col-md-4">
 					<label><small><strong>SEX</strong></small></label>
-					<select class="form-control" id="exampleFormControlSelect1">
+					<select class="form-control">
+						<option value="">- Select -</option>
 						<option value="Male">Male</option>
 						<option value="Female">Female</option>
 					</select>
@@ -61,7 +63,7 @@
 			</div>
 
 			  <div class="form-group page_nav text-center">
-				<span>Already have an account? <span class="page_nav_label" onclick="location.href='index.php'">Login.</span></span>
+				<span>Already have an account? <span class="page_nav_label" onclick="location.href='index.php'">Login</span></span>
 			</div>
   		</div>
 	</div>
