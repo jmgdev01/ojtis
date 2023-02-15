@@ -1,3 +1,43 @@
+<?php
+include("include/config.php");
+
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+	$username=$_POST["acc_username"];
+	$password=$_POST["acc_password"];
+
+	$sql = mysqli_query($connection, "SELECT * FROM accounts_tbl WHERE acc_username='$username' AND acc_password='$password'");
+
+	if(mysqli_num_rows($sql) > 0) {
+
+		$row = mysqli_fetch_assoc($sql);
+		
+		session_start();
+		$_SESSION['acc_id'] = $row['acc_id'];
+		$_SESSION['role'] = $row['role'];
+
+		if($row["role"]=="admin") {
+			header("location:");
+		}
+		elseif ($row["role"]=="supervisor") {
+			header("location:");
+		}
+		elseif ($row["role"]=="intern") {
+			header("location:");
+		}
+	} else {
+		echo '
+		<div id="msg_alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+		  <strong>Invalid username or password!</strong>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		';
+	}
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +55,16 @@
 			  	<img src="assets/logo/logo-small.png" alt="">
 				<h1 class="card_header">LOGIN</h1>
 			</div>
-	  		<div class="form-group">
-	  			<label><small><strong>EMAIL OR USERNAME</strong></small></label>
-	  			<input type="text" name="" class="form-control" placeholder="e.g. juan@gmail.com">
-	  		</div>
-	  		<div class="form-group">
-	  			<label><small><strong>PASSWORD</strong></small></label>
-	  			<input type="password" name="" class="form-control">
-	  		</div>
+			<form action="#" method="POST">
+				<div class="form-group">
+					<label><small><strong>EMAIL OR USERNAME</strong></small></label>
+					<input type="text" name="" class="form-control" placeholder="e.g. juan@gmail.com">
+				</div>
+				<div class="form-group">
+					<label><small><strong>PASSWORD</strong></small></label>
+					<input type="password" name="" class="form-control">
+				</div>
+			</form>
 	  		<div class="form-group text-center">
 	  			<button class="form-btn form-btn-md btn-blue"><strong>LOGIN</strong></button>
 	  		</div>
