@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <style type="text/css">
 *{
 	box-sizing: border-box;
@@ -51,6 +52,18 @@
 	}
 /*  */
 
+/* Alert */
+	#msg_alert {
+		width: 300px;
+		font-size: 14px;
+		font-weight: 500;
+		color: #ffffff;
+		position: fixed;
+		top: 30px;
+		right: 30px;
+	}
+/*  */
+
 .container_login_register{
 	display: flex;
 	flex-direction: column;
@@ -60,6 +73,7 @@
 	height: 100vh;
 	width: 100%;
 	padding: 10px;
+	overflow-y: auto;
 	background-color: #0d9eed;
 }
 .card_container{
