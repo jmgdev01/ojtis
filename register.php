@@ -1,3 +1,85 @@
+<?php
+
+include('include/config.php');
+
+if (isset($_POST['btn_submit'])) {
+
+	$firstname = $_POST['i_fname'];
+	$middlename = $_POST['i_mname'];
+	$lastname = $_POST['i_lname'];
+	$extension = $_POST['i_extname'];
+	$dateofbirth = $_POST['i_bdate'];
+	$age = $_POST['i_age'];
+	$sex = $_POST['i_sex'];
+	$status = $_POST['i_cstatus'];
+	$bloodtype = $_POST['i_btype'];
+	$height = $_POST['i_height'];
+	$weight = $_POST['i_weight'];
+	$contact = $_POST['i_contact'];
+	$alternativeEmail = $_POST['i_altemail'];
+	$provinceAddress = $_POST['i_paddress'];
+	$placeofbirth = $_POST['i_pbirth'];
+	$supervisor = $_POST['s_id'];
+	$courseCode = $_POST['i_course_code'];
+	$courseDescription = $_POST['i_course_description'];
+	$major = $_POST['i_major'];
+	$year = $_POST['i_year'];
+	$section = $_POST['i_section'];
+	$curriculum = $_POST['i_curriculum'];
+	$intern = $_POST['acc_id'];
+
+
+	$sql = mysqli_query($conn, "INSERT INTO user 
+	 (i_fname, 
+	 i_mname,
+	 i_lname,
+	 i_extname, 
+	 i_bdate, 
+	 i_age,
+	 i_sex, 
+	 i_cstatus, 
+	 i_height, 
+	 i_weight, 
+	 i_contact,
+	 i_altemail,
+	 i_paddress,
+	 i_pbirth,
+	 s_id,
+	 i_course_code,
+	 i_course_description,
+	 i_major,
+	 i_year,
+	 i_section,
+	 i_curriculum,
+	 acc_id) 
+	 VALUES 
+	 ('$firstname',
+	 '$middlename',
+	 '$lastname',
+	 '$extension',
+	 '$dateofbirth',
+	 '$age',
+	 '$sex',
+	 '$status',
+	 '$bloodtype',
+	 '$height', 
+	 '$weight', 
+	 '$contact',
+	 '$alternativeEmail',
+	 '$provinceAddress',
+	 '$placeofbirth',
+	 '$supervisor',
+	 '$courseCode',
+	 '$courseDescription',
+	 '$major',
+	 '$year',
+	 '$section',
+	 '$curriculum',
+	 '$intern')");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +113,7 @@
 				</div>
 				<div class="form-group col-lg-2 col-md-5">
 					<label><small><strong>EXT.</strong></small></label>
-					<select class="form-control">
+					<select class="form-control" name="i_extname">
 						<option value="">- Select -</option>
 						<option value="Jr.">Jr.</option>
 						<option value="Sr.">Sr.</option>
@@ -50,7 +132,7 @@
 				</div>
 				<div class="form-group col-lg-4 col-md-4">
 					<label><small><strong>SEX</strong></small></label>
-					<select class="form-control">
+					<select class="form-control" name="i_sex">
 						<option value="">- Select -</option>
 						<option value="Male">Male</option>
 						<option value="Female">Female</option>
@@ -58,7 +140,7 @@
 				</div>
 				<div class="form-group col-lg-3 col-md-3">
 					<label><small><strong>STATUS</strong></small></label>
-					<select class="form-control">
+					<select class="form-control" name="i_cstatus">
 						<option value="">- Select -</option>
 						<option value="Single">Single</option>
 						<option value="Married">Married</option>
@@ -67,7 +149,7 @@
 				</div>
 				<div class="form-group col-lg-3	 col-md-3">
 					<label><small><strong>BLOODTYPE</strong></small></label>
-					<select class="form-control">
+					<select class="form-control" name="i_btype">
 						<option value="">- Select -</option>
 						<option value="A+">A+</option>
 						<option value="A-">A-</option>
