@@ -71,18 +71,18 @@
 	padding-right: 8px;
 }
 /*  */
-
+body {
+	background-color: #0d9eed;
+}
 .container_login_register{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	height: 100vh;
+	height: 100%;
 	width: 100%;
-	padding: 10px;
-	overflow-y: auto;
-	background-color: #0d9eed;
+	padding: 50px 10px 25px 10px;
 }
 .card_container{
 	max-width: 500px;
@@ -104,9 +104,11 @@
 	font-weight: 700;
 }
 @media screen and (max-width: 992px) {
-	.container_login_register {
-		height: 100%;
+	body {
 		background-color: transparent;
+	}
+	.container_login_register{
+		padding-top: 10px;
 	}
 	.card_container, .card_container_2 {
 		box-shadow: none;
