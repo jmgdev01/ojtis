@@ -16,9 +16,7 @@
         <!-- Navigation-->
         <?php include("include/nav.php"); ?>
         <div class="container">
-
-            
-
+            <p>fsf</p>
         </div>
         <?php include("include/script.php"); ?>
     </body>
