@@ -24,9 +24,8 @@
 			<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
 					<button 
-					class="nav-link active" 
-					data-toggle="tab" 
-					data-target="#personal_info" 
+					class="nav-link active"  
+					id="pi_tab"
 					type="button" 
 					role="tab" 
 					aria-selected="true"><i class="fa fa-vcard-o"></i></button>
@@ -34,8 +33,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#address_contact_info" 
+					id="aci_tab"
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-map"></i></button>
@@ -43,8 +41,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#cases_details" 
+					id="cd_tab"
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-wheelchair-alt"></i></button>
@@ -52,8 +49,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#parent_info" 
+					id="pr_tab" 
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-sitemap"></i></button>
@@ -61,8 +57,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#educational_background" 
+					id="eb_tab"
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-mortar-board"></i></button>
@@ -70,8 +65,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#skills_training" 
+					id="st_tab"
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-soccer-ball-o"></i></button>
@@ -79,8 +73,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#emergency" 
+					id="em_tab"
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-medkit"></i></button>
@@ -88,8 +81,7 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
-					data-toggle="tab" 
-					data-target="#account" 
+					id="ac_tab" 
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-lock"></i></button>
@@ -165,9 +157,12 @@
 							<label><small><strong>NATIONALITY <span class="text-danger">*</span></strong></small></label>
 							<input type="text" name="i_age" class="form-control" placeholder="e.g. Filipino">
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next1">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="address_contact_info" role="tabpanel">
@@ -207,9 +202,13 @@
 							<label><small><strong>CONTACT NUMBER <span class="text-danger">*</span></strong></small></label>
 							<input type="text" name="" class="form-control" placeholder="e.g. 09123456789">
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous2">Previous</button>
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next2">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="cases_details" role="tabpanel">
@@ -233,9 +232,13 @@
 							<label><small><strong>CRIMINAL LIABILITY</strong></small></label>
 							<input type="text" name="" class="form-control" placeholder="e.g. N/A">
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous3">Previous</button>
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next3">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="parent_info" role="tabpanel">
@@ -263,9 +266,13 @@
 							<label><small><strong>ADDRESS</strong></small></label>
 							<input type="text" name="" class="form-control" placeholder="e.g. New Poblacion, Buenavista, Guimaras">
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous4">Previous</button>
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next4">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="educational_background" role="tabpanel">
@@ -328,9 +335,13 @@
 							<label><small><strong>CURRICULUM <span class="text-danger">*</span></strong></small></label>
 							<input type="text" name="" class="form-control" placeholder="e.g. BSIT22">
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous5">Previous</button>
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next5">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="skills_training" role="tabpanel">
@@ -351,9 +362,13 @@
 							<textarea type="text" name="" row="3" class="form-control" placeholder="e.g. Web Development, Computer Hardware Servicing, etc."></textarea>
 							<label><small>Separate each <strong>training</strong> and <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous6">Previous</button>
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next6">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="emergency" role="tabpanel">
@@ -377,9 +392,13 @@
 							<label><small><strong>CONTACT NUMBER <span class="text-danger">*</span></strong></small></label>
 							<input type="text" name="" class="form-control" placeholder="e.g. 09123456789">
 						</div>
-						<div class="col-lg-12 page_nav pb-3">
-							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
+							<button class="form-btn form-btn-sm btn-teal" id="btn_next7">Next</button>
 						</div>
+						<!-- <div class="col-lg-12 page_nav pb-3">
+							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane fade" id="account" role="tabpanel">
@@ -396,7 +415,9 @@
 							<input type="password" name="" class="form-control" placeholder="">
 							<small><strong>Password</strong> length shoud atleast <code>6-character long</code></small>
 						</div>
-
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous8">Previous</button>
+						</div>
 						<div class="form-group col-lg-12 text-center">
 							<button class="form-btn form-btn-md btn-blue"><strong>REGISTER</strong></button>
 						</div>
