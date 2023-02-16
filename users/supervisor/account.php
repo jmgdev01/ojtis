@@ -11,8 +11,14 @@
     <body id="page-top">
         <!-- Navigation-->
         <?php include("include/nav.php"); ?>
-        <div class="container">
-        </div>
+            <div class="container">
+                <div class="card mt-5">
+                    <div class="card-body col-lg-12">
+                        <h3 class="card-title"><center><strong>PROFILE</strong></center></h3>
+                            
+                    </div>
+                </div>
+            </div>
         <?php include("include/script.php"); ?>
     </body>
 </html>
