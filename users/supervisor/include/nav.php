@@ -7,8 +7,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">Dashboard</a></li>
+<<<<<<< HEAD
                 <li class="nav-item"><a class="nav-link" href="#services">Item</a></li>
                 <li class="nav-item"><a class="nav-link" href="../../function/logout.php"><i class="fa fa-power-off"></i></a></li>
+=======
+                <li class="nav-item"><a class="nav-link" href="#services">View Intern Attendance</a></li>
+>>>>>>> 80834d196e204529e150b3d5aff97cf77457c8f6
             </ul>
         </div>
     </div>
