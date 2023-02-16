@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Item</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">View Intern Attendance</a></li>
             </ul>
         </div>
     </div>

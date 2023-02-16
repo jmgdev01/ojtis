@@ -54,13 +54,15 @@
 
 /* Alert */
 	#msg_alert {
-		width: 300px;
+		position: fixed;
+		z-index: 100;
+		top: 30px;
+		right: 30px;
+
+		width: 350px;
 		font-size: 14px;
 		font-weight: 500;
 		color: #ffffff;
-		position: fixed;
-		top: 30px;
-		right: 30px;
 	}
 /*  */
 
@@ -77,7 +79,6 @@ body {
 .container_login_register{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 
 	height: 100%;
@@ -129,5 +130,8 @@ body {
 	color: #fdbd41;
 	cursor: pointer;
 }
-
+.close {
+	color: #ffffff !important;
+	margin-top: -2px;
+}
 </style>

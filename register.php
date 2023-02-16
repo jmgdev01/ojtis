@@ -1,3 +1,8 @@
+<?php
+	include("function/config.php");
+	include("register-section/register-verification.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
