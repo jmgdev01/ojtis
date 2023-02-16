@@ -1,10 +1,6 @@
 <?php 
 
-<<<<<<< HEAD
-	$host = "localhost";
-=======
 	$host = "127.0.0.1";
->>>>>>> bc3d0c21abb971af9b3a357ff630e888c2ae36a9
 	$username = "root";
 	$password = "";
 	$database = "ojtis";
