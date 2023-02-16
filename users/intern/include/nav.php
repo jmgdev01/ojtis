@@ -9,6 +9,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="account.php">Account</a></li>
+                <li class="nav-item"><a class="nav-link" href="../../function/logout.php"><i class="fa fa-power-off"></i></a></li>
             </ul>
         </div>
     </div>
