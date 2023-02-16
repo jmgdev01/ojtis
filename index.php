@@ -23,11 +23,11 @@
 			<form action="index.php" method="POST">
 				<div class="form-group">
 					<label><small><strong>EMAIL OR USERNAME</strong></small></label>
-					<input type="text" name="" class="form-control" placeholder="e.g. juan@gmail.com">
+					<input type="email" name="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
 				</div>
 				<div class="form-group">
 					<label><small><strong>PASSWORD</strong></small></label>
-					<input type="password" name="" class="form-control">
+					<input type="password" name="acc_password" class="form-control">
 				</div>
 				<div class="form-group text-center">
 					<button class="form-btn form-btn-md btn-blue" type="submit" name="btn_login"><strong>LOGIN</strong></button>
