@@ -13,7 +13,7 @@
         <?php include("include/nav.php"); ?>
         <div class="container">
 
-            <label>Kem gallo</label>
+            
 
         </div>
         <?php include("include/script.php"); ?>
