@@ -1,39 +1,6 @@
 <?php
-include("include/config.php");
-
-if(isset($_POST['btn_login'])=="POST") {
-	$acc_username = $_POST["acc_username"];
-	$acc_password = $_POST["acc_password"];
-
-	$sql = mysqli_query($conn, "SELECT * FROM accounts_tbl WHERE acc_username='$acc_username' AND acc_password='$acc_password'");
-
-	if(mysqli_num_rows($sql) > 0) {
-		$row = mysqli_fetch_assoc($sql);
-		
-		session_start();
-		$_SESSION['acc_id'] = $row['acc_id'];
-		$_SESSION['acc_role'] = $row['acc_role'];
-
-		if($row["role"]=="admin"){
-			header("location: ");
-		}
-		elseif ($row["role"]=="supervisor"){
-			header("location: ");
-		}
-		elseif ($row["acc_role"]=="intern"){
-			header("location: ");
-		}
-	} else {
-		echo '
-		<div id="msg_alert" class="alert bg-danger alert-dismissible fade show" role="alert">
-		  <strong>Invalid username or password!</strong>
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-		    <span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		';
-	}
-}
+	include("function/config.php");
+	include("login-section/login-verification.php");
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +9,7 @@ if(isset($_POST['btn_login'])=="POST") {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login | OJT Information System</title>
-	<?php include('include/style.php'); ?>
+	<?php include('function/style.php'); ?>
 </head>
 <body>
 
@@ -73,6 +40,6 @@ if(isset($_POST['btn_login'])=="POST") {
 	</div>
 </div>
 
-<?php include('include/script.php'); ?>
+<?php include('function/script.php'); ?>
 </body>
 </html>
