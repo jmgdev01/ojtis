@@ -1,7 +1,6 @@
 <?php
 	include("function/config.php");
 	include("register-section/register-verification.php");
-    include('function/script.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +12,7 @@
 	<?php include('function/style.php'); ?>
 	<script type = "text/javascript">
         function fun() {
-		alert ("Data Inserted Succesfuly!");
+			alert ("Data Inserted Succesfuly!");
         }
     </script>
 </head>
@@ -26,7 +25,7 @@
 				<img src="assets/logo/logo-small.png" alt="">
 				<h1 class="card_header">CREATE AN ACCOUNT</h1>
 			</div>
-	  		
+			<form action="register.php" method="post">
 			<ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
 				<li class="nav-item" role="presentation">
 					<button 
@@ -164,7 +163,7 @@
 							<input type="text" name="i_nationality" class="form-control" placeholder="e.g. Filipino">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next1">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next1">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -209,8 +208,8 @@
 							<input type="text" name="ct_mobile_no" class="form-control" placeholder="e.g. 09123456789">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous2">Previous</button>
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next2">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous2">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next2">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -239,8 +238,8 @@
 							<input type="text" name="c_criminal_liability" class="form-control" placeholder="e.g. N/A">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous3">Previous</button>
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next3">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous3">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next3">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -273,8 +272,8 @@
 							<input type="text" name="p_address" class="form-control" placeholder="e.g. New Poblacion, Buenavista, Guimaras">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous4">Previous</button>
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next4">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous4">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next4">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -292,7 +291,7 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-							<input type="text" name="eb_elem_year" class="form-control" placeholder="e.g. 2012">
+							<input type="number" name="eb_elem_year" class="form-control" placeholder="e.g. 2012">
 						</div>
 						<div class="form-group col-lg-8 col-md-8">
 							<label><small><strong>SECONDARY / HIGH SCHOOL <span class="text-danger">*</span></strong></small></label>
@@ -300,7 +299,7 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-							<input type="text" name="eb_sec_year" class="form-control" placeholder="e.g. 2018">
+							<input type="number" name="eb_sec_year" class="form-control" placeholder="e.g. 2018">
 						</div>
 						<div class="form-group col-lg-8 col-md-8">
 							<label><small><strong>TERTIARY / COLLEGE <span class="text-danger">*</span></strong></small></label>
@@ -308,7 +307,7 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-							<input type="text" name="eb_ter_year" class="form-control" placeholder="e.g. 2022">
+							<input type="number" name="eb_ter_year" class="form-control" placeholder="e.g. 2022">
 						</div>
 						<div class="form-group col-lg-3 col-md-3">
 							<label><small><strong>COURSE CODE <span class="text-danger">*</span></strong></small></label>
@@ -342,8 +341,8 @@
 							<input type="text" name="eb_curriculum" class="form-control" placeholder="e.g. BSIT22">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous5">Previous</button>
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next5">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous5">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next5">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -369,8 +368,8 @@
 							<label><small>Separate each <strong>training</strong> and <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous6">Previous</button>
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next6">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous6">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next6">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -399,8 +398,8 @@
 							<input type="text" name="em_contact" class="form-control" placeholder="e.g. 09123456789">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
-							<button class="form-btn form-btn-sm btn-teal" id="btn_next7">Next</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next7">Next</button>
 						</div>
 						<!-- <div class="col-lg-12 page_nav pb-3">
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -422,15 +421,15 @@
 							<small><strong>Password</strong> length shoud atleast <code>6-character long</code></small>
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous8">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous8">Previous</button>
 						</div>
 						<div class="form-group col-lg-12 text-center">
-							<button class="form-btn form-btn-md btn-blue" name="btn_submit" onclick = "fun();"><strong>REGISTER</strong></button>
+							<button class="form-btn form-btn-md btn-blue" name="btn_submit"><strong>REGISTER</strong></button>
 						</div>
 					</div>
 				</div>
 			</div>
-
+			</form>
 			<div class="form-group page_nav text-center">
 				<span>Already have an account? <span class="page_nav_label" onclick="location.href='index.php'">Login</span></span>
 			</div>
