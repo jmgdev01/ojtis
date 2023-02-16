@@ -1,3 +1,8 @@
+<?php
+    include("../../function/config.php");
+    include("include/validate_user_session.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +18,7 @@
         <?php include("include/nav.php"); ?>
         <div class="container">
 
-            
+        
 
         </div>
         <?php include("include/script.php"); ?>
