@@ -1,9 +1,9 @@
 <?php
-if(isset($_POST['btn_login'])=="POST") {
-	$acc_username = $_POST["acc_username"];
+if(isset($_POST['btn_login'])) {
+	$acc_email_address = $_POST["acc_email_address"];
 	$acc_password = $_POST["acc_password"];
 
-	$sql = mysqli_query($conn, "SELECT * FROM accounts_tbl WHERE acc_username='$acc_username' AND acc_password='$acc_password'");
+	$sql = mysqli_query($conn, "SELECT * FROM accounts_tbl WHERE acc_email_address='$acc_email_address' AND acc_password='$acc_password'");
 
 	if(mysqli_num_rows($sql) > 0) {
 		$row = mysqli_fetch_assoc($sql);
@@ -12,14 +12,12 @@ if(isset($_POST['btn_login'])=="POST") {
 		$_SESSION['acc_id'] = $row['acc_id'];
 		$_SESSION['acc_role'] = $row['acc_role'];
 
-		if($row["role"]=="admin"){
-			header("location: ");
-		}
-		elseif ($row["role"]=="supervisor"){
-			header("location: ");
-		}
-		elseif ($row["acc_role"]=="intern"){
-			header("location: ");
+		if($row["acc_role"]=="admin"){
+			header("location: users/admin/index.php");
+		}elseif ($row["acc_role"]=="supervisor"){
+			header("location: users/supervisor/index.php");
+		}elseif ($row["acc_role"]=="intern"){
+			header("location: users/intern/index.php");
 		}
 	} else {
 		echo '

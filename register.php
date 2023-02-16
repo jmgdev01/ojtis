@@ -154,7 +154,7 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>PLACE OF BIRTH <span class="text-danger">*</span></strong></small></label>
-							<input type="text" name="i_bdate" class="form-control" placeholder="e.g. Jaro, Ililo">
+							<input type="text" name="i_bdate" class="form-control" placeholder="e.g. Jaro, Iloilo">
 						</div>
 						<div class="form-group col-lg-3 col-md-3">
 							<label><small><strong>NATIONALITY <span class="text-danger">*</span></strong></small></label>
