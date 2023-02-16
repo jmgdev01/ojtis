@@ -11,10 +11,9 @@
     <body id="page-top">
         <!-- Navigation-->
         <?php include("include/nav.php"); ?>
-        <div class="container">
-
+        <div class="container pt-5">
+            <h1 class="pt-5">Dashboard</h1>
             
-
         </div>
         <?php include("include/script.php"); ?>
     </body>
