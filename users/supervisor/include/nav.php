@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
     <div class="container px-4">
         <a class="navbar-brand" href="#page-top">
             <img class="nav_logo" src="../../assets/logo/logo-small.png" alt="">

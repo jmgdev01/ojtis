@@ -12,7 +12,7 @@
         <!-- Navigation-->
         <?php include("include/nav.php"); ?>
             <div class="container pt-5 d-flex justify-content-center">
-            <div class="card mt-5 col-lg-4 col-md-6 col-sm-8">
+            <div class="card col-lg-4 col-md-6 col-sm-8" style="margin-top: 15%;">
                 <div class="card-body">
                     <h3 class="card-title"><center>Account Settings</center></h3>
                     <div class="row">
@@ -28,6 +28,10 @@
 							<label><small><strong>NEW PASSWORD <span class="text-danger">*</span></strong></small></label>
 							<input type="password" name="" class="form-control" placeholder="">
 						</div>
+                        <div>
+                            <button class="btn btn-sm btn-success col-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button>
+                            <button class="btn btn-sm btn-danger col-md-3"><i class="fa fa-times-circle" aria-hidden="true"></i>Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>

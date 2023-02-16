@@ -1,6 +1,7 @@
 <?php
 	include("function/config.php");
-	include("login-section/login-verification.php");
+	include("function/validate_user_session.php");
+	include("login-section/login-verification.php")
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +24,11 @@
 			<form action="index.php" method="POST">
 				<div class="form-group">
 					<label><small><strong>EMAIL OR USERNAME</strong></small></label>
-					<input type="email" name="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
+					<input type="email" name="acc_email_address" id="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
 				</div>
 				<div class="form-group">
 					<label><small><strong>PASSWORD</strong></small></label>
-					<input type="password" name="acc_password" class="form-control">
+					<input type="password" name="acc_password" id="acc_password" class="form-control">
 				</div>
 				<div class="form-group text-center">
 					<button class="form-btn form-btn-md btn-blue" type="submit" name="btn_login"><strong>LOGIN</strong></button>
@@ -41,5 +42,13 @@
 </div>
 
 <?php include('function/script.php'); ?>
+<script>
+	$(document).ready(function(){
+		$('#btn-save').click(function(){
+			$('#acc_email_address').val();
+			$('#acc_password').val();
+		});
+	});
+</script>
 </body>
 </html>
