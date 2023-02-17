@@ -4,7 +4,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style type="text/css">
-*{
+* {
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
 }	
@@ -16,6 +16,10 @@
 /* Dark - #282828 */
 /* White - #ffffff */
 
+	body {
+		background-color: #282828;
+	}
+
 /* Button Classes */
 	.form-btn {
 		font-weight: 500;
@@ -23,6 +27,10 @@
 		border: none;
 		border-radius: 4px;
 		letter-spacing: 1px;
+	}
+	.form-btn-sm {
+		padding: 5px 10px;
+		font-size: 12px;
 	}
 	.form-btn-md {
 		padding: 8px 20px;
@@ -33,7 +41,8 @@
 	.btn-yellow {
 		background-color: #fdbd41;
 		border: 1px solid #fdbd41;
-		color: #ffffff;
+		color: #282828;
+		font-weight: 700;
 	}
 	.btn-teal {
 		background-color: #13acc5;
@@ -67,71 +76,70 @@
 /*  */
 
 /* Icons */
-.nav-item i {
-	color: #282828;
-	padding-left: 8px;
-	padding-right: 8px;
-}
+	.nav-item i {
+		color: #282828;
+		padding-left: 8px;
+		padding-right: 8px;
+	}
 /*  */
-body {
-	background-color: #0d9eed;
-}
-.container_login_register{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 
-	height: 100%;
-	width: 100%;
-	padding: 50px 10px 25px 10px;
-}
-.card_container{
-	max-width: 500px;
-	width: 100%;
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-	border: none;
-	border-radius: 16px;
-}
-.card_container_2 {
-	max-width: 900px;
-	width: 100%;
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-	border: none;
-	border-radius: 16px;
-}
-.card_header {
-	font-family: 'Poppins', sans-serif;
-	font-size: 40px;
-	font-weight: 700;
-}
-@media screen and (max-width: 992px) {
-	body {
-		background-color: transparent;
-	}
 	.container_login_register{
-		padding-top: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		height: 100%;
+		width: 100%;
+		padding: 50px 10px 25px 10px;
 	}
-	.card_container, .card_container_2 {
-		box-shadow: none;
+	.card_container{
+		max-width: 500px;
+		width: 100%;
+		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 		border: none;
+		border-radius: 16px;
 	}
-}
-.card_container label, .card_container_2 label{
-	font-weight: 500;
-}
-.card_container img, .card_container_2 img {
-	max-width: 80px;
-	width: 100%;
-}
-.page_nav span {
-	font-weight: 500;
-}
-.page_nav_label {
-	color: #fdbd41;
-	cursor: pointer;
-}
-.close {
-	color: #ffffff !important;
-	margin-top: -2px;
-}
+	.card_container_2 {
+		max-width: 900px;
+		width: 100%;
+		box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+		border: none;
+		border-radius: 16px;
+	}
+	.card_header {
+		font-family: 'Poppins', sans-serif;
+		font-size: 40px;
+		font-weight: 700;
+		color: #282828;
+	}
+	@media screen and (max-width: 992px) {
+		body {
+			background-color: transparent;
+		}
+		.container_login_register{
+			padding-top: 10px;
+		}
+		.card_container, .card_container_2 {
+			box-shadow: none;
+			border: none;
+		}
+	}
+	.card_container label, .card_container_2 label{
+		font-weight: 500;
+	}
+	.card_container img, .card_container_2 img {
+		max-width: 80px;
+		width: 100%;
+	}
+	.page_nav span {
+		font-weight: 500;
+	}
+	.page_nav_label {
+		color: #fdbd41;
+		cursor: pointer;
+	}
+	.close {
+		color: #ffffff !important;
+		margin-top: -2px;
+	}
 </style>
