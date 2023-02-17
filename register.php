@@ -165,7 +165,7 @@
 								<input type="text" name="i_nationality" class="form-control" placeholder="e.g. Filipino">
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next1" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next1" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -211,7 +211,7 @@
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
 								<button class="form-btn form-btn-sm btn-yellow" id="btn_previous2">Previous</button>
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next2" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next2" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -241,7 +241,7 @@
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
 								<button class="form-btn form-btn-sm btn-yellow" id="btn_previous3">Previous</button>
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next3" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next3" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -275,7 +275,7 @@
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
 								<button class="form-btn form-btn-sm btn-yellow" id="btn_previous4">Previous</button>
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next4" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next4" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -344,7 +344,7 @@
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
 								<button class="form-btn form-btn-sm btn-yellow" id="btn_previous5">Previous</button>
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next5" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next5" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -371,7 +371,7 @@
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
 								<button class="form-btn form-btn-sm btn-yellow" id="btn_previous6">Previous</button>
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next6" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next6" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
@@ -401,7 +401,7 @@
 							</div>
 							<div class="col-lg-12 page_nav pb-3 text-right">
 								<button class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
-								<button class="form-btn form-btn-sm btn-teal" id="btn_next7" type="button">Next</button>
+								<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next7" type="button">Next</button>
 							</div>
 							<!-- <div class="col-lg-12 page_nav pb-3">
 								<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
