@@ -103,19 +103,19 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-7">
 							<label><small><strong>FIRST NAME <span class="text-danger">*</span></strong></small></label>
-							<input type="text" name="i_fname" class="form-control" placeholder="e.g. Juan">
+							<input type="text" name="i_first_name" class="form-control" placeholder="e.g. Juan">
 						</div>
 						<div class="form-group col-lg-3 col-md-5">
 							<label><small><strong>MIDDLE NAME</strong></small></label>
-							<input type="text" name="i_mname" class="form-control" placeholder="e.g. Garcia">
+							<input type="text" name="i_middle_name" class="form-control" placeholder="e.g. Garcia">
 						</div>
 						<div class="form-group col-lg-3 col-md-7">
 							<label><small><strong>LAST NAME <span class="text-danger">*</span></strong></small></label>
-							<input type="text" name="i_lname" class="form-control" placeholder="e.g. Cruz">
+							<input type="text" name="i_last_name" class="form-control" placeholder="e.g. Cruz">
 						</div>
 						<div class="form-group col-lg-2 col-md-5">
 							<label><small><strong>EXT.</strong></small></label>
-							<select class="form-control">
+							<select class="form-control" name="i_suffix_name">
 								<option value="">- Select -</option>
 								<option value="Jr.">Jr.</option>
 								<option value="Sr.">Sr.</option>
