@@ -1,20 +1,15 @@
 <?php 
 
-	$host = "127.0.0.1";
-	$username = "root";
-	$password = "";
-	$database = "ojtis";
+$dbHost = '127.0.0.1';
+$dbName = 'ojtis';
+$dbUsername = 'root';
+$dbPassword = '';
 
-	// Create connection
-	$conn = mysqli_connect($host, $username, $password, $database);
+$db = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
-	// Check connection
-	if (!$conn) {
-		die("Connection failed: " . mysqli_connect_error());
-	}
-	
-	date_default_timezone_set("Asia/Manila"); 
-	ini_set('session.cookie_lifetime','31536000'); 
-	// The validity of the session is 1 year
-	session_start();
+if (mysqli_connect_errno()){
+	echo "Database connection failed with following errors:". mysqli_connect_errno();
+	die();
+}
+
 ?>

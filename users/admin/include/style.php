@@ -3,6 +3,6 @@
 <link href="../../assets/users/css/styles.css" rel="stylesheet" />
 <style>
     .nav_logo {
-        width: 40px;
+        width: 35px;
     }
 </style>

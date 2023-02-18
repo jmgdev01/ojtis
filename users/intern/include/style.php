@@ -4,6 +4,6 @@
 <link rel="stylesheet" href="../../assets/css/font-awesome/css/font-awesome.min.css">
 <style>
     .nav_logo {
-        width: 40px;
+        width: 35px;
     }
 </style>

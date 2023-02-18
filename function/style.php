@@ -70,8 +70,13 @@
 
 		width: 350px;
 		font-size: 14px;
-		font-weight: 500;
 		color: #ffffff;
+	}
+	.text_bold {
+		font-weight: 500 !important;
+	}
+	.text_bolder {
+		font-weight: 700 !important;
 	}
 /*  */
 

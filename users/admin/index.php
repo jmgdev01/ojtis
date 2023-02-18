@@ -1,4 +1,5 @@
 <?php
+    include("../../function/session.php");
     include("../../function/config.php");
     include("include/validate_user_session.php");
 ?>

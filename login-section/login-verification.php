@@ -1,46 +1,46 @@
-<?php
-if(isset($_POST['btn_login'])) {
-	$acc_email_address = $_POST["acc_email_address"];
-	$acc_password = $_POST["acc_password"];
+<?php 
+include('../function/config.php');
 
-	if ($acc_email_address != "" || $acc_password != "") {
-		$sql = mysqli_query($conn, "SELECT * FROM accounts_tbl WHERE acc_email_address='$acc_email_address' AND acc_password='$acc_password'");
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
-		if(mysqli_num_rows($sql) > 0) {
-			$row = mysqli_fetch_assoc($sql);
-			
-			session_start();
-			$_SESSION['acc_id'] = $row['acc_id'];
-			$_SESSION['acc_role'] = $row['acc_role'];
+if(isset($_POST["action"])){
+	$output = '';
+	if($_POST["action"]=="Login"){
+	  $acc_email_address = test_input($_POST["acc_email_address"]);
+	  $acc_password = test_input($_POST["acc_password"]);
 
-			if($row["acc_role"]=="admin"){
-				header("location: users/admin/index.php");
-			}elseif ($row["acc_role"]=="supervisor"){
-				header("location: users/supervisor/index.php");
-			}elseif ($row["acc_role"]=="intern"){
-				header("location: users/intern/index.php");
-			}
-		} else {
-			echo '
-				<div id="msg_alert" class="alert bg-danger alert-dismissible fade show" role="alert">
-					<strong>Invalid username or password!</strong>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-			';
-		}
-	} else {
-		echo '
-			<div id="msg_alert" class="alert bg-danger alert-dismissible fade show" role="alert">
-				<strong>Fill out all the required fields!</strong>
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-		';
-	}
+	  $sql = mysqli_query($db, "SELECT * FROM accounts_tbl WHERE acc_email_address='$acc_email_address' AND acc_password='$acc_password'");
 
-	
+	  if(mysqli_num_rows($sql) > 0){
+	  	while($res = mysqli_fetch_assoc($sql)){
+
+			$acc_id = $res['acc_id']; 
+		    $acc_email_address = $res['acc_email_address'];
+		    $acc_role = $res['acc_role'];
+		    
+			ini_set('session.cookie_lifetime','31536000');
+		    session_start();
+		    $_SESSION['acc_id'] = $acc_id;
+		    $_SESSION['acc_email_address'] = $acc_email_address;
+		    $_SESSION['acc_role'] = $acc_role;
+	  	}
+	  	if($acc_role == "admin"){
+	  		echo $output = 'admin';
+	  	}
+	  	if($acc_role == "supervisor"){
+	  		echo $output = 'supervisor';
+	  	}
+	  	if($acc_role == "intern"){
+	  		echo $output = 'intern';
+	  	}
+	  } else {
+	  	echo $output = "User doesn't exist.";
+	  }
+	}	
 }
 ?>
