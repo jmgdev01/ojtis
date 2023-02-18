@@ -34,7 +34,7 @@
 				<input type="password" name="acc_password" id="acc_password" class="form-control">
 			</div>
 			<div class="form-group text-center">
-				<button class="form-btn form-btn-md btn-blue" id="btn-login" name="btn-login"><strong>LOGIN</strong></button>
+				<button class="form-btn form-btn-md btn-blue" id="btn_login"><strong>LOGIN</strong></button>
 			</div>
 			<div class="form-group page_nav text-center">
 				<span>Not yet registered? <span class="page_nav_label" onclick="location.href='register.php'">Create an account</span></span>
@@ -49,7 +49,7 @@
 		
 		$("#msg_alert").hide();
 
-		$('#btn-login').click(function(){
+		$('#btn_login').click(function(){
 			var acc_email_address = $('#acc_email_address').val();
 			var acc_password = $('#acc_password').val();
 			var action = "Login";
@@ -63,8 +63,7 @@
 			data : {acc_email_address:acc_email_address, acc_password:acc_password, action:action},
 			success: function(data){
 				if(data=="User doesn't exist."){
-					if (email_pattern.test(acc_email_address)==true) {
-					}else{
+					if (email_pattern.test(acc_email_address)==false) {
 						$("#msg_alert").show();
 						$("#msg_alert").removeClass("alert bg-primary text_bold alert-dismissible");
 						$("#msg_alert").removeClass("alert bg-warning text_bolder text-dark alert-dismissible");
@@ -91,9 +90,9 @@
 					if(data == 'admin') {
 						$(location).attr('href','users/admin/index.php');
 					} else if(data == 'supervisor') {
-						$(location).attr('href','users/admin/index.php');
+						$(location).attr('href','users/supervisor/index.php');
 					} else if(data == 'intern') {
-						$(location).attr('href','users/admin/index.php');
+						$(location).attr('href','users/intern/index.php');
 					} 
 				}
 			}

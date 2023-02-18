@@ -14,7 +14,7 @@ function test_input($data) {
     if($_POST["action"]=="Register"){
 
         date_default_timezone_set("Asia/Manila"); 
-        $sql_init = mysqli_query($conn, "SELECT MAX(i_id+1) AS max_i_id FROM intern_tbl");
+        $sql_init = mysqli_query($db, "SELECT MAX(i_id+1) AS max_i_id FROM intern_tbl");
         $i_init = mysqli_fetch_assoc($sql_init);
 
         $max_id = '';
@@ -95,56 +95,59 @@ function test_input($data) {
         $acc_email_address = test_input($_POST['acc_email_address']);
         $acc_password = test_input($_POST['acc_password']);
         $acc_role = "intern";
-        $u_reg_date = date("Y-m-d");
+        $acc_date_reg = date("Y-m-d");
 
-        $sql = mysqli_query($conn, "SELECT * FROM intern_tbl INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id WHERE educational_background_tbl.eb_id_number='$eb_id_number' AND intern_tbl.i_code='$i_code'");
+        $sql = mysqli_query($db, "SELECT * FROM intern_tbl INNER JOIN accounts_tbl ON intern_tbl.i_id = accounts_tbl.i_id WHERE intern_tbl.i_code='$i_code' OR accounts_tbl.acc_email_address='$acc_email_address'");
 
         if(mysqli_num_rows($sql) > 0) {
             echo $output = "User already exist.";  
         } else {
 
             /* intern_tbl */
-            $sql0 = mysqli_query($db, "INSERT INTO intern_tbl (i_code, i_first_name, i_middle_name, i_last_name, i_suffix_name, i_sex, i_civil_status, i_height, i_weight, i_birth_date, i_age, i_place_birth, i_nationality, i_skills, i_training_seminar) 
-            VALUES 
-            ('$i_code','$i_first_name','$i_middle_name', '$i_last_name','$i_suffix_name', '$i_sex', '$i_civil_status', '$i_height', '$i_weight', '$i_birth_date', '$i_age', '$i_place_birth','$i_nationality', '$i_skills', '$i_training_seminar')");
+            $sql0 = mysqli_query($db, "INSERT INTO intern_tbl (i_code, i_first_name, i_middle_name, i_last_name, i_suffix_name, i_sex, i_civil_status, i_height, i_weight, i_birth_date, i_age, i_place_birth, i_nationality, i_skills, i_training_seminar) VALUES ('$i_code', '$i_first_name', '$i_middle_name', '$i_last_name', '$i_suffix_name', '$i_sex', '$i_civil_status', '$i_height', '$i_weight', '$i_birth_date', '$i_age', '$i_place_birth', '$i_nationality', '$i_skills', '$i_training_seminar')");
 
             $sql1 = mysqli_query($db, "SELECT * FROM intern_tbl WHERE i_code='$i_code'");
             $res1 = mysqli_fetch_assoc($sql1);
+            $insert_i_code = $res1['i_id'];
 
             /* accounts_tbl */
-            $sql3 = mysqli_query($conn, "INSERT INTO accounts_tbl (acc_email_address, acc_password, acc_role, i_id) 
-            VALUES 
-            ('$acc_email_address','$acc_password', '$acc_role', '".$res1['i_id']."')");
+            $sql3 = mysqli_query($db, "INSERT INTO accounts_tbl (acc_email_address, acc_password, acc_role, i_id, acc_date_reg) VALUES ('$acc_email_address','$acc_password', '$acc_role', '$insert_i_code', '$acc_date_reg')");
 
-            // /*educational_background_tbl*/
-            // $sql1 = mysqli_query($conn, "INSERT INTO educational_background_tbl (eb_elementary, eb_elem_year, eb_secondary,eb_sec_year, eb_tertiary, eb_ter_year,eb_course_code, eb_course_description, eb_year, eb_section, eb_curriculum, eb_id_number) 
-            // VALUES 
-            // ('$eb_elementary','$eb_elem_year', '$eb_secondary','$eb_sec_year', '$eb_tertiary' , '$eb_ter_year', '$eb_course_code', '$eb_course_description', '$eb_year', '$eb_section', '$eb_curriculum', '$eb_id_number')");
+            /* address_tbl */
+            $sql4 = mysqli_query($db, "INSERT INTO address_tbl (ad_street, ad_barangay, ad_municipality, ad_zipcode, ad_province, i_id) VALUES ('$ad_street', '$ad_barangay', '$ad_municipality', '$ad_zipcode', '$ad_province', '$insert_i_code')"); 
 
-            // /*case_tbl*/
-            // $sql2 = mysqli_query($conn, "INSERT INTO case_tbl (c_physical_disability, c_mental_disability, c_criminal_liability) 
-            // VALUES 
-            // ('$c_physical_disability','$c_mental_disability', '$c_criminal_liability')");
+            /* contacts_tbl */
+            $sql5 = mysqli_query($db, "INSERT INTO contacts_tbl (ct_email_address, ct_mobile_no, i_id) VALUES ('$ct_email_address','$ct_mobile_no', '$insert_i_code')");
 
-            // /*parent_tbl*/
-            // $sql4 = mysqli_query($conn, "INSERT INTO parent_tbl (p_father, p_father_occupation, p_mother, p_mother_occupation, p_address) 
-            // VALUES 
-            // ('$p_father','$p_father_occupation', '$p_mother', '$p_mother_occupation', '$p_address')");
+            /* parent_tbl */
+            $sql6 = mysqli_query($db, "INSERT INTO parent_tbl (p_father, p_father_occupation, p_mother, p_mother_occupation, p_address, i_id) VALUES ('$p_father', '$p_father_occupation', '$p_mother', '$p_mother_occupation', '$p_address', '$insert_i_code')");
 
-            // /*contacts_tbl*/
-            // $sql5 = mysqli_query($conn, "INSERT INTO contacts_tbl (ct_email_address, ct_mobile_no) 
-            // VALUES 
-            // ('$ct_email_address','$ct_mobile_no')");
+            /* educational_background_tbl */
+            $sql7 = mysqli_query($db, "INSERT INTO educational_background_tbl (eb_elementary, eb_elem_year, eb_secondary, eb_sec_year, eb_tertiary, eb_ter_year, eb_course_code, eb_course_description, eb_year, eb_section, eb_curriculum, eb_id_number, i_id) VALUES ('$eb_elementary','$eb_elem_year', '$eb_secondary','$eb_sec_year', '$eb_tertiary' , '$eb_ter_year', '$eb_course_code', '$eb_course_description', '$eb_year', '$eb_section', '$eb_curriculum', '$eb_id_number', '$insert_i_code')");
 
-            // /*emergency_tbl*/
-            // $sql6 = mysqli_query($conn, "INSERT INTO emergency_tbl (em_guardian, em_relationship, em_address, em_contact) 
-            // VALUES 
-            // ('$em_guardian','$em_relationship', '$em_address', '$em_contact')");
+            /* case_tbl */
+            $sql8 = mysqli_query($db, "INSERT INTO case_tbl (c_physical_disability, c_mental_disability, c_criminal_liability, i_id) VALUES ('$c_physical_disability', '$c_mental_disability', '$c_criminal_liability', '$insert_i_code')");
 
-            // /*address_tbl*/
-            // $sql7 = mysqli_query($conn, "INSERT INTO address_tbl (ad_street, ad_barangay, ad_municipality, ad_zipcode, ad_province) 
-            // VALUES 
-            // ('$ad_street','$ad_barangay', '$ad_municipality', '$ad_zipcode', '$ad_province')"); 
+            /* emergency_tbl */
+            $sql10 = mysqli_query($db, "INSERT INTO emergency_tbl (em_guardian, em_relationship, em_address, em_contact, i_id) VALUES ('$em_guardian','$em_relationship', '$em_address', '$em_contact', '$insert_i_code')");
+
+            $sql11 = mysqli_query($db, "SELECT * FROM intern_tbl INNER JOIN accounts_tbl ON intern_tbl.i_id = accounts_tbl.i_id WHERE intern_tbl.i_id='$insert_i_code'");
+
+            if(mysqli_num_rows($sql11) > 0){
+                while($res11 = mysqli_fetch_assoc($sql11)){
+
+                    $acc_id1 = $res11['acc_id']; 
+                    $acc_email_address1 = $res11['acc_email_address'];
+                    $acc_role1 = $res11['acc_role'];
+                    
+                    ini_set('session.cookie_lifetime','31536000');
+                    session_start();
+                    $_SESSION['acc_id'] = $acc_id1;
+                    $_SESSION['acc_email_address'] = $acc_email_address1;
+                    $_SESSION['acc_role'] = $acc_role1;
+                }
+                echo $output = 'intern';
+            }
         }
     }
 }
