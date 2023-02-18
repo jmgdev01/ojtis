@@ -407,13 +407,6 @@
 							<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
 						</div> -->
 					</div>
-					<div class="col-lg-12 page_nav pb-3 text-right">
-						<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
-						<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next7">Next</button>
-					</div>
-					<!-- <div class="col-lg-12 page_nav pb-3">
-						<small><span>Note: <span class="text-danger">Please fill out all the required fields to proceed.</span></span></small>
-					</div> -->
 				</div>
 
 				<div class="tab-pane fade" id="account" role="tabpanel">
