@@ -9,7 +9,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login | OJT Information System</title>
-	<?php include('function/style.php'); ?>
+	<?php 
+		include('function/style.php'); 
+	?>
 </head>
 <body>
 
@@ -27,11 +29,11 @@
 
 			<div class="form-group">
 				<label><small><strong>EMAIL OR USERNAME</strong></small></label>
-				<input type="email" name="acc_email_address" id="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
+				<input type="email" id="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
 			</div>
 			<div class="form-group">
 				<label><small><strong>PASSWORD</strong></small></label>
-				<input type="password" name="acc_password" id="acc_password" class="form-control">
+				<input type="password" id="acc_password" class="form-control">
 			</div>
 			<div class="form-group text-center">
 				<button class="form-btn form-btn-md btn-blue" id="btn_login"><strong>LOGIN</strong></button>
@@ -43,7 +45,9 @@
 	</div>
 </div>
 
-<?php include('function/script.php'); ?>
+<?php 
+	include('function/script.php'); 
+?>
 <script>
 	$(document).ready(function(){
 		

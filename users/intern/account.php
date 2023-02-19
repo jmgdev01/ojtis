@@ -1,3 +1,8 @@
+<?php
+    include("../../function/session.php");
+    include("../../function/config.php");
+    include("include/validate_user_session.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,38 +10,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Scrolling Nav - Start Bootstrap Template</title>
-        <?php include("include/style.php"); ?>
+        <title>Account - OJT Information System</title>
+        <?php 
+            include("include/style.php"); 
+        ?>
     </head>
     <body id="page-top">
-        <!-- Navigation-->
         <?php include("include/nav.php"); ?>
-            <div class="container pt-5 d-flex justify-content-center">
-            <div class="card col-lg-4 col-md-6 col-sm-8" style="margin-top: 15%;">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Account Settings</h3>
-                    <div class="row">
-                        <div class="form-group col-lg-12 mb-2">
-							<label><small><strong>EMAIL <span class="text-danger">*</span></strong></small></label>
-							<input type="email" name="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
-						</div>
-                        <div class="form-group col-lg-12 mb-2">
-							<label><small><strong>PASSWORD <span class="text-danger">*</span></strong></small></label>
-							<input type="password" name="" class="form-control" placeholder="">
-						</div>
-                        <div class="form-group col-lg-12 mb-2">
-							<label><small><strong>NEW PASSWORD <span class="text-danger">*</span></strong></small></label>
-							<input type="password" name="" class="form-control" placeholder="">
-						</div>
-                        <div>
-                            <button class="btn btn-md btn-success col-md-3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Update</button>
-                            <button class="btn btn-md btn-danger col-md-3"><i class="fa fa-times-circle" aria-hidden="true"></i>Cancel</button>
+        <div class="container py-5">
+            <h3 class="pb-2"><strong>ACCOUNT SETTING</strong></h3>
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-5 col-md-6 col-sm-8">
+                    <div class="card">
+                        <div class="card-body pb-2 px-4">
+                            <div class="form-group">
+                                <label><small><strong>EMAIL OR USERNAME</strong></small></label>
+                                <input type="email" id="acc_email_address" class="form-control" placeholder="e.g. juan@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label><small><strong>OLD PASSWORD</strong></small></label>
+                                <input type="password" id="acc_password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label><small><strong>NEW PASSWORD</strong></small></label>
+                                <input type="password" id="new_acc_password" class="form-control">
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="form-btn form-btn-md btn-blue" id="btn_save"><strong>Save</strong></button>
+                            </div>
                         </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
             
-            </div>
-        <?php include("include/script.php"); ?>
+        </div>
+        <?php 
+            include("include/script.php"); 
+        ?>
     </body>
 </html>

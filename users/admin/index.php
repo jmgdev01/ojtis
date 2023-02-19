@@ -3,7 +3,6 @@
     include("../../function/config.php");
     include("include/validate_user_session.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,16 +11,18 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - OJT Information System</title>
-        <?php include("include/style.php"); ?>
+        <?php 
+            include("include/style.php"); 
+        ?>
     </head>
     <body id="page-top">
-        <!-- Navigation-->
         <?php include("include/nav.php"); ?>
-        <div class="container">
-
-        
-
+        <div class="container pt-5">
+            <h3><strong>Dashboard</strong></h3>
+            
         </div>
-        <?php include("include/script.php"); ?>
+        <?php 
+            include("include/script.php"); 
+        ?>
     </body>
 </html>

@@ -9,7 +9,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Register | OJT Information System</title>
-	<?php include('function/style.php'); ?>
+	<?php 
+		include('function/style.php'); 
+	?>
 </head>
 <body>
 
@@ -422,7 +424,9 @@
 	</div>
 </div>
 
-<?php include('function/script.php'); ?>
+<?php 
+	include('function/script.php'); 
+?>
 <script>
 $(document).ready(function(){
 
@@ -604,7 +608,7 @@ $(document).ready(function(){
 				$("#msg_alert").show();
 				$("#msg_alert").removeClass("alert bg-danger text_bold alert-dismissible");
 				$("#msg_alert").removeClass("alert bg-primary text_bold alert-dismissible");
-				$("#msg_alert").addClass("alert bg-warning text_bolder alert-dismissible");
+				$("#msg_alert").addClass("alert bg-warning text_bolder text-dark alert-dismissible");
 				$("#msg").text(data);
 				$("#msg_alert").delay(3000).fadeOut();
             } else {
@@ -666,7 +670,7 @@ $(document).ready(function(){
 
 				$("#msg_alert").show();
 				$("#msg_alert").removeClass("alert bg-danger text_bold alert-dismissible");
-				$("#msg_alert").removeClass("alert bg-warning text_bolder alert-dismissible");
+				$("#msg_alert").removeClass("alert bg-warning text_bolder text-dark alert-dismissible");
 				$("#msg_alert").addClass("alert bg-primary text_bold alert-dismissible");
 				$("#msg").text("You have been registered successfully.");
 				$("#msg_alert").delay(3000).fadeOut();
@@ -681,7 +685,7 @@ $(document).ready(function(){
     } else {
       $("#msg_alert").show();
       $("#msg_alert").removeClass("alert bg-primary text_bold alert-dismissible");
-      $("#msg_alert").removeClass("alert bg-warning text_bolder alert-dismissible");
+      $("#msg_alert").removeClass("alert bg-warning text_bolder text-dark alert-dismissible");
       $("#msg_alert").addClass("alert bg-danger text_bold alert-dismissible");
       $("#msg").text("All fields are required.");
       $("#msg_alert").delay(3000).fadeOut();
