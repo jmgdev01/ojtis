@@ -23,7 +23,7 @@
         <div class="accordion" id="c_body">
             <div class="card">
                 <div class="card-header c_header" data-toggle="collapse" data-target="#c1">
-                    <div>1</div><h5><strong> PERSONAL INFORMATION</strong></h5>
+                    <div>1</div><h5><strong>PERSONAL INFORMATION</strong></h5>
                 </div>
 
                 <div id="c1" class="collapse show"  data-parent="#c_body">

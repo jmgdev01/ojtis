@@ -83,8 +83,8 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 /* Alert */
 	#msg_alert {
 		position: fixed;
-		z-index: 100;
-		top: 30px;
+		z-index: 2000;
+		top: 80px;
 		right: 30px;
 
 		width: 350px;
@@ -237,6 +237,10 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 			margin-bottom: -590px;
 			margin-left: 60px;
 		}
+	}
+	.close {
+		color: #ffffff !important;
+		margin-top: -2px;
 	}
 /*  */
 </style>
