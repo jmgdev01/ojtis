@@ -204,15 +204,18 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		margin-right: 5px;
 	}
 	.doc_signature {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 700;
 		border-bottom: 1px solid black;
+	}
+	.doc_signature_designation {
+		font-size: 14px;
 	}
 	.registration_form .doc_footer {
 		text-align: center;
 	}
-	.registration_form .doc_footer .fimg1, .registration_form .doc_footer .fimg2 {
-		width: 88% !important;
+	.registration_form .doc_footer img {
+		width: 90% !important;
 	}
 	@media print {
 		.d_hide {
@@ -223,19 +226,11 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 			transform: scale(.95);
 			transform-origin: top;
 		}
-		.registration_form .doc_footer .fimg1 {
+		.registration_form .doc_footer img {
 			position: fixed;
 			bottom: 0;
 			left: 0;
-			margin-bottom: 70px;
-			margin-left: 60px;
-		}
-		.registration_form .doc_footer .fimg2 {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			margin-bottom: -590px;
-			margin-left: 60px;
+			margin-left: 50px;
 		}
 	}
 	.close {

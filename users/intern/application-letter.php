@@ -113,12 +113,12 @@
                 }
                 echo strtoupper($res['i_last_name']);
                 ?></span><br>
-                <div class="pt-1">Applicant, OJT Trainee</div>
+                <div class="pt-1 doc_signature_designation">Applicant, OJT Trainee</div>
             </div>
 
-            <div class="col-lg-12 doc_footer text-center pt-5">
-                <img class="fimg2" src="../../assets/header/doc-footer.png" alt="">
-            </div>
+            <!-- <div class="col-lg-12 doc_footer text-center pt-5">
+                <img src="../../assets/header/doc-footer.png" alt="">
+            </div> -->
         </div>
 
     </div>

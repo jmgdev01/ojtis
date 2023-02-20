@@ -537,12 +537,12 @@
                 }
                 echo strtoupper($res['i_last_name']);
                 ?></span><br>
-                <div class="pt-1">Signature</div>
+                <div class="pt-1 doc_signature_designation">Signature</div>
             </div>
 
-            <div class="col-lg-12 doc_footer text-center pt-5">
-                <img class="fimg1" src="../../assets/header/doc-footer.png" alt="">
-            </div>
+            <!-- <div class="col-lg-12 doc_footer text-center pt-5">
+                <img src="../../assets/header/doc-footer.png" alt="">
+            </div> -->
         </div>
 
     </div>

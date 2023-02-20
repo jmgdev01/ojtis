@@ -107,7 +107,7 @@
                     <div class="card-body">
                     <div class="row">
                         <div class="form-group col-lg-6 col-md-6">
-                            <label><small><strong>STREET <span class="text-danger">*</span></strong></small></label>
+                            <label><small><strong>STREET</strong></small></label>
                             <input type="text" id="ad_street" class="form-control" placeholder="">
                         </div>
                         <div class="form-group col-lg-6 col-md-6">
@@ -140,7 +140,7 @@
                     <div class="card-body">
                     <div class="row">
                         <div class="form-group col-lg-7 col-md-7">
-                            <label><small><strong>PERSONAL EMAIL ADDRESS <span class="text-danger">*</span></strong></small></label>
+                            <label><small><strong>PERSONAL EMAIL ADDRESS</strong></small></label>
                             <input type="email" id="ct_email_address" class="form-control" placeholder="e.g. juan.cruz@gmail.com">
                         </div>
                         <div class="form-group col-lg-5 col-md-5">
@@ -190,23 +190,23 @@
                     <div class="card-body">
                     <div class="row">
                         <div class="form-group col-lg-8 col-md-7">
-                            <label><small><strong>FATHER'S NAME</strong></small></label>
+                            <label><small><strong>FATHER'S NAME <span class="text-danger">*</span></strong></small></label>
                             <input type="text" id="p_father" class="form-control" placeholder="e.g. Carlos Garcia Cruz">
                         </div>
                         <div class="form-group col-lg-4 col-md-5">
-                            <label><small><strong>OCCUPATION</strong></small></label>
+                            <label><small><strong>OCCUPATION <span class="text-danger">*</span></strong></small></label>
                             <input type="text" id="p_father_occupation" class="form-control" placeholder="e.g. Laborer">
                         </div>
                         <div class="form-group col-lg-8 col-md-7">
-                            <label><small><strong>MOTHER'S NAME</strong></small></label>
+                            <label><small><strong>MOTHER'S NAME <span class="text-danger">*</span></strong></small></label>
                             <input type="text" id="p_mother" class="form-control" placeholder="e.g. Maria Santos Cruz">
                         </div>
                         <div class="form-group col-lg-4 col-md-5">
-                            <label><small><strong>OCCUPATION</strong></small></label>
+                            <label><small><strong>OCCUPATION <span class="text-danger">*</span></strong></small></label>
                             <input type="text" id="p_mother_occupation" class="form-control" placeholder="e.g. Housewife">
                         </div>
                         <div class="form-group col-lg-12 col-md-12">
-                            <label><small><strong>ADDRESS</strong></small></label>
+                            <label><small><strong>ADDRESS <span class="text-danger">*</span></strong></small></label>
                             <input type="text" id="p_address" class="form-control" placeholder="e.g. New Poblacion, Buenavista, Guimaras">
                         </div>
                     </div>

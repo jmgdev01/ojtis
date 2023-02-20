@@ -144,9 +144,7 @@
         eyeIcon.classList.toggle('fa-eye');
         eyeIcon.classList.toggle('fa-eye-slash');
     });
-</script>
-<!-- script for the (eye icon) show new_password icon -->
-<script>
+
     const togglePassword2 = document.querySelector('#togglePassword2');
     const passwordInput2 = document.querySelector('#new_acc_password');
 

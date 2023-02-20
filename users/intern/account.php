@@ -76,12 +76,11 @@
         <?php 
             include("include/style.php"); 
         ?>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body id="page-top">
         <?php include("include/nav.php"); ?>
         <div class="container py-5">
-            <h3 class="pb-2"><strong><center>ACCOUNT SETTING</center></strong></h3>
+            <h3 class="pb-2 text-center"><strong>ACCOUNT SETTING</strong></h3>
 
             <form method="post" action="account.php">
                 <div class="row d-flex justify-content-center">
@@ -144,9 +143,7 @@
         eyeIcon.classList.toggle('fa-eye');
         eyeIcon.classList.toggle('fa-eye-slash');
     });
-</script>
-<!-- script for the (eye icon) show new_password icon -->
-<script>
+
     const togglePassword2 = document.querySelector('#togglePassword2');
     const passwordInput2 = document.querySelector('#new_acc_password');
 
