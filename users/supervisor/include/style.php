@@ -124,5 +124,22 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
     .c_header h5 {
         margin-bottom: 0;
     }
+	.c_header div {
+		width: 28px;
+		height: 28px;
+		text-align: center;
+		border-radius: 50px;
+		font-size: 14px;
+		font-weight: 700 !important;
+		color: #ffffff;
+		margin-top: -1px;
+		background-color: #dc3545;
+		margin-right: 5px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 /*  */
 </style>
