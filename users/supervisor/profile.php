@@ -20,24 +20,25 @@
         <div class="container pt-5">
             <h3><center>Update Profile Account Setting<center></h3>
             <div class="col-lg-12">
+                
                 <div class="row">
                     <div class="col-lg-6">
                         <label for="exampleInputEmail1" class="pt-2"><strong>Fullname</strong></label>
-                        <input type="text" class="form-control col-md-7" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control col-md-7" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe">
                         
                         <label for="exampleInputEmail1" class="pt-2"><strong>Contact No</strong></label>
-                        <input type="number" class="form-control col-md-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="number" class="form-control col-md-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="+93-00">
                         
                         <label for="exampleInputEmail1" class="pt-2"><strong>Address</strong></label>
-                        <input type="text" class="form-control col-md-7" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="text" class="form-control col-md-7" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mclain Buenavista,Guimaras">
                     </div>  
                     
                     <div class="col-lg-6">
-                    <label for="exampleInputEmail1" class="pt-2"><strong>Agency/Company Name</strong></label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    
-                    <label for="exampleInputEmail1" class="pt-2"><strong>Designation</strong></label>
-                    <input type="text" class="form-control col-md-7" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="exampleInputEmail1" class="pt-2"><strong>Agency/Company Name</strong></label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                        
+                        <label for="exampleInputEmail1" class="pt-2"><strong>Designation</strong></label>
+                        <input type="text" class="form-control col-md-7" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                     </div>
                 </div>
 
