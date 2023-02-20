@@ -21,7 +21,7 @@
             $old_password = $_POST['acc_password'];
             $new_password = $_POST['new_acc_password'];
         
-            // check if any of the fields are empty
+            //Checks if any of the fields are empty
             if (empty($acc_email_address) || empty($old_password) || empty($new_password)) {
                 echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
                     All fields are required!
@@ -60,7 +60,6 @@
                 }
             }
         }
-        
     }
 ?>
 
@@ -84,7 +83,7 @@
 
             <form method="post" action="account.php">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-5 col-md-6 col-sm-8">
+                    <div class="col-lg-6 col-md-9 col-sm-12">
                         <div class="card">
                             <div class="card-body pb-2 px-4">
                                 <div class="form-group">
@@ -96,8 +95,8 @@
                                     <div class="input-group">
                                     <input type="password" id="acc_password" name="acc_password" class="form-control" value="">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <button class="btn btn-secondary" type="button" id="togglePassword">
+                                            <i class="fa fa-toggle-on" aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -107,8 +106,8 @@
                                     <div class="input-group">
                                     <input type="password" id="new_acc_password" name="new_acc_password" class="form-control">
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword2">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <button class="btn btn-secondary" type="button" id="togglePassword2">
+                                            <i class="fa fa-toggle-on" aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -140,8 +139,8 @@
         
         // toggle the eye icon
         const eyeIcon = togglePassword.querySelector('i');
-        eyeIcon.classList.toggle('fa-eye');
-        eyeIcon.classList.toggle('fa-eye-slash');
+        eyeIcon.classList.toggle('fa-toggle-on');
+        eyeIcon.classList.toggle('fa-toggle-off');
     });
 
     const togglePassword2 = document.querySelector('#togglePassword2');
@@ -154,7 +153,7 @@
         
         // toggle the eye icon
         const eyeIcon2 = togglePassword2.querySelector('i');
-        eyeIcon2.classList.toggle('fa-eye');
-        eyeIcon2.classList.toggle('fa-eye-slash');
+        eyeIcon2.classList.toggle('fa-toggle-on');
+        eyeIcon2.classList.toggle('fa-toggle-off');
     });
 </script>
