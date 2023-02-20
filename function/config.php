@@ -1,6 +1,6 @@
 <?php 
 
-$dbHost = '127.0.0.1';
+$dbHost = '100.102.0.6';
 $dbName = 'ojtis';
 $dbUsername = 'root';
 $dbPassword = '';
