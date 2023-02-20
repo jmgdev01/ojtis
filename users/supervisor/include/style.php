@@ -76,8 +76,8 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 /* Alert */
 	#msg_alert {
 		position: fixed;
-		z-index: 100;
-		top: 30px;
+		z-index: 2000;
+		top: 80px;
 		right: 30px;
 
 		width: 350px;
@@ -118,8 +118,12 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 /*  */
 
 /* Accordion */
-    .c_header {
+.c_header {
         cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
     }
     .c_header h5 {
         margin-bottom: 0;
