@@ -70,7 +70,7 @@
                        <div class="text_stretch">
                             <strong class="pr-5 mr-4"></strong>
                             <div class="text_tag">
-                                <small><i>Last Name</i></small>
+                                <small><i>Last Name ~ Suffix</i></small>
                                 <small><i>First Name</i></small>
                                 <small><i>Middle Name</i></small>
                             </div>
@@ -541,7 +541,7 @@
             </div>
 
             <div class="col-lg-12 doc_footer text-center pt-5">
-                <img src="../../assets/header/doc-footer.png" alt="">
+                <img class="fimg1" src="../../assets/header/doc-footer.png" alt="">
             </div>
         </div>
 

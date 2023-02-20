@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - OJT Information System</title>
+        <title>Curriculum Vitae - OJT Information System</title>
         <?php 
             include("include/style.php"); 
         ?>
@@ -18,7 +18,8 @@
     <body id="page-top">
         <?php include("include/nav.php"); ?>
         <div class="container pt-5">
-            <h3><strong>Dashboard</strong></h3>
+            
+        
             
         </div>
         <?php 

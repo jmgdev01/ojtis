@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" onclick="window.location.href=''">DTR</a>
+                    <a class="nav-link" onclick="window.location.href='dtr.php'">DTR</a>
                     <!-- Journal of Daily Activities would be integrated on the DTR module for easy access and managing of accomplishments. -->
                 </li>
                 <li class="nav-item dropdown">
@@ -20,7 +20,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" onclick="window.location.href='registration-form.php'">Regsitration Form</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='curriculum-vitae.php'">Curriculum Vitae</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href=''">Application Letter</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='application-letter.php'">Application Letter</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" onclick="window.location.href=''">Endorsement Letter</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href=''">Acknowledgement Letter</a></li>
