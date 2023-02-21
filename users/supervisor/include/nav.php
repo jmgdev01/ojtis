@@ -13,10 +13,10 @@
                     <a class="nav-link" onclick="window.location.href='index.php'">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="window.location.href='account.php'">Account</a>
+                    <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
+                    <a class="nav-link" onclick="window.location.href='account.php'">Account</a>
                 </li>
                 <li class="nav-item" id="nav_logout">
                     <a class="nav-link" 
