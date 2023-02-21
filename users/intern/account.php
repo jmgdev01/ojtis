@@ -79,13 +79,12 @@
     <body id="page-top">
         <?php include("include/nav.php"); ?>
         <div class="container py-5">
-            <h3 class="pb-2 text-center"><strong>ACCOUNT SETTING</strong></h3>
-
             <form method="post" action="account.php">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6 col-md-9 col-sm-12">
                         <div class="card">
                             <div class="card-body pb-2 px-4">
+                                <h3 class="pb-2 text-center"><strong>ACCOUNT SETTING</strong></h3>
                                 <div class="form-group">
                                     <label><small><strong>EMAIL OR USERNAME</strong></small></label>
                                     <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="<?php echo $res['acc_email_address']; ?>">
