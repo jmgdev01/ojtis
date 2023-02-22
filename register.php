@@ -405,7 +405,14 @@
 						</div>
 						<div class="form-group col-lg-6 col-md-6">
 							<label><small><strong>PASSWORD <span class="text-danger">*</span></strong></small></label>
-							<input type="password" id="acc_password" class="form-control" placeholder="">
+							<div class="input-group">
+							<input type="password" id="acc_password" name="acc_password" class="form-control">
+								<div class="input-group-append">
+									<button class="btn btn-secondary" type="button" id="togglePassword">
+									<i class="fa fa-toggle-on" aria-hidden="true"></i>
+									</button>
+								</div>
+							</div>
 							<small><strong>Password</strong> length shoud be at least <code>6-character long</code></small>
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
@@ -691,6 +698,21 @@ $(document).ready(function(){
     }
   });
 });
+
+// script for toggle in password
+const togglePassword = document.querySelector('#togglePassword');
+            const passwordInput = document.querySelector('#acc_password');
+
+            togglePassword.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // toggle the eye icon
+                const eyeIcon = togglePassword.querySelector('i');
+                eyeIcon.classList.toggle('fa-toggle-on');
+                eyeIcon.classList.toggle('fa-toggle-off');
+            });
 </script>
 </body>
 </html>

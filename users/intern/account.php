@@ -124,35 +124,35 @@
         <?php 
             include("include/script.php"); 
         ?>
+        <!-- script for the (eye icon) show old_password icon -->
+        <script>
+            const togglePassword = document.querySelector('#togglePassword');
+            const passwordInput = document.querySelector('#acc_password');
+
+            togglePassword.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // toggle the eye icon
+                const eyeIcon = togglePassword.querySelector('i');
+                eyeIcon.classList.toggle('fa-toggle-on');
+                eyeIcon.classList.toggle('fa-toggle-off');
+            });
+
+            const togglePassword2 = document.querySelector('#togglePassword2');
+            const passwordInput2 = document.querySelector('#new_acc_password');
+
+            togglePassword2.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type2 = passwordInput2.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput2.setAttribute('type', type2);
+                
+                // toggle the eye icon
+                const eyeIcon2 = togglePassword2.querySelector('i');
+                eyeIcon2.classList.toggle('fa-toggle-on');
+                eyeIcon2.classList.toggle('fa-toggle-off');
+            });
+        </script>
     </body>
 </html>
-<!-- script for the (eye icon) show old_password icon -->
-<script>
-    const togglePassword = document.querySelector('#togglePassword');
-    const passwordInput = document.querySelector('#acc_password');
-
-    togglePassword.addEventListener('click', function (e) {
-        // toggle the type attribute
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        
-        // toggle the eye icon
-        const eyeIcon = togglePassword.querySelector('i');
-        eyeIcon.classList.toggle('fa-toggle-on');
-        eyeIcon.classList.toggle('fa-toggle-off');
-    });
-
-    const togglePassword2 = document.querySelector('#togglePassword2');
-    const passwordInput2 = document.querySelector('#new_acc_password');
-
-    togglePassword2.addEventListener('click', function (e) {
-        // toggle the type attribute
-        const type2 = passwordInput2.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput2.setAttribute('type', type2);
-        
-        // toggle the eye icon
-        const eyeIcon2 = togglePassword2.querySelector('i');
-        eyeIcon2.classList.toggle('fa-toggle-on');
-        eyeIcon2.classList.toggle('fa-toggle-off');
-    });
-</script>
