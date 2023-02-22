@@ -5,7 +5,62 @@
 
     $acc_id = $_SESSION['acc_id'];
 
+    $sql = mysqli_query($db, "SELECT * FROM accounts_tbl WHERE acc_id='$acc_id'");
+    $res = mysqli_fetch_assoc($sql);
 
+    if (isset($_POST['btn_save'])) {
+        $acc_email_address = $_POST['acc_email_address'];
+        $old_password = $_POST['acc_password'];
+        $new_password = $_POST['new_acc_password'];
+
+        $sql1 = mysqli_query($db, "SELECT acc_password FROM accounts_tbl WHERE acc_email_address='$acc_email_address'");
+        $res1 = mysqli_fetch_assoc($sql1);
+
+        if (isset($_POST['btn_save'])) {
+            $acc_email_address = $_POST['acc_email_address'];
+            $old_password = $_POST['acc_password'];
+            $new_password = $_POST['new_acc_password'];
+        
+            //Checks if any of the fields are empty
+            if (empty($acc_email_address) || empty($old_password) || empty($new_password)) {
+                echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
+                    All fields are required!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>";
+            } else {
+                $sql1 = mysqli_query($db, "SELECT acc_password FROM accounts_tbl WHERE acc_email_address='$acc_email_address'");
+                $res1 = mysqli_fetch_assoc($sql1);
+        
+                if($res1['acc_password'] == $old_password) {
+                    if($old_password != $new_password){
+                        $sql1 = mysqli_query($db, "UPDATE accounts_tbl SET acc_password='$new_password' WHERE acc_email_address='$acc_email_address'");
+                        echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
+                            Password updated successfully!
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>";
+                    } else {
+                        echo "<div id='msg_alert' class='alert bg-warning text-dark alert-dismissible fade show' role='alert'>
+                            New and Old password is the same.
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>";
+                    }
+                } else {
+                    echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
+                        Invalid Old Password!
+                        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                        </button>
+                    </div>";
+                }
+            }
+        }
+    }
 ?>
 
 
@@ -32,7 +87,7 @@
                                 <h3 class="pb-2 text-center"><strong>ACCOUNT SETTING</strong></h3>
                                 <div class="form-group">
                                     <label><small><strong>EMAIL OR USERNAME</strong></small></label>
-                                    <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="">
+                                    <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="<?php echo $res['acc_email_address']; ?>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label><small><strong>OLD PASSWORD</strong></small></label>
