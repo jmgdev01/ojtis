@@ -12,8 +12,11 @@
                 <li class="nav-item active">
                     <a class="nav-link" onclick="window.location.href='#'">Home</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" onclick="window.location.href='#'">Link</a>
+                    <a class="nav-link" onclick="window.location.href='account.php'">Account</a>
                 </li>
                 <li class="nav-item" id="nav_logout">
                     <a class="nav-link" 
