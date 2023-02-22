@@ -20,6 +20,35 @@
 
     $sql = mysqli_query($db, "SELECT * FROM supervisor_tbl INNER JOIN accounts_tbl ON supervisor_tbl.s_id = accounts_tbl.s_id WHERE accounts_tbl.acc_id='$acc_id'");
     $res = mysqli_fetch_assoc($sql);
+
+    if (isset($_POST['btn_save'])) {
+        $s_id = $_POST['s_id'];
+        $s_first_name = $_POST['s_first_name'];
+        $s_middle_name = $_POST['s_middle_name'];
+        $s_last_name = $_POST['s_last_name'];
+        $s_suffix_name = $_POST['s_suffix_name'];
+        $s_mobile_no = $_POST['s_mobile_no'];
+        $s_agency = $_POST['s_agency'];
+        $s_designation = $_POST['s_designation'];
+    
+        // check if any of the fields are empty
+        if (empty($s_first_name) || empty($s_middle_name) || empty($s_last_name) || empty($s_suffix_name) || empty($s_mobile_no)|| empty($s_agency)|| empty($s_designation)) {
+            echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
+                All fields are required!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
+        } else {
+            $sql1 = mysqli_query($db, "UPDATE supervisor_tbl SET s_first_name='$s_first_name', s_middle_name='$s_middle_name', s_last_name='$s_last_name', s_suffix_name='$s_suffix_name', s_mobile_no='$s_mobile_no', s_agency='$s_agency', s_designation='$s_designation' WHERE s_id='$s_id'");
+            echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
+                Updated successfully!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
