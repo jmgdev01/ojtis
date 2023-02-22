@@ -33,7 +33,14 @@
 			</div>
 			<div class="form-group">
 				<label><small><strong>PASSWORD</strong></small></label>
-				<input type="password" id="acc_password" class="form-control">
+				<div class="input-group">
+				<input type="password" id="acc_password" name="acc_password" class="form-control" value="">
+					<div class="input-group-append">
+						<button class="btn btn-secondary" type="button" id="togglePassword">
+						<i class="fa fa-toggle-on" aria-hidden="true"></i>
+						</button>
+					</div>
+				</div>
 			</div>
 			<div class="form-group text-center">
 				<button class="form-btn form-btn-md btn-blue" id="btn_login"><strong>LOGIN</strong></button>
@@ -112,6 +119,20 @@
 		});
 
 	});
+// toggle script
+const togglePassword = document.querySelector('#togglePassword');
+            const passwordInput = document.querySelector('#acc_password');
+
+            togglePassword.addEventListener('click', function (e) {
+                // toggle the type attribute
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // toggle the eye icon
+                const eyeIcon = togglePassword.querySelector('i');
+                eyeIcon.classList.toggle('fa-toggle-on');
+                eyeIcon.classList.toggle('fa-toggle-off');
+            });
 </script>
 </body>
 </html>
