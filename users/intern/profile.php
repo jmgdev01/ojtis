@@ -469,7 +469,11 @@ $res = mysqli_fetch_assoc($sql0);
             </div>
 
             <div class="form-group pt-3 text-center">
-                <button class="form-btn form-btn-md btn-blue" type="submit" name="btn_save" id="btn_save"><strong>Save</strong></button>
+                <button class="form-btn form-btn-md btn-blue" type="submit" name="btn_save" id="btn_save">
+                    <strong>
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                    </strong>
+                </button>
             </div>
         </form> 
     </div>

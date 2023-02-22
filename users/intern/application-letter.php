@@ -59,7 +59,7 @@
                 <span><?php echo $res['s_agency']." - ".$res['s_office']; ?></span>
                 <br><br>
                 <span>Dear <?php echo $res['s_salutation'];?>,</span>
-                <br><br><br>
+                <br><br>
                 <span>Warmest Greetings!</span>
                 <br><br><br>   
                 <span>I am 
@@ -83,17 +83,17 @@
                 }
                 ?>
                 student at the 
-                <?php echo $res['cf_campus']; ?>
+                <strong><?php echo $res['cf_campus']; ?></strong>
                 of the
-                <?php echo $res['cf_school']; ?>
+                <strong><?php echo $res['cf_school']; ?></strong>
                 in 
-                <?php echo $res['cf_address']; ?>.
+                <strong><?php echo $res['cf_address']; ?></strong>.
                 I must do an On-the-Job Training (OJT) for a minimum of 
-                <?php echo $res['cf_hours']; ?> hours, 
-                or equivalent to <?php echo $res['cf_week_equivalent']; ?>,
-                starting on <?php echo date("F j, Y", strtotime($res['cf_start_date'])); ?>,
+                <strong><?php echo $res['cf_hours']; ?> hours</strong>, 
+                or equivalent to <strong><?php echo $res['cf_week_equivalent']; ?></strong>,
+                starting on <strong><?php echo date("F j, Y", strtotime($res['cf_start_date'])); ?></strong>,
                 in order to partially fulfill the requirements for the 
-                <?php echo $res['cf_program']; ?>.
+                <strong><?php echo $res['cf_program']; ?></strong>.
                 <br><br>
                 I would like to apply in your esteemed office as a trainee because I believe the experience and training I will gain could broaden my understanding on the subject matter of my course, and will allow me to grasp the practices and procedures used in an actual working environment.
                 <br><br>

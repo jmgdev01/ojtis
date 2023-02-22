@@ -22,9 +22,9 @@
                         <li><a class="dropdown-item" onclick="window.location.href='curriculum-vitae.php'">Curriculum Vitae</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='application-letter.php'">Application Letter</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" onclick="window.location.href=''">Endorsement Letter</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href=''">Acknowledgement Letter</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href=''">Consent and Waiver</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='endorsement-letter.php'">Endorsement Letter</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='acknowledgement-letter.php'">Acknowledgement Letter</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='consent-waiver.php'">Consent and Waiver</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" onclick="window.location.href='#'">Memorandum of Agreement (MOA)</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='#'">Memorandum of Understanding (MOU)</a></li>

@@ -167,8 +167,8 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	.registration_form .doc_title h6 {
 		margin-bottom: 0;
 	}
-	.doc_body {
-		font-size: 14px;
+	.doc_body, .doc_body span {
+		font-size: 14px !important;
 	}
 	.doc_indent {
 		margin-left: 45px;
@@ -216,6 +216,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	}
 	.registration_form .doc_footer img {
 		width: 90% !important;
+	}
+	.info_tbl {
+		font-size: 14px;
 	}
 	@media print {
 		.d_hide {

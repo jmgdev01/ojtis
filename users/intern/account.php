@@ -112,7 +112,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button class="form-btn form-btn-md btn-blue" type="submit" id="btn_save" name="btn_save"><strong><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</strong></button>
+                                    <button class="form-btn form-btn-md btn-blue" type="submit" id="btn_save" name="btn_save">
+                                        <strong>
+                                            <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                                        </strong>
+                                    </button>
                                 </div>
                             </div>
                         </div>    
