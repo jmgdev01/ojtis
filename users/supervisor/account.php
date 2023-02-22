@@ -90,7 +90,7 @@
                             <div class="card-body pb-2 px-4">
                                 <div class="form-group">
                                     <label><small><strong>EMAIL OR USERNAME</strong></small></label>
-                                    <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="<?php echo $res['acc_email_address']; ?>">
+                                    <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="<?php echo $res['acc_email_address']; ?>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label><small><strong>OLD PASSWORD</strong></small></label>
@@ -98,7 +98,7 @@
                                     <input type="password" id="acc_password" name="acc_password" class="form-control" value="">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" type="button" id="togglePassword">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <i class="fa fa-toggle-on" aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                     <input type="password" id="new_acc_password" name="new_acc_password" class="form-control">
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary" type="button" id="togglePassword2">
-                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                            <i class="fa fa-toggle-on" aria-hidden="true"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -141,8 +141,8 @@
         
         // toggle the eye icon
         const eyeIcon = togglePassword.querySelector('i');
-        eyeIcon.classList.toggle('fa-eye');
-        eyeIcon.classList.toggle('fa-eye-slash');
+        eyeIcon.classList.toggle('fa-toggle-on');
+        eyeIcon.classList.toggle('fa-toggle-off');
     });
 
     const togglePassword2 = document.querySelector('#togglePassword2');
@@ -155,7 +155,7 @@
         
         // toggle the eye icon
         const eyeIcon2 = togglePassword2.querySelector('i');
-        eyeIcon2.classList.toggle('fa-eye');
-        eyeIcon2.classList.toggle('fa-eye-slash');
+        eyeIcon2.classList.toggle('fa-toggle-on');
+        eyeIcon2.classList.toggle('fa-toggle-off');
     });
 </script>
