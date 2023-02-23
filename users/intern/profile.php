@@ -30,23 +30,23 @@ if (isset($_POST['btn_save'])) {
     $ad_zipcode = $_POST['ad_zipcode'];
     $ad_province = $_POST['ad_province'];
 
-     // contact_tbl
-     $ct_email_address = $_POST['ct_email_address'];
-     $ct_mobile_no = $_POST['ct_mobile_no'];
+    // contact_tbl
+    $ct_email_address = $_POST['ct_email_address'];
+    $ct_mobile_no = $_POST['ct_mobile_no'];
 
      // case_tbl
     $c_physical_disability = $_POST['c_physical_disability'];
     $c_mental_disability = $_POST['c_mental_disability'];
     $c_criminal_liability = $_POST['c_criminal_liability'];
 
-     // parent_tbl
-     $p_father = $_POST['p_father'];
-     $p_father_occupation = $_POST['p_father_occupation'];
-     $p_mother = $_POST['p_mother'];
-     $p_mother_occupation = $_POST['p_mother_occupation'];
-     $p_address = $_POST['p_address'];
+    // parent_tbl
+    $p_father = $_POST['p_father'];
+    $p_father_occupation = $_POST['p_father_occupation'];
+    $p_mother = $_POST['p_mother'];
+    $p_mother_occupation = $_POST['p_mother_occupation'];
+    $p_address = $_POST['p_address'];
 
-      // educational_background-table
+    // educational_background-table
     $eb_elementary = $_POST['eb_elementary'];
     $eb_elem_year = $_POST['eb_elem_year'];
     $eb_secondary = $_POST['eb_secondary'];
@@ -117,6 +117,7 @@ INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id
 WHERE accounts_tbl.acc_id='$acc_id'");
 $res = mysqli_fetch_assoc($sql0);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,9 +126,7 @@ $res = mysqli_fetch_assoc($sql0);
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Profile - OJT Information System</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
@@ -477,9 +476,7 @@ $res = mysqli_fetch_assoc($sql0);
             </div>
         </form> 
     </div>
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
     <script>
         
     </script>

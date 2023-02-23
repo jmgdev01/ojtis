@@ -7,9 +7,6 @@
 
     $sql = mysqli_query($db, "SELECT * FROM accounts_tbl 
     INNER JOIN intern_tbl ON accounts_tbl.i_id = intern_tbl.i_id 
-    INNER JOIN contacts_tbl ON intern_tbl.i_id = contacts_tbl.i_id 
-    INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id 
-    INNER JOIN address_tbl ON intern_tbl.i_id = address_tbl.i_id 
     INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
     INNER JOIN supervisor_tbl ON accounts_tbl.s_id = supervisor_tbl.s_id 
     INNER JOIN configuration_tbl ON accounts_tbl.cf_id = configuration_tbl.cf_id 
@@ -25,9 +22,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Registration Form - OJT Information System</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
@@ -61,11 +56,17 @@
                     echo strtoupper(substr($res['s_middle_name'], 0, 1)).". ";
                 }
                 echo strtoupper($res['s_last_name']); 
+                if($res['s_suffix_name'] != ''){
+                    echo " ".$res['s_suffix_name'];
+                }
+                if($res['s_extension'] != ''){
+                    echo ", ".$res['s_extension'];
+                }
                 ?></strong></span>
                 <br>
                 <span><?php echo $res['s_designation']; ?></span>
                 <br>
-                <span><?php echo $res['s_agency']." - ".$res['s_office']; ?></span>
+                <span><?php echo $res['s_office'].", ".$res['s_agency']; ?></span>
                 <br><br><br>
                 <span>
                 <?php
@@ -88,6 +89,9 @@
                         echo strtoupper(substr($res['i_middle_name'], 0, 1)).". ";
                     }
                     echo strtoupper($res['i_last_name']); 
+                    if($res['i_suffix_name'] != ''){
+                        echo " ".$res['i_suffix_name'];
+                    }
                     ?></strong>
                     a 
                     <?php
@@ -154,7 +158,7 @@
                 <br>
 
                 <span class="doc_indent">
-                    Please feel free to contact us at the above address for whatever difficulty or problem you may encounter with our student trainee.
+                    Feel free to reach us at the above address for whatever difficulty or problem you may encounter with our student trainee.
                 </span>
 
                 <br><br>
@@ -170,7 +174,7 @@
                         <td width="50%" style="padding-bottom: 60px;">
                             <span>Very truly yours, </span>
                             <br><br><br>
-                            <strong><?php echo strtoupper($res['sg_name1']); ?></strong>
+                            <span class="doc_signature"><?php echo $res['sg_name1']; ?></span>
                             <br>
                             <span><?php echo $res['sg_designation1']; ?></span>
                         </td>
@@ -179,14 +183,14 @@
                         <td width="50%" style="padding-bottom: 15px;">
                             <span>Noted: </span>
                             <br><br><br>
-                            <strong><?php echo strtoupper($res['sg_name2']); ?></strong>
+                            <span class="doc_signature"><?php echo $res['sg_name2']; ?></span>
                             <br>
                             <span><?php echo $res['sg_designation2']; ?></span>
                         </td>
                         <td width="50%" style="padding-bottom: 15px;">
                             <span>Approved: </span>
                             <br><br><br>
-                            <strong><?php echo strtoupper($res['sg_name3']); ?></strong>
+                            <span class="doc_signature"><?php echo $res['sg_name3']; ?></span>
                             <br>
                             <span><?php echo $res['sg_designation3']; ?></span>
                         </td>
@@ -200,9 +204,7 @@
         </div>
 
     </div>
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
     <script>
 
     </script>

@@ -24,9 +24,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Registration Form - OJT Information System</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
@@ -537,7 +535,7 @@
                 }
                 echo strtoupper($res['i_last_name']);
                 ?></span><br>
-                <div class="pt-1 doc_signature_designation">Signature</div>
+                <div class="doc_signature_designation">Signature</div>
             </div>
 
             <!-- <div class="col-lg-12 doc_footer text-center pt-5">
@@ -546,9 +544,7 @@
         </div>
 
     </div>
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
     <script>
 
     </script>

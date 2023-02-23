@@ -63,7 +63,6 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -72,9 +71,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Account - OJT Information System</title>
-        <?php 
-            include("include/style.php"); 
-        ?>
+        <?php include("include/style.php"); ?>
     </head>
     <body id="page-top">
         <?php include("include/nav.php"); ?>
@@ -87,7 +84,7 @@
                                 <h3 class="pb-2 text-center"><strong>ACCOUNT SETTING</strong></h3>
                                 <div class="form-group">
                                     <label><small><strong>EMAIL OR USERNAME</strong></small></label>
-                                    <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="<?php echo $res['acc_email_address']; ?>">
+                                    <input type="email" id="acc_email_address" name="acc_email_address" class="form-control" value="<?php echo $res['acc_email_address']; ?>" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label><small><strong>OLD PASSWORD</strong></small></label>
@@ -125,9 +122,7 @@
             </form>  
             
         </div>
-        <?php 
-            include("include/script.php"); 
-        ?>
+        <?php include("include/script.php"); ?>
         <!-- script for the (eye icon) show old_password icon -->
         <script>
             const togglePassword = document.querySelector('#togglePassword');

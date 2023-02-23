@@ -21,9 +21,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Registration Form - OJT Information System</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
@@ -46,13 +44,21 @@
                 <br>
                 <span><?php echo date("F j, Y"); ?></span>
                 <br><br><br>
-                <span><strong><?php 
+                <span><strong>
+                <?php 
                 echo strtoupper($res['s_first_name'])." ";
                 if($res['s_middle_name'] != ''){
                     echo strtoupper(substr($res['s_middle_name'], 0, 1)).". ";
                 }
                 echo strtoupper($res['s_last_name']); 
-                ?></strong></span>
+                if($res['s_suffix_name'] != ''){
+                    echo " ".$res['s_suffix_name'];
+                }
+                if($res['s_extension'] != ''){
+                    echo ", ".$res['s_extension'];
+                }
+                ?>
+                </strong></span>
                 <br>
                 <span><?php echo $res['s_designation']; ?></span>
                 <br>
@@ -69,6 +75,9 @@
                     echo strtoupper(substr($res['i_middle_name'], 0, 1)).". ";
                 }
                 echo strtoupper($res['i_last_name']); 
+                if($res['i_suffix_name'] != ''){
+                    echo " ".$res['i_suffix_name'];
+                }
                 ?></strong>, 
                 a 
                 <?php
@@ -113,7 +122,7 @@
                 }
                 echo strtoupper($res['i_last_name']);
                 ?></span><br>
-                <div class="pt-1 doc_signature_designation">Applicant, OJT Trainee</div>
+                <div class="doc_signature_designation">Applicant, OJT Trainee</div>
             </div>
 
             <!-- <div class="col-lg-12 doc_footer text-center pt-5">
@@ -122,9 +131,7 @@
         </div>
 
     </div>
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
     <script>
 
     </script>

@@ -240,5 +240,10 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		color: #ffffff !important;
 		margin-top: -2px;
 	}
+	.rating_tbl td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 0;
+	}
 /*  */
 </style>
