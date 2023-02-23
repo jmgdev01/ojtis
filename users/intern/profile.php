@@ -411,7 +411,7 @@ $res = mysqli_fetch_assoc($sql0);
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
-                                <textarea type="text" id="i_skills" name="i_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."> <?php echo $res['i_skills'] ?></textarea>
+                                <textarea type="text" id="i_skills" name="i_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."><?php echo $res['i_skills'] ?></textarea>
                                 <label><small>Separate each <strong>skill</strong> with <code>semicolon ( ; )</code></small></label>
                             </div>
                         </div>
@@ -425,12 +425,13 @@ $res = mysqli_fetch_assoc($sql0);
                     </div>
 
                     <div id="c7" class="collapse"  data-parent="#c_body">
-                        <div class="card-body">
+                        <div class="card-body pb-0">
                         <div class="row">
-                            <div class="col-lg-12 col-md-12">
-                                <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
-                                <textarea type="text" id="i_training_seminar" name="i_training_seminar" rows="5" class="form-control" placeholder="e.g. Web Development, Computer Hardware Servicing, etc."><?php echo $res['i_training_seminar']; ?></textarea>
-                                <label><small>Separate each <strong>training</strong> and <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label><br>
+                                <label><small>Each training should include <strong>Title ( Sponsor )</strong>.</small></label>
+                                <textarea type="text" id="i_training_seminar" name="i_training_seminar" rows="5" class="form-control" placeholder="e.g. Python Programming (DICT Region IV); User Experience Design (STI Manila); etc."><?php echo $res['i_training_seminar']; ?></textarea>
+                                <label><small>Separate each <strong>training</strong> or <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
                             </div>
                         </div>
                         </div>
@@ -478,7 +479,7 @@ $res = mysqli_fetch_assoc($sql0);
     </div>
     <?php include("include/script.php"); ?>
     <script>
-        
+
     </script>
 </body>
 </html>

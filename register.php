@@ -348,17 +348,19 @@
 						</div>
 						<div class="form-group col-lg-12 col-md-12">
 							<label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
-							<textarea type="text" id="i_skills" row="3" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."></textarea>
+							<textarea type="text" id="i_skills" row="3" class="form-control" placeholder="e.g. Playing Basketball; Developing Applications; etc."></textarea>
 							<label><small>Separate each <strong>skill</strong> with <code>semicolon ( ; )</code></small></label>
 						</div>
 						<div class="form-group col-lg-12 pt-1">
 							<h3><strong>TRAININGS AND SEMINARS</strong></h3>
 						</div>
 						<div class="form-group col-lg-12 col-md-12">
-							<label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
-							<textarea type="text" id="i_training_seminar" row="3" class="form-control" placeholder="e.g. Web Development, Computer Hardware Servicing, etc."></textarea>
-							<label><small>Separate each <strong>training</strong> and <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
+							<label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label><br>
+							<label><small>Each training should include <strong>Title ( Sponsor )</strong>.</small></label>
+							<textarea type="text" id="i_training_seminar" rows="5" class="form-control" placeholder="e.g. Python Programming (DICT Region IV); User Experience Design (STI Manila); etc."></textarea>
+							<label><small>Separate each <strong>training</strong> or <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
 						</div>
+
 						<div class="col-lg-12 page_nav pb-3 text-right">
 							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous6">Previous</button>
 							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next6" type="button">Next</button>
@@ -408,8 +410,8 @@
 							<div class="input-group">
 							<input type="password" id="acc_password" name="acc_password" class="form-control">
 								<div class="input-group-append">
-									<button class="btn btn-secondary" type="button" id="togglePassword">
-									<i class="fa fa-toggle-on" aria-hidden="true"></i>
+									<button class="btn btn-dark" type="button" id="togglePassword">
+									<i class="fa fa-toggle-off" aria-hidden="true"></i>
 									</button>
 								</div>
 							</div>
@@ -701,18 +703,18 @@ $(document).ready(function(){
 
 // script for toggle in password
 const togglePassword = document.querySelector('#togglePassword');
-            const passwordInput = document.querySelector('#acc_password');
+const passwordInput = document.querySelector('#acc_password');
 
-            togglePassword.addEventListener('click', function (e) {
-                // toggle the type attribute
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                
-                // toggle the eye icon
-                const eyeIcon = togglePassword.querySelector('i');
-                eyeIcon.classList.toggle('fa-toggle-on');
-                eyeIcon.classList.toggle('fa-toggle-off');
-            });
+togglePassword.addEventListener('click', function (e) {
+	// toggle the type attribute
+	const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+	passwordInput.setAttribute('type', type);
+	
+	// toggle the eye icon
+	const eyeIcon = togglePassword.querySelector('i');
+	eyeIcon.classList.toggle('fa-toggle-off');
+	eyeIcon.classList.toggle('fa-toggle-on');
+});
 </script>
 </body>
 </html>
