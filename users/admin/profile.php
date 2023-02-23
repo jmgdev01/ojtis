@@ -19,14 +19,14 @@
             </div>";
         } else {
 
-            if(isset($_FILES['image'])){
-                $file_name = $_FILES['image']['name'];
-                $file_tmp = $_FILES['image']['tmp_name'];
+            if(isset($_FILES['profile_image'])){
+                $file_name = $_FILES['profile_image']['name'];
+                $file_tmp = $_FILES['profile_image']['tmp_name'];
                 move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-                echo "Stored in: " . "../../assets/profile/" . $_FILES['image']['name'];
+                $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
             }
 
-            $sql1 = mysqli_query($db, "UPDATE admin_tbl SET a_fullname='$a_fullname', a_mobile='$a_mobile' WHERE a_id='$a_id'");
+            $sql1 = mysqli_query($db, "UPDATE admin_tbl SET a_fullname='$a_fullname', a_img='$img_store', a_mobile='$a_mobile' WHERE a_id='$a_id'");
 
             echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
                     Profile updated successfully!
@@ -69,10 +69,10 @@
                                         <div class="row">
                                             <div class="col-md-12 col-md-12 pb-3">
                                                 <label><small><strong>Profile Image</strong></small></label>
-                                                <div class="col-lg-12 col-md-12 col-sm-12" style="width: 100%; height: 200px; background-color: #ccc; margin-bottom: 10px; text-align: center; padding: 20px;">
-                                                    <img id="image_preview" src="#" alt="your image" style="display: none; max-width: 100%; max-height: 100%;">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 " style="width: 100%; height: 200px; background-color: #ccc; margin-bottom: 10px; text-align: center; padding: 20px;">
+                                                    <img id="image_preview" src="<?php echo $res['a_img']; ?>" alt="your image" style="max-width: 100%; max-height: 100%;" >
                                                 </div>
-                                                <input type="file" name="image" id="image">
+                                                <input type="file" name="profile_image" id="profile_image">
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
                                                 <input type="text" id="a_fullname" name="a_fullname" class="form-control" placeholder="e.g. Juan Dela Cru" value="<?php echo $res['a_fullname']; ?>">
                                             </div>
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label><small><strong>CONTACT NO<span class="text-danger">*</span></strong></small></label>
+                                                <label><small><strong>CONTACT NO <span class="text-danger">*</span></strong></small></label>
                                                 <input type="text" id="s_mobile_no" name="a_mobile" class="form-control" placeholder="e.g. 09123456789" value="<?php echo $res['a_mobile']; ?>">
                                             </div>
                                             <div class="form-group col-lg-12 text-center">
