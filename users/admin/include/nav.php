@@ -15,6 +15,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="window.location.href='configuration.php'">Configuration</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" onclick="window.location.href='account.php'">Account</a>
                 </li>
