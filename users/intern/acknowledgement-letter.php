@@ -6,11 +6,6 @@
     $acc_id = $_SESSION['acc_id'];
 
     $sql = mysqli_query($db, "SELECT * FROM accounts_tbl 
-    INNER JOIN intern_tbl ON accounts_tbl.i_id = intern_tbl.i_id 
-    INNER JOIN contacts_tbl ON intern_tbl.i_id = contacts_tbl.i_id 
-    INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id 
-    INNER JOIN address_tbl ON intern_tbl.i_id = address_tbl.i_id 
-    INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
     INNER JOIN supervisor_tbl ON accounts_tbl.s_id = supervisor_tbl.s_id 
     INNER JOIN configuration_tbl ON accounts_tbl.cf_id = configuration_tbl.cf_id 
     INNER JOIN signatories_tbl ON configuration_tbl.cf_id = signatories_tbl.cf_id 
@@ -34,9 +29,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Registration Form - OJT Information System</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
@@ -71,58 +64,139 @@
 
                 <span class="doc_indent">
                     I certify that on this 
-                    <?php echo ordinal(date("j")); ?> 
+                    <strong><?php echo ordinal(date("j")); ?></strong>
                     day of 
-                    <?php echo date("F"); ?>, 
-                    2023, before me, a notary public duty authorized in the province/city named above to take acknowledgements, personally appeared the following:
+                    <strong><?php echo date("F"); ?> 2023</strong>, 
+                    before me, a notary public duty authorized in the province/city named above to take acknowledgements, personally appeared the following:
+                </span>
+
+                <br><br><br>
+
+                <table width="100%" class="info_tbl">
+                    <tr width="100%">
+                        <td width="45%" style="padding-bottom: 30px;">
+                            <span>Name</span>
+                        </td>
+                        <td width="25%" style="padding-bottom: 30px;" class="text-center">
+                            <span>Valid ID</span>
+                        </td>
+                        <td width="30%" style="padding-bottom: 30px;" class="text-center">
+                            <span>Date/Place of Issue</span>
+                        </td>
+                    </tr>
+                    <tr width="100%">
+                        <td width="45%" style="padding-bottom: 20px;">
+                            <span>
+                                <strong>
+                                    <?php echo $res['sg_name4']; ?>
+                                </strong>
+                            </span>
+                        </td>
+                        <td width="25%" style="padding-bottom: 20px;" class="px-3">
+                            <div class="text_stretch">
+                                <div class="text_underline">
+                                    <span style="color: transparent;">.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td width="30%" style="padding-bottom: 20px;" class="px-3">
+                            <div class="text_stretch">
+                                <div class="text_underline">
+                                    <span style="color: transparent;">.</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr width="100%">
+                        <td width="45%" style="padding-bottom: 20px;">
+                            <span>
+                                <strong>
+                                <?php 
+                                echo strtoupper($res['s_first_name'])." ";
+                                if($res['s_middle_name'] != ''){
+                                    echo strtoupper(substr($res['s_middle_name'], 0, 1)).". ";
+                                }
+                                echo strtoupper($res['s_last_name']); 
+                                if($res['s_suffix_name'] != ''){
+                                    echo " ".$res['s_suffix_name'];
+                                }
+                                if($res['s_extension'] != ''){
+                                    echo ", ".$res['s_extension'];
+                                }
+                                ?>
+                                </strong>
+                            </span>
+                        </td>
+                        <td width="25%" style="padding-bottom: 20px;" class="px-3">
+                            <div class="text_stretch">
+                                <div class="text_underline">
+                                    <span style="color: transparent;">.</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td width="30%" style="padding-bottom: 20px;" class="px-3">
+                            <div class="text_stretch">
+                                <div class="text_underline">
+                                    <span style="color: transparent;">.</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <span>
+                    who were identified by me through competent evidence of identity to be the same persons described in the foregoing instrument, who acknowledged before me that their respective signatures on the instrument were voluntarily affixed by them for the purposes stated therein, and who declared to me that they have executed the instrument as their free and voluntarily act and deed.
                 </span>
 
                 <br><br>
 
-                <table width="100%" class="info_tbl">
-                    <tr width="100%">
-                        <td width="45%" style="padding-bottom: 40px;">
-                            <span>Name</span>
-                        </td>
-                        <td width="25%" style="padding-bottom: 40px;">
-                            <span>Valid ID</span>
-                        </td>
-                        <td width="30%" style="padding-bottom: 40px;">
-                            <span>Date / Place of Issue</span>
-                        </td>
-                    </tr>
-                    <tr width="100%">
-                        <td width="45%" style="padding-bottom: 20px;">
-                            <span>
-                                <strong style="text-transform: uppercase;">
-                                    <?php echo strtoupper($res['sg_name4']); ?>
-                                </strong>
-                            </span>
-                        </td>
-                        <td width="25%" style="padding-bottom: 20px;">
-                            <span> </span>
-                        </td>
-                        <td width="30%" style="padding-bottom: 20px;">
-                            <span> </span>
-                        </td>
-                    </tr>
-                    <tr width="100%">
-                        <td width="45%" style="padding-bottom: 20px;">
-                            <span>
-                                <strong style="text-transform: uppercase;">
-                                    <?php echo strtoupper($res['sg_name4']); ?>
-                                </strong>
-                            </span>
-                        </td>
-                        <td width="25%" style="padding-bottom: 20px;">
-                            <span> </span>
-                        </td>
-                        <td width="30%" style="padding-bottom: 20px;">
-                            <span> </span>
-                        </td>
-                    </tr>
-                    </table>
+                <span class="doc_indent">
+                    This instrument consisting of four (4) pages including this Acknowledgement has been signed on each and every page by the parties and their instrumental witness.
+                </span>
 
+                <br><br>
+
+                <span class="doc_indent">
+                    <strong>IN WITNESS WHEREOF</strong>,
+                    I hereuntoset my hand and affix my notarial seal on the date and the place above written.
+                </span>
+
+                <br><br><br><br>
+
+                <div class="text-right">
+                    <span>Nootary Public</span>
+                </div>
+
+                <br><br><br><br><br>
+
+                <div style="width: 300px;">
+                    <div class="text_stretch pb-2">
+                        <strong>Doc. No.</strong>
+                        <div class="text_underline">
+                            <span> </span>
+                        </div>;
+                    </div>
+
+                    <div class="text_stretch pb-2">
+                        <strong>Page No.</strong>
+                        <div class="text_underline">
+                            <span> </span>
+                        </div>;
+                    </div>
+
+                    <div class="text_stretch pb-2">
+                        <strong>Book. No.</strong>
+                        <div class="text_underline">
+                            <span> </span>
+                        </div>;
+                    </div>
+
+                    <div class="text_stretch">
+                        <strong>Series of <?php echo date("Y"); ?></strong>
+                    </div>
+                </div>
             </div>
 
             <!-- <div class="col-lg-12 doc_footer text-center pt-5">
@@ -131,9 +205,7 @@
         </div>
 
     </div>
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
     <script>
 
     </script>

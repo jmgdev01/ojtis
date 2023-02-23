@@ -18,7 +18,7 @@
                         Documents
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" onclick="window.location.href='registration-form.php'">Regsitration Form</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='registration-form.php'">Registration Form</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='curriculum-vitae.php'">Curriculum Vitae</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='application-letter.php'">Application Letter</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -29,7 +29,7 @@
                         <li><a class="dropdown-item" onclick="window.location.href='#'">Memorandum of Agreement (MOA)</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='#'">Memorandum of Understanding (MOU)</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" onclick="window.location.href='#'">Agency Training and Performance Evaluation (ATPE)</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='agency-training-performance-evaluation.php'">Agency Training and Performance Evaluation (ATPE)</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">

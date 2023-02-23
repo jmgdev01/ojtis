@@ -11,9 +11,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Curriculum Vitae - OJT Information System</title>
-        <?php 
-            include("include/style.php"); 
-        ?>
+        <?php include("include/style.php"); ?>
     </head>
     <body id="page-top">
         <?php include("include/nav.php"); ?>
@@ -22,8 +20,6 @@
         
             
         </div>
-        <?php 
-            include("include/script.php"); 
-        ?>
+        <?php include("include/script.php"); ?>
     </body>
 </html>

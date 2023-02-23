@@ -10,7 +10,6 @@
     INNER JOIN contacts_tbl ON intern_tbl.i_id = contacts_tbl.i_id 
     INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id 
     INNER JOIN address_tbl ON intern_tbl.i_id = address_tbl.i_id 
-    INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
     INNER JOIN supervisor_tbl ON accounts_tbl.s_id = supervisor_tbl.s_id 
     INNER JOIN configuration_tbl ON accounts_tbl.cf_id = configuration_tbl.cf_id 
     WHERE accounts_tbl.acc_id='$acc_id'");
@@ -24,9 +23,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Registration Form - OJT Information System</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
@@ -76,6 +73,9 @@
                         echo strtoupper(substr($res['i_middle_name'], 0, 1)).". ";
                     }
                     echo strtoupper($res['i_last_name']); 
+                    if($res['i_suffix_name'] != ''){
+                        echo " ".$res['i_suffix_name'];
+                    }
                     ?></strong>
                     to take 
                     <?php
@@ -136,7 +136,7 @@
                        </div>
                        <div class="text_stretch">
                             <div class="text_tag">
-                                <small><i>Name of Parent/Guardian </i></small>
+                                <small><i>Name of Guardian </i></small>
                             </div>
                        </div>
                     </div>
@@ -181,6 +181,9 @@
                             echo substr($res['i_middle_name'], 0, 1).". ";
                         }
                         echo $res['i_last_name']; 
+                        if($res['i_suffix_name'] != ''){
+                            echo " ".$res['i_suffix_name'];
+                        }
                         ?>
                         </strong>
                         </td>
@@ -218,7 +221,7 @@
                     </tr>
                     <tr width="100%">
                         <td width="40%" style="padding-bottom: 15px;">
-                            Parent/Guardian's Contact Number/s:
+                            Guardian's Contact Number:
                         </td>
                         <td width="60%" style="padding-bottom: 15px;">
                         <strong><?php echo $res['em_contact']; ?></strong>
@@ -233,9 +236,7 @@
         </div>
 
     </div>
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
     <script>
 
     </script>
