@@ -15,8 +15,9 @@
         $s_agency = $_POST['s_agency'];
         $s_office = $_POST['s_office'];
         $s_designation = $_POST['s_designation'];
+        $s_salutation = $_POST['s_salutation'];
     
-        if (empty($s_first_name) || empty($s_middle_name) || empty($s_last_name)) {
+        if (empty($s_first_name) || empty($s_middle_name) || empty($s_last_name) || empty($s_mobile_no)|| empty($s_agency)|| empty($s_office)|| empty($s_designation)|| empty($s_salutation)) {
             echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
                 All fields are required!
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
@@ -24,7 +25,7 @@
                 </button>
             </div>";
          } else {
-            // intern_tbl query
+            // supervisor_tbl query
             $sql = mysqli_query($db, "UPDATE supervisor_tbl SET s_first_name='$s_first_name', s_middle_name='$s_middle_name', s_last_name='$s_last_name', s_suffix_name='$s_suffix_name', s_mobile_no='$s_mobile_no', s_agency='$s_agency', s_office='$s_office', s_designation='$s_designation', s_salutation='$s_salutation' WHERE s_id='$s_id'");
     
             // Success message
@@ -108,7 +109,7 @@
                                             </div>
                                             <div class="form-group col-lg-4 col-md-12">
                                                 <label><small><strong>MOBILE NUMBER <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="s_mobile_name" name="s_mobile_name" class="form-control" placeholder="e.g. 0956424564" value="<?php echo $res['s_mobile_no']; ?>">
+                                                <input type="text" id="s_mobile_no" name="s_mobile_no" class="form-control" placeholder="e.g. 0956424564" value="<?php echo $res['s_mobile_no']; ?>">
                                             </div>
                                             <div class="form-group col-lg-5 col-md-12">
                                                 <label><small><strong>AGENCY <span class="text-danger">*</span></strong></small></label>
