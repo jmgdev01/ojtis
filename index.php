@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="form-group text-center">
-				<button class="form-btn form-btn-md btn-blue" id="btn_login"><strong>LOGIN</strong></button>
+				<button class="form-btn form-btn-md btn-blue" id="btn_login"><strong><i class="fa fa-sign-in"></i> LOGIN</strong></button>
 			</div>
 			<div class="form-group page_nav text-center">
 				<span>Not yet registered? <span class="page_nav_label" onclick="location.href='register.php'">Create an account</span></span>

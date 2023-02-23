@@ -18,7 +18,7 @@
     <body id="page-top">
         <?php include("include/nav.php"); ?>
         <div class="container pt-5">
-            <h3>Dashboard</h3>
+            <h3><strong>Dashboard</strong></h3>
             
         </div>
         <?php 

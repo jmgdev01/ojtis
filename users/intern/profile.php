@@ -68,11 +68,11 @@ if (isset($_POST['btn_save'])) {
  
      if (empty($i_first_name) || empty($i_last_name) || empty($i_sex) || empty($i_civil_status) || empty($i_height) || empty($i_weight) || empty($i_birth_date) || empty($i_age) || empty($i_place_birth) || empty($i_nationality) || empty($ad_barangay) || empty($ad_municipality) || empty($ad_zipcode) || empty($ad_province) || empty($ct_mobile_no) || empty($p_father) || empty($p_father_occupation) || empty($p_mother) || empty($p_mother_occupation) || empty($p_address) || empty($eb_elementary) || empty($eb_elem_year) || empty($eb_secondary) || empty($eb_sec_year) || empty($eb_tertiary) || empty($eb_ter_year) || empty($eb_course_code) || empty($eb_course_description) || empty($eb_year) || empty($eb_section) || empty($eb_curriculum) || empty($eb_id_number) || empty($i_skills) || empty($i_training_seminar) || empty($em_guardian) || empty($em_relationship) || empty($em_address) || empty($em_contact)) {
         echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
-            All fields are required!
-            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                <span aria-hidden='true'>&times;</span>
-            </button>
-        </div>";
+                All fields are required!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
      } else {
         // intern_tbl query
         $sqlintern = mysqli_query($db, "UPDATE intern_tbl SET i_first_name='$i_first_name', i_middle_name='$i_middle_name', i_last_name='$i_last_name', i_suffix_name='$i_suffix_name', i_sex='$i_sex', i_civil_status='$i_civil_status', i_height='$i_height', i_weight='$i_weight', i_birth_date='$i_birth_date', i_age='$i_age', i_place_birth='$i_place_birth', i_nationality='$i_nationality', i_skills='$i_skills', i_training_seminar='$i_training_seminar' WHERE i_id='$i_id'");
@@ -95,14 +95,13 @@ if (isset($_POST['btn_save'])) {
         // emergency_query
         $sqleducation = mysqli_query($db, "UPDATE emergency_tbl SET em_guardian='$em_guardian', em_relationship='$em_relationship', em_address='$em_address', em_contact='$em_contact' WHERE i_id='$i_id'");
 
-        // Success message
+        // Alert after successful registration
         echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
                 Profile updated successfully!
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
             </div>";
-            
      }   
 }
 
@@ -131,7 +130,7 @@ $res = mysqli_fetch_assoc($sql0);
 <body id="page-top">
     <?php include("include/nav.php"); ?>
     <div class="container py-5">
-        <h3 class="pb-2"><strong>PROFILE</strong></h3>
+        <h2 class="pb-2"><strong>PROFILE</strong></h2>
 
         <div class="accordion" id="c_body">
         <form method="post" action="profile.php">  
@@ -377,7 +376,7 @@ $res = mysqli_fetch_assoc($sql0);
                                 <input type="text" id="eb_id_number" name="eb_id_number" value="<?php echo $res['eb_id_number']; ?>" class="form-control" placeholder="e.g. ABC-1-0001">
                             </div>
 
-                            <div class="form-group col-lg-3 col-md-3">
+                            <div class="form-group col-lg-3 col-md-4">
                                 <label><small><strong>YEAR <span class="text-danger">*</span></strong></small></label>
                                 <select class="form-control" id="eb_year" name="eb_year">
                                     <option value="<?php echo $res['eb_year']; ?>">Active (<?php echo $res['eb_year']; ?> year)</option>
@@ -388,7 +387,7 @@ $res = mysqli_fetch_assoc($sql0);
                                     <option value="4">4th Year</option>
                                 </select>
                             </div>
-                            <div class="form-group col-lg-3 col-md-3">
+                            <div class="form-group col-lg-3 col-md-2">
                                 <label><small><strong>SECTION <span class="text-danger">*</span></strong></small></label>
                                 <input type="text" id="eb_section" name="eb_section" value="<?php echo $res['eb_section']; ?>" class="form-control" placeholder="e.g. A">
                             </div>
@@ -471,7 +470,7 @@ $res = mysqli_fetch_assoc($sql0);
             <div class="form-group pt-3 text-center">
                 <button class="form-btn form-btn-md btn-blue" type="submit" name="btn_save" id="btn_save">
                     <strong>
-                        <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i> SAVE
                     </strong>
                 </button>
             </div>

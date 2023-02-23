@@ -421,7 +421,7 @@
 							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous8">Previous</button>
 						</div>
 						<div class="form-group col-lg-12 text-center">
-							<button class="form-btn form-btn-md btn-blue" id="btn_register"><strong>REGISTER</strong></button>
+							<button class="form-btn form-btn-md btn-blue" id="btn_register"><strong><i class="fa fa-sign-in"></i> REGISTER</strong></button>
 						</div>
 					</div>
 				</div>

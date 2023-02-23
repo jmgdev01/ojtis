@@ -9,9 +9,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" onclick="window.location.href='index.php'">Home</a>
-                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Users
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="window.location.href='#'">Trainer</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='#'">Intern</a></li>
+                    </ul>
                 <li class="nav-item">
                     <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
                 </li>

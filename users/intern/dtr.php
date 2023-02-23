@@ -16,7 +16,7 @@
     <body id="page-top">
         <?php include("include/nav.php"); ?>
         <div class="container pt-5">
-            <h3><strong>DTR</strong></h3>
+            <h2><strong>DTR</strong></h2>
             
         </div>
         <?php include("include/script.php"); ?>
