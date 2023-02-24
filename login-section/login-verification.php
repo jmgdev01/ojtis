@@ -35,6 +35,9 @@ if(isset($_POST["action"])){
 	  	if($acc_role == "supervisor"){
 	  		echo $output = 'supervisor';
 	  	}
+		if($acc_role == "trainer"){
+			echo $output = 'trainer';
+		}
 	  	if($acc_role == "intern"){
 	  		echo $output = 'intern';
 	  	}

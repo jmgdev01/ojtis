@@ -9,9 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Register | OJT Information System</title>
-	<?php 
-		include('function/style.php'); 
-	?>
+	<?php include('function/style.php'); ?>
 </head>
 <body>
 
@@ -75,6 +73,14 @@
 					type="button" 
 					role="tab" 
 					aria-selected="false"><i class="fa fa-soccer-ball-o"></i></button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
+					id="we_tab"
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-university"></i></button>
 				</li>
 				<li class="nav-item" role="presentation">
 					<button 
@@ -285,7 +291,7 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-							<input type="number" id="eb_elem_year" class="form-control" placeholder="e.g. 2012">
+							<input type="text" id="eb_elem_year" class="form-control" placeholder="e.g. 2006-2011">
 						</div>
 						<div class="form-group col-lg-8 col-md-8">
 							<label><small><strong>SECONDARY / HIGH SCHOOL <span class="text-danger">*</span></strong></small></label>
@@ -293,7 +299,15 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-							<input type="number" id="eb_sec_year" class="form-control" placeholder="e.g. 2018">
+							<input type="text" id="eb_sec_year" class="form-control" placeholder="e.g. 2011-2015">
+						</div>
+						<div class="form-group col-lg-8 col-md-8">
+							<label><small><strong>SENIOR HIGH SCHOOL </strong></small></label>
+							<input type="text" id="eb_shs" class="form-control" placeholder="e.g. Buenavista National School">
+						</div>
+						<div class="form-group col-lg-4 col-md-4">
+							<label><small><strong>YEAR GRADUATED </strong></small></label>
+							<input type="text" id="eb_shs_year" class="form-control" placeholder="e.g. 2015-2017">
 						</div>
 						<div class="form-group col-lg-8 col-md-8">
 							<label><small><strong>TERTIARY / COLLEGE <span class="text-danger">*</span></strong></small></label>
@@ -301,7 +315,7 @@
 						</div>
 						<div class="form-group col-lg-4 col-md-4">
 							<label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-							<input type="number" id="eb_ter_year" class="form-control" placeholder="e.g. 2022">
+							<input type="text" id="eb_ter_year" class="form-control" placeholder="e.g. 2017-2021">
 						</div>
 						<div class="form-group col-lg-3 col-md-3">
 							<label><small><strong>COURSE CODE <span class="text-danger">*</span></strong></small></label>
@@ -344,18 +358,18 @@
 				<div class="tab-pane fade" id="skills_training" role="tabpanel">
 					<div class="row">
 						<div class="form-group col-lg-12 pt-4">
-							<h3><strong>SKILLS</strong></h3>
+							<h3><strong>COMPUTER KNOWLEDGE AND SKILLS</strong></h3>
 						</div>
 						<div class="form-group col-lg-12 col-md-12">
-							<label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
-							<textarea type="text" id="i_skills" row="3" class="form-control" placeholder="e.g. Playing Basketball; Developing Applications; etc."></textarea>
+							<label><small><strong>DESCRIPTION </strong></small></label>
+							<textarea type="text" id="i_comp_knowledge_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball; Developing Applications; etc."></textarea>
 							<label><small>Separate each <strong>skill</strong> with <code>semicolon ( ; )</code></small></label>
 						</div>
 						<div class="form-group col-lg-12 pt-1">
 							<h3><strong>TRAININGS AND SEMINARS</strong></h3>
 						</div>
 						<div class="form-group col-lg-12 col-md-12">
-							<label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label><br>
+							<label><small><strong>DESCRIPTION </strong></small></label><br>
 							<label><small>Each training should include <strong>Title ( Sponsor )</strong>.</small></label>
 							<textarea type="text" id="i_training_seminar" rows="5" class="form-control" placeholder="e.g. Python Programming (DICT Region IV); User Experience Design (STI Manila); etc."></textarea>
 							<label><small>Separate each <strong>training</strong> or <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
@@ -367,6 +381,36 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="tab-pane fade" id="work_experience_membership" role="tabpanel">
+					<div class="row">
+						<div class="form-group col-lg-12 pt-4">
+							<h3><strong>WORK EXPERIENCE</strong></h3>
+						</div>
+						<div class="form-group col-lg-12 col-md-12">
+							<label><small><strong>DESCRIPTION </strong></small></label><br>
+							<label><small>Each work experience should include <strong>Job Description - Company/Agency ( Start and End Date )</strong>.</small></label>
+							<textarea type="text" id="i_work_experience" rows="5" class="form-control" placeholder="e.g. Encoder - PSA (January 22 to March 2023); etc."></textarea>
+							<label><small>Separate each <strong>work experience</strong> with <code>semicolon ( ; )</code></small></label>
+						</div>
+
+						<div class="form-group col-lg-12 pt-1">
+							<h3><strong>MEMBERSHIP</strong></h3>
+						</div>
+						<div class="form-group col-lg-12 col-md-12">
+							<label><small><strong>DESCRIPTION </strong></small></label><br>
+							<label><small>Each membership should include <strong>Role - Organization ( Start and End Date )</strong>.</small></label>
+							<textarea type="text" id="i_membership" rows="5" class="form-control" placeholder="e.g. Python Programming (DICT Region IV); User Experience Design (STI Manila); etc."></textarea>
+							<label><small>Separate each <strong>membership</strong> with <code>semicolon ( ; )</code></small></label>
+						</div>
+
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next7" type="button">Next</button>
+						</div>
+					</div>
+				</div>
+
 
 				<div class="tab-pane fade" id="emergency" role="tabpanel">
 					<div class="row">
@@ -390,8 +434,8 @@
 							<input type="text" id="em_contact" class="form-control" placeholder="e.g. 09123456789">
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous7">Previous</button>
-							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next7" type="button">Next</button>
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous8">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next8" type="button">Next</button>
 						</div>
 					</div>
 				</div>
@@ -418,7 +462,7 @@
 							<small><strong>Password</strong> length shoud be at least <code>6-character long</code></small>
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous8">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous9">Previous</button>
 						</div>
 						<div class="form-group col-lg-12 text-center">
 							<button class="form-btn form-btn-md btn-blue" id="btn_register"><strong><i class="fa fa-sign-in"></i> REGISTER</strong></button>
@@ -454,8 +498,10 @@ $(document).ready(function(){
     var i_age = $('#i_age').val();
 	var i_place_birth = $('#i_place_birth').val();
     var i_nationality = $('#i_nationality').val();
-    var i_skills = $('#i_skills').val();
+    var i_comp_knowledge_skills = $('#i_comp_knowledge_skills').val();
     var i_training_seminar = $('#i_training_seminar').val();
+	var i_work_experience = $('#i_work_experience').val();
+	var i_membership = $('#i_membership').val();
 
 	var ct_email_address = $('#ct_email_address').val();
 	var ct_mobile_no = $('#ct_mobile_no').val();
@@ -480,6 +526,8 @@ $(document).ready(function(){
 	var eb_elem_year = $('#eb_elem_year').val();
 	var eb_secondary = $('#eb_secondary').val();
 	var eb_sec_year = $('#eb_sec_year').val();
+	var eb_shs = $('#eb_shs').val();
+	var eb_shs_year = $('#eb_shs_year').val();
 	var eb_tertiary = $('#eb_tertiary').val();
 	var eb_ter_year = $('#eb_ter_year').val();
 	var eb_course_code = $('#eb_course_code').val();
@@ -549,6 +597,14 @@ $(document).ready(function(){
 		$("#msg").text("Invalid email address.");
 		$("#msg_alert").delay(3000).fadeOut();
       } 
+	  if (email_pattern.test(ct_email_address)==false) {
+        $("#msg_alert").show();
+		$("#msg_alert").removeClass("alert bg-primary text_bold alert-dismissible");
+		$("#msg_alert").removeClass("alert bg-warning text_bolder text-dark alert-dismissible");
+		$("#msg_alert").addClass("alert bg-danger text_bold alert-dismissible");
+		$("#msg").text("Invalid alternative email address.");
+		$("#msg_alert").delay(3000).fadeOut();
+      } 
 	  if(pl1 < 6) {
         $("#msg_alert").show();
 		$("#msg_alert").removeClass("alert bg-primary text_bold alert-dismissible");
@@ -557,7 +613,7 @@ $(document).ready(function(){
 		$("#msg").text("Password length should be at least 6-character long.");
 		$("#msg_alert").delay(3000).fadeOut();
       } 
-	  if(pl1 >= 6 && email_pattern.test(acc_email_address)==true){
+	  if(pl1 >= 6 && email_pattern.test(acc_email_address)==true && email_pattern.test(ct_email_address)==true){
         $.ajax({
           url : "register-section/register-verification.php",
           method : "POST",
@@ -574,8 +630,10 @@ $(document).ready(function(){
 			i_age:i_age,
 			i_place_birth:i_place_birth,
 			i_nationality:i_nationality,
-			i_skills:i_skills,
+			i_comp_knowledge_skills:i_comp_knowledge_skills,
 			i_training_seminar:i_training_seminar,
+			i_work_experience:i_work_experience,
+			i_membership:i_membership,
 			ct_email_address:ct_email_address,
 			ct_mobile_no:ct_mobile_no,
 			ad_street:ad_street,
@@ -595,6 +653,8 @@ $(document).ready(function(){
 			eb_elem_year:eb_elem_year,
 			eb_secondary:eb_secondary,
 			eb_sec_year:eb_sec_year,
+			eb_shs:eb_shs,
+			eb_shs_year:eb_shs_year,
 			eb_tertiary:eb_tertiary,
 			eb_ter_year:eb_ter_year,
 			eb_course_code:eb_course_code,
@@ -632,8 +692,10 @@ $(document).ready(function(){
 				$('#i_age').val('');
 				$('#i_place_birth').val('');
 				$('#i_nationality').val('');
-				$('#i_skills').val('');
+				$('#i_comp_knowledge_skills').val('');
 				$('#i_training_seminar').val('');
+				$('#i_work_experience').val('');
+				$('#i_membership').val('');
 
 				$('#ct_email_address').val('');
 				$('#ct_mobile_no').val('');
@@ -658,6 +720,8 @@ $(document).ready(function(){
 				$('#eb_elem_year').val('');
 				$('#eb_secondary').val('');
 				$('#eb_sec_year').val('');
+				$('#eb_shs').val('');
+				$('#eb_shs_year').val('');
 				$('#eb_tertiary').val('');
 				$('#eb_ter_year').val('');
 				$('#eb_course_code').val('');

@@ -16,6 +16,7 @@
     INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
     WHERE accounts_tbl.acc_id='$acc_id'");
     $res = mysqli_fetch_assoc($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

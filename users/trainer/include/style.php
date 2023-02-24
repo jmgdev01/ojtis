@@ -240,5 +240,40 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		color: #ffffff !important;
 		margin-top: -2px;
 	}
+	.rating_tbl td {
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 0;
+	}
+/*  */
+
+/* Profile */
+	.profile_img_con {
+		width: 100%; 
+		height: 250px; 
+		background-color: #ccc; 
+		margin-bottom: 10px; 
+		text-align: center; 
+		padding: 10px;
+		border-radius: 4px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.profile_img_con img {
+		max-width: 100%; max-height: 100%;
+	}
+	#profile_image {
+		padding: 3px 3px 30px 3px;
+	}
+/*  */
+
+/* Card */
+	.card_con {
+		max-width: 35rem;
+		width: 100%;
+	}
 /*  */
 </style>

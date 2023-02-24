@@ -97,6 +97,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	.text_bolder {
 		font-weight: 700 !important;
 	}
+	.alert {
+		padding: 15px 30px 15px 30px;
+	}
 /*  */
 
 /* Navbar */
@@ -238,7 +241,7 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	}
 	.close {
 		color: #ffffff !important;
-		margin-top: -2px;
+		margin-top: 0;
 	}
 	.rating_tbl td {
 		border: 1px solid black;
@@ -267,6 +270,25 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	}
 	#profile_image {
 		padding: 3px 3px 30px 3px;
+	}
+	#cv_img_con {
+		height: 144px;
+		width: 144px; 
+		background-color: #ffffff; 
+		text-align: center; 
+		background-size: cover;
+		background-position: center;
+	}
+	.no_trainer_icon {
+		max-width: 500px;
+		width: 100%;
+	}
+/*  */
+
+/* Card */
+	.card_con {
+		max-width: 35rem;
+		width: 100%;
 	}
 /*  */
 </style>

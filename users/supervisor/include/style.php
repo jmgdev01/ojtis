@@ -269,4 +269,11 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		padding: 3px 3px 30px 3px;
 	}
 /*  */
+
+/* Card */
+	.card_con {
+		max-width: 35rem;
+		width: 100%;
+	}
+/*  */
 </style>

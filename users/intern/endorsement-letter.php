@@ -13,6 +13,7 @@
     INNER JOIN signatories_tbl ON configuration_tbl.cf_id = signatories_tbl.cf_id 
     WHERE accounts_tbl.acc_id='$acc_id'");
     $res = mysqli_fetch_assoc($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

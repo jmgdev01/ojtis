@@ -100,6 +100,8 @@ $(document).ready(function(){
 					$(location).attr('href','users/admin/index.php');
 				} else if(data == 'supervisor') {
 					$(location).attr('href','users/supervisor/index.php');
+				} else if(data == 'trainer') {
+					$(location).attr('href','users/trainer/index.php');
 				} else if(data == 'intern') {
 					$(location).attr('href','users/intern/index.php');
 				} 

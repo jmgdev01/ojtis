@@ -15,6 +15,7 @@
     INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id 
     WHERE accounts_tbl.acc_id='$acc_id'");
     $res = mysqli_fetch_assoc($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +48,7 @@
                 <h3><strong>REGISTRATION FORM</strong></h3>
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
+            <div class="col-lg-12 pt-2 doc_body">
                 <h5><strong>PERSONAL INFORMATION</strong></h5>
                 <div class="row pb-3">
                     <div class="col-8">
@@ -268,7 +269,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
+            <div class="col-lg-12 pt-2 doc_body">
                 <h5><strong>FAMILY DATA</strong></h5>
                 <div class="row pb-3">
                     <div class="col-7">
@@ -335,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
+            <div class="col-lg-12 pt-2 doc_body">
                 <h5><strong>EDUCATIONAL BACKGROUND</strong></h5>
                 <div class="row pb-3">
                     <div class="col-8">
@@ -353,7 +354,7 @@
                     </div>
                     <div class="col-4">
                        <div class="text_stretch">
-                            <strong>Date Graduated:</strong>
+                            <strong>Year Graduated:</strong>
                             <div class="text_underline">
                                 <span><?php echo $res['eb_elem_year']; ?></span>
                             </div>
@@ -364,7 +365,7 @@
                 <div class="row pb-3">
                     <div class="col-8">
                        <div class="text_stretch">
-                            <strong>Secondary ( High School ):</strong>
+                            <strong>Secondary / High School:</strong>
                             <div class="text_underline">
                                 <?php if($res['eb_secondary'] != ''){
                                     echo $res['eb_secondary'];
@@ -377,7 +378,7 @@
                     </div>
                     <div class="col-4">
                        <div class="text_stretch">
-                            <strong>Date Graduated:</strong>
+                            <strong>Year Graduated:</strong>
                             <div class="text_underline">
                                 <span><?php echo $res['eb_sec_year']; ?></span>
                             </div>
@@ -388,7 +389,31 @@
                 <div class="row pb-3">
                     <div class="col-8">
                        <div class="text_stretch">
-                            <strong>Tertiary ( College ):</strong>
+                            <strong>Senior High School:</strong>
+                            <div class="text_underline">
+                                <?php if($res['eb_shs'] != ''){
+                                    echo $res['eb_shs'];
+                                } else {
+                                    echo "N/A";
+                                }
+                                ?></span>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-4">
+                       <div class="text_stretch">
+                            <strong>Year Graduated:</strong>
+                            <div class="text_underline">
+                                <span><?php echo $res['eb_shs_year']; ?></span>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="row pb-3">
+                    <div class="col-8">
+                       <div class="text_stretch">
+                            <strong>Tertiary / College:</strong>
                             <div class="text_underline">
                                 <?php if($res['eb_tertiary'] != ''){
                                     echo $res['eb_tertiary'];
@@ -401,7 +426,7 @@
                     </div>
                     <div class="col-4">
                        <div class="text_stretch">
-                            <strong>Date Graduated:</strong>
+                            <strong>Year Graduated:</strong>
                             <div class="text_underline">
                                 <span><?php echo $res['eb_ter_year']; ?></span>
                             </div>
@@ -410,7 +435,7 @@
                 </div>
 
                 <div class="row pb-3">
-                    <div class="col-5">
+                    <div class="col-7">
                        <div class="text_stretch">
                             <strong>Course:</strong>
                             <div class="text_underline">
@@ -420,7 +445,7 @@
                             </div>
                        </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                        <div class="text_stretch">
                             <strong>Course / Year / Section:</strong>
                             <div class="text_underline">
@@ -428,7 +453,10 @@
                             </div>
                        </div>
                     </div>
-                    <div class="col-3">
+                </div>
+
+                <div class="row pb-3">
+                    <div class="col-7">
                        <div class="text_stretch">
                             <strong>Curriculum:</strong>
                             <div class="text_underline">
@@ -440,14 +468,14 @@
 
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
-                <h5><strong>SKILLS</strong></h5>
+            <div class="col-lg-12 pt-2 doc_body">
+                <h5><strong>COMPUTER KNOWLEDGE AND SKILLS</strong></h5>
                 <div class="row pb-3">
                     <div class="col-12">
                        <div class="text_stretch">
                             <div class="text_underline">
-                                <?php if($res['i_skills'] != ''){
-                                    echo $res['i_skills'];
+                                <?php if($res['i_comp_knowledge_skills'] != ''){
+                                    echo $res['i_comp_knowledge_skills'];
                                 } else {
                                     echo "N/A";
                                 }
@@ -458,7 +486,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
+            <div class="col-lg-12 pt-2 doc_body">
                 <h5><strong>TRAININGS AND SEMINARS ATTENDED</strong></h5>
                 <div class="row pb-3">
                     <div class="col-12">
@@ -476,7 +504,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
+            <div class="col-lg-12 pt-2 doc_body">
                 <h5><strong>IN CASE OF EMERGENCY, PLEASE NOTIFY</strong></h5>
                 <div class="row pb-3">
                     <div class="col-8">
@@ -523,7 +551,7 @@
 
             </div>
 
-            <div class="col-lg-12 pt-3 doc_body">
+            <div class="col-lg-12 pt-2 doc_body">
                 <span class="doc_indent">I HEREBY CERTIFY THAT THE INFORMATION GIVEN ABOVE ARE TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE.</span>
             </div>
 

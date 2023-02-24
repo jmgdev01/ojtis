@@ -20,7 +20,7 @@ if (isset($_POST['btn_save'])) {
     $i_age = $_POST['i_age'];
     $i_place_birth = $_POST['i_place_birth'];
     $i_nationality = $_POST['i_nationality'];
-    $i_skills = $_POST['i_skills'];
+    $i_comp_knowledge_skills = $_POST['i_comp_knowledge_skills'];
     $i_training_seminar = $_POST['i_training_seminar'];
 
     // address_tbl 
@@ -34,7 +34,7 @@ if (isset($_POST['btn_save'])) {
     $ct_email_address = $_POST['ct_email_address'];
     $ct_mobile_no = $_POST['ct_mobile_no'];
 
-     // case_tbl
+    // case_tbl
     $c_physical_disability = $_POST['c_physical_disability'];
     $c_mental_disability = $_POST['c_mental_disability'];
     $c_criminal_liability = $_POST['c_criminal_liability'];
@@ -51,6 +51,8 @@ if (isset($_POST['btn_save'])) {
     $eb_elem_year = $_POST['eb_elem_year'];
     $eb_secondary = $_POST['eb_secondary'];
     $eb_sec_year = $_POST['eb_sec_year'];
+    $eb_shs = $_POST['eb_shs'];
+    $eb_shs_year = $_POST['eb_shs_year'];
     $eb_tertiary = $_POST['eb_tertiary'];
     $eb_ter_year = $_POST['eb_ter_year'];
     $eb_course_code = $_POST['eb_course_code'];
@@ -60,13 +62,17 @@ if (isset($_POST['btn_save'])) {
     $eb_curriculum = $_POST['eb_curriculum'];
     $eb_id_number = $_POST['eb_id_number'];
 
-     //emergency_tbl
-     $em_guardian = $_POST['em_guardian'];
-     $em_relationship = $_POST['em_relationship'];
-     $em_address = $_POST['em_address'];
-     $em_contact = $_POST['em_contact'];
+    // emergency_tbl
+    $em_guardian = $_POST['em_guardian'];
+    $em_relationship = $_POST['em_relationship'];
+    $em_address = $_POST['em_address'];
+    $em_contact = $_POST['em_contact'];
+
+    // image
+    $file_name = $_FILES['profile_image']['name'];
+    $file_tmp = $_FILES['profile_image']['tmp_name'];
  
-     if (empty($i_first_name) || empty($i_last_name) || empty($i_sex) || empty($i_civil_status) || empty($i_height) || empty($i_weight) || empty($i_birth_date) || empty($i_age) || empty($i_place_birth) || empty($i_nationality) || empty($ad_barangay) || empty($ad_municipality) || empty($ad_zipcode) || empty($ad_province) || empty($ct_mobile_no) || empty($p_father) || empty($p_father_occupation) || empty($p_mother) || empty($p_mother_occupation) || empty($p_address) || empty($eb_elementary) || empty($eb_elem_year) || empty($eb_secondary) || empty($eb_sec_year) || empty($eb_tertiary) || empty($eb_ter_year) || empty($eb_course_code) || empty($eb_course_description) || empty($eb_year) || empty($eb_section) || empty($eb_curriculum) || empty($eb_id_number) || empty($i_skills) || empty($i_training_seminar) || empty($em_guardian) || empty($em_relationship) || empty($em_address) || empty($em_contact)) {
+     if (empty($i_first_name) || empty($i_last_name) || empty($i_sex) || empty($i_civil_status) || empty($i_height) || empty($i_weight) || empty($i_birth_date) || empty($i_age) || empty($i_place_birth) || empty($i_nationality) || empty($ad_barangay) || empty($ad_municipality) || empty($ad_zipcode) || empty($ad_province) || empty($ct_mobile_no) || empty($p_father) || empty($p_father_occupation) || empty($p_mother) || empty($p_mother_occupation) || empty($p_address) || empty($eb_elementary) || empty($eb_elem_year) || empty($eb_secondary) || empty($eb_sec_year) || empty($eb_shs) || empty($eb_shs_year) || empty($eb_tertiary) || empty($eb_ter_year) || empty($eb_course_code) || empty($eb_course_description) || empty($eb_year) || empty($eb_section) || empty($eb_curriculum) || empty($eb_id_number) || empty($i_comp_knowledge_skills) || empty($i_training_seminar) || empty($em_guardian) || empty($em_relationship) || empty($em_address) || empty($em_contact) || empty($file_name)) {
         echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
                 All fields are required!
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
@@ -74,38 +80,56 @@ if (isset($_POST['btn_save'])) {
                 </button>
             </div>";
      } else {
-        // intern_tbl query
-        $sqlintern = mysqli_query($db, "UPDATE intern_tbl SET i_first_name='$i_first_name', i_middle_name='$i_middle_name', i_last_name='$i_last_name', i_suffix_name='$i_suffix_name', i_sex='$i_sex', i_civil_status='$i_civil_status', i_height='$i_height', i_weight='$i_weight', i_birth_date='$i_birth_date', i_age='$i_age', i_place_birth='$i_place_birth', i_nationality='$i_nationality', i_skills='$i_skills', i_training_seminar='$i_training_seminar' WHERE i_id='$i_id'");
 
-        // address_tbl query
-        $sqladdress = mysqli_query($db, "UPDATE address_tbl SET ad_street='$ad_street', ad_barangay='$ad_barangay',   ad_municipality='$ad_municipality', ad_zipcode='$ad_zipcode', ad_province='$ad_province' WHERE i_id='$i_id'");
+        $email_regex = "/([a-zA-Z0-9!#$%&’?^_`~-])+@([a-zA-Z0-9-])+(.com)+/";
+        if(preg_match($email_regex, $ct_email_address)){
+            // Upload image from your computer to the project directory
+            move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
+            $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
 
-        // contact_query
-        $sqlcontact = mysqli_query($db, "UPDATE contacts_tbl SET ct_email_address='$ct_email_address', ct_mobile_no='$ct_mobile_no' WHERE i_id='$i_id'");
+            // intern_tbl query
+            $sqlintern = mysqli_query($db, "UPDATE intern_tbl SET i_first_name='$i_first_name', i_middle_name='$i_middle_name', i_last_name='$i_last_name', i_suffix_name='$i_suffix_name', i_img='$img_store', i_sex='$i_sex', i_civil_status='$i_civil_status', i_height='$i_height', i_weight='$i_weight', i_birth_date='$i_birth_date', i_age='$i_age', i_place_birth='$i_place_birth', i_nationality='$i_nationality', i_comp_knowledge_skills='$i_comp_knowledge_skills', i_training_seminar='$i_training_seminar' WHERE i_id='$i_id'");
 
-        // case_query
-        $sqlcase = mysqli_query($db, "UPDATE case_tbl SET c_physical_disability='$c_physical_disability', c_mental_disability='$c_mental_disability', c_criminal_liability='$c_criminal_liability' WHERE i_id='$i_id'");
+            // address_tbl query
+            $sqladdress = mysqli_query($db, "UPDATE address_tbl SET ad_street='$ad_street', ad_barangay='$ad_barangay',   ad_municipality='$ad_municipality', ad_zipcode='$ad_zipcode', ad_province='$ad_province' WHERE i_id='$i_id'");
+
+            // contact_query
+            $sqlcontact = mysqli_query($db, "UPDATE contacts_tbl SET ct_email_address='$ct_email_address', ct_mobile_no='$ct_mobile_no' WHERE i_id='$i_id'");
+
+            // case_query
+            $sqlcase = mysqli_query($db, "UPDATE case_tbl SET c_physical_disability='$c_physical_disability', c_mental_disability='$c_mental_disability', c_criminal_liability='$c_criminal_liability' WHERE i_id='$i_id'");
+            
+            // parent_query
+            $sqlparent = mysqli_query($db, "UPDATE parent_tbl SET p_father='$p_father', p_father_occupation='$p_father_occupation', p_mother='$p_mother', p_mother_occupation='$p_mother_occupation', p_address='$p_address' WHERE i_id='$i_id'");
+
+            // educational_background_query
+            $sqleducation = mysqli_query($db, "UPDATE educational_background_tbl SET eb_elementary='$eb_elementary', eb_elem_year='$eb_elem_year', eb_secondary='$eb_secondary', eb_sec_year='$eb_sec_year', eb_shs='$eb_shs', eb_shs_year='$eb_shs_year',  eb_tertiary='$eb_tertiary', eb_ter_year='$eb_ter_year', eb_course_code='$eb_course_code', eb_course_description='$eb_course_description', eb_year='$eb_year', eb_section='$eb_section', eb_curriculum='$eb_curriculum', eb_id_number='$eb_id_number' WHERE i_id='$i_id'");
+
+            // emergency_query
+            $sqleducation = mysqli_query($db, "UPDATE emergency_tbl SET em_guardian='$em_guardian', em_relationship='$em_relationship', em_address='$em_address', em_contact='$em_contact' WHERE i_id='$i_id'");
+
+            // Alert after successful registration
+            echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
+                    Profile updated successfully!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>";
+        } else {
+            // Alert when alternative email is invalid
+            echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
+                    Invalid alternative email address!
+                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                </div>";
+        }
+
         
-        // parent_query
-        $sqlparent = mysqli_query($db, "UPDATE parent_tbl SET p_father='$p_father', p_father_occupation='$p_father_occupation', p_mother='$p_mother', p_mother_occupation='$p_mother_occupation', p_address='$p_address' WHERE i_id='$i_id'");
-
-        // educational_background_query
-        $sqleducation = mysqli_query($db, "UPDATE educational_background_tbl SET eb_elementary='$eb_elementary', eb_elem_year='$eb_elem_year', eb_secondary='$eb_secondary', eb_sec_year='$eb_sec_year', eb_tertiary='$eb_tertiary', eb_ter_year='$eb_ter_year', eb_course_code='$eb_course_code', eb_course_description='$eb_course_description', eb_year='$eb_year', eb_section='$eb_section', eb_curriculum='$eb_curriculum', eb_id_number='$eb_id_number' WHERE i_id='$i_id'");
-
-        // emergency_query
-        $sqleducation = mysqli_query($db, "UPDATE emergency_tbl SET em_guardian='$em_guardian', em_relationship='$em_relationship', em_address='$em_address', em_contact='$em_contact' WHERE i_id='$i_id'");
-
-        // Alert after successful registration
-        echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
-                Profile updated successfully!
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-            </div>";
      }   
 }
 
-$sql0 = mysqli_query($db, "SELECT * FROM accounts_tbl 
+$sql = mysqli_query($db, "SELECT * FROM accounts_tbl 
 INNER JOIN intern_tbl ON accounts_tbl.i_id = intern_tbl.i_id 
 INNER JOIN address_tbl ON intern_tbl.i_id = address_tbl.i_id 
 INNER JOIN contacts_tbl ON intern_tbl.i_id = contacts_tbl.i_id 
@@ -114,7 +138,7 @@ INNER JOIN parent_tbl ON intern_tbl.i_id = parent_tbl.i_id
 INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
 INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id 
 WHERE accounts_tbl.acc_id='$acc_id'");
-$res = mysqli_fetch_assoc($sql0);
+$res = mysqli_fetch_assoc($sql);
 ?>
 
 <!DOCTYPE html>
@@ -132,85 +156,100 @@ $res = mysqli_fetch_assoc($sql0);
     <div class="container py-5">
         <h2 class="pb-2"><strong>PROFILE</strong></h2>
 
-        <div class="accordion" id="c_body">
-        <form method="post" action="profile.php">  
-            <input type="hidden" name="i_id" value="<?php echo $res['i_id']; ?>">
-            <div class="card">
-                <div class="card-header c_header" data-toggle="collapse" data-target="#c1">
-                    <div>1</div><h5><strong>PERSONAL INFORMATION</strong></h5>
-                </div>
+        <form method="post" action="profile.php" enctype="multipart/form-data"> 
+            <div class="accordion" id="c_body"> 
+                <input type="hidden" name="i_id" value="<?php echo $res['i_id']; ?>">
+                <div class="card">
+                    <div class="card-header c_header" data-toggle="collapse" data-target="#c1">
+                        <div>1</div><h5><strong>PERSONAL INFORMATION</strong></h5>
+                    </div>
 
-                <div id="c1" class="collapse show"  data-parent="#c_body">
-                    <div class="card-body"> 
-                        <div class="row">
-                            <div class="form-group col-lg-4 col-md-7">
-                                <label><small><strong>FIRST NAME <span class="text-danger">*</span></strong></small></label>
-                                <input type="text" id="i_first_name" name="i_first_name" value="<?php echo $res['i_first_name']; ?>" class="form-control" placeholder="">
+                    <div id="c1" class="collapse show"  data-parent="#c_body">
+                        <div class="card-body"> 
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-md-12 pb-3">
+                                            <label><small><strong>PROFILE IMAGE</strong></small></label>
+                                            <div class="col-lg-12 profile_img_con">
+                                                <img id="image_preview" src="<?php echo $res['i_img']; ?>">
+                                            </div>
+                                            <input type="file" name="profile_image" id="profile_image" class="form-control" value="<?php echo $res['i_img']; ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="form-group col-lg-5 col-md-5">
+                                            <label><small><strong>FIRST NAME <span class="text-danger">*</span></strong></small></label>
+                                            <input type="text" id="i_first_name" name="i_first_name" value="<?php echo $res['i_first_name']; ?>" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-3">
+                                            <label><small><strong>MIDDLE NAME</strong></small></label>
+                                            <input type="text" id="i_middle_name" name="i_middle_name" value="<?php echo $res['i_middle_name']; ?>" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>LAST NAME <span class="text-danger">*</span></strong></small></label>
+                                            <input type="text" id="i_last_name" name="i_last_name" value="<?php echo $res['i_last_name']; ?>" class="form-control" placeholder="e.g. Cruz">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>EXT.</strong></small></label>
+                                            <select class="form-control" id="i_suffix_name" name="i_suffix_name">
+                                                <option value="<?php echo $res['i_suffix_name']; ?>">Active (<?php echo $res['i_suffix_name']; ?>)</option>
+                                                <option value="">- Select -</option>
+                                                <option value="Jr.">Jr.</option>
+                                                <option value="Sr.">Sr.</option>
+                                                <option value="III">III</option>
+                                                <option value="IV">IV</option>
+                                                <option value="V">V</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>SEX <span class="text-danger">*</span></strong></small></label>
+                                            <select class="form-control" id="i_sex" name="i_sex">
+                                                <option value="<?php echo $res['i_sex']; ?>">Active (<?php echo $res['i_sex']; ?>)</option>
+                                                <option value="">- Select -</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>STATUS <span class="text-danger">*</span></strong></small></label>
+                                            <select class="form-control" id="i_civil_status" name="i_civil_status">
+                                                <option value="<?php echo $res['i_civil_status']; ?>">Active (<?php echo $res['i_civil_status']; ?>)</option>
+                                                <option value="">- Select -</option>
+                                                <option value="Single">Single</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Widow">Widow</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>HEIGHT <span class="text-danger">*</span></strong></small></label>
+                                            <input type="number" id="i_height" name="i_height" value="<?php echo $res['i_height']; ?>" class="form-control" placeholder="cm" min="1">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>WEIGHT <span class="text-danger">*</span></strong></small></label>
+                                            <input type="number" id="i_weight" name="i_weight" value="<?php echo $res['i_weight']; ?>" class="form-control" placeholder="kg" min="1">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>AGE <span class="text-danger">*</span></strong></small></label>
+                                            <input type="number" id="i_age" name="i_age" value="<?php echo $res['i_age']; ?>" class="form-control">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-4">
+                                            <label><small><strong>DATE OF BIRTH <span class="text-danger">*</span></strong></small></label>
+                                            <input type="date" id="i_birth_date" name="i_birth_date" value="<?php echo $res['i_birth_date']; ?>" class="form-control">
+                                        </div>
+                                        <div class="form-group col-lg-5 col-md-5">
+                                            <label><small><strong>PLACE OF BIRTH <span class="text-danger">*</span></strong></small></label>
+                                            <input type="text" id="i_place_birth" name="i_place_birth" value="<?php echo $res['i_place_birth']; ?>" class="form-control" placeholder="e.g. Jaro, Iloilo">
+                                        </div>
+                                        <div class="form-group col-lg-3 col-md-3">
+                                            <label><small><strong>NATIONALITY <span class="text-danger">*</span></strong></small></label>
+                                            <input type="text" id="i_nationality" name="i_nationality" value="<?php echo $res['i_nationality']; ?>" class="form-control" placeholder="e.g. Filipino">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group col-lg-3 col-md-5">
-                                <label><small><strong>MIDDLE NAME</strong></small></label>
-                                <input type="text" id="i_middle_name" name="i_middle_name" value="<?php echo $res['i_middle_name']; ?>" class="form-control" placeholder="">
-                            </div>
-                            <div class="form-group col-lg-3 col-md-7">
-                                <label><small><strong>LAST NAME <span class="text-danger">*</span></strong></small></label>
-                                <input type="text" id="i_last_name" name="i_last_name" value="<?php echo $res['i_last_name']; ?>" class="form-control" placeholder="e.g. Cruz">
-                            </div>
-                            <div class="form-group col-lg-2 col-md-5">
-                                <label><small><strong>EXT.</strong></small></label>
-                                <select class="form-control" id="i_suffix_name" name="i_suffix_name">
-                                    <option value="<?php echo $res['i_suffix_name']; ?>">Active (<?php echo $res['i_suffix_name']; ?>)</option>
-                                    <option value="">- Select -</option>
-                                    <option value="Jr.">Jr.</option>
-                                    <option value="Sr.">Sr.</option>
-                                    <option value="III">III</option>
-                                    <option value="IV">IV</option>
-                                    <option value="V">V</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-lg-3 col-md-3">
-                                <label><small><strong>SEX <span class="text-danger">*</span></strong></small></label>
-                                <select class="form-control" id="i_sex" name="i_sex">
-                                    <option value="<?php echo $res['i_sex']; ?>">Active (<?php echo $res['i_sex']; ?>)</option>
-                                    <option value="">- Select -</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-lg-3 col-md-3">
-                                <label><small><strong>STATUS <span class="text-danger">*</span></strong></small></label>
-                                <select class="form-control" id="i_civil_status" name="i_civil_status">
-                                    <option value="<?php echo $res['i_civil_status']; ?>">Active (<?php echo $res['i_civil_status']; ?>)</option>
-                                    <option value="">- Select -</option>
-                                    <option value="Single">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Widow">Widow</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-lg-3 col-md-3">
-                                <label><small><strong>HEIGHT <span class="text-danger">*</span></strong></small></label>
-                                <input type="number" id="i_height" name="i_height" value="<?php echo $res['i_height']; ?>" class="form-control" placeholder="cm" min="1">
-                            </div>
-                            <div class="form-group col-lg-3 col-md-3">
-                                <label><small><strong>WEIGHT <span class="text-danger">*</span></strong></small></label>
-                                <input type="number" id="i_weight" name="i_weight" value="<?php echo $res['i_weight']; ?>" class="form-control" placeholder="kg" min="1">
-                            </div>
-                            <div class="form-group col-lg-3 col-md-3">
-                                <label><small><strong>DATE OF BIRTH <span class="text-danger">*</span></strong></small></label>
-                                <input type="date" id="i_birth_date" name="i_birth_date" value="<?php echo $res['i_birth_date']; ?>" class="form-control">
-                            </div>
-                            <div class="form-group col-lg-2 col-md-2">
-                                <label><small><strong>AGE <span class="text-danger">*</span></strong></small></label>
-                                <input type="number" id="i_age" name="i_age" value="<?php echo $res['i_age']; ?>" class="form-control">
-                            </div>
-                            <div class="form-group col-lg-4 col-md-4">
-                                <label><small><strong>PLACE OF BIRTH <span class="text-danger">*</span></strong></small></label>
-                                <input type="text" id="i_place_birth" name="i_place_birth" value="<?php echo $res['i_place_birth']; ?>" class="form-control" placeholder="e.g. Jaro, Iloilo">
-                            </div>
-                            <div class="form-group col-lg-3 col-md-3">
-                                <label><small><strong>NATIONALITY <span class="text-danger">*</span></strong></small></label>
-                                <input type="text" id="i_nationality" name="i_nationality" value="<?php echo $res['i_nationality']; ?>" class="form-control" placeholder="e.g. Filipino">
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -345,7 +384,7 @@ $res = mysqli_fetch_assoc($sql0);
                             </div>
                             <div class="form-group col-lg-4 col-md-4">
                                 <label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-                                <input type="number" id="eb_elem_year" name="eb_elem_year" value="<?php echo $res['eb_elem_year']; ?>" class="form-control" placeholder="e.g. 2012">
+                                <input type="text" id="eb_elem_year" name="eb_elem_year" value="<?php echo $res['eb_elem_year']; ?>" class="form-control" placeholder="e.g. 2005-2011">
                             </div>
                             <div class="form-group col-lg-8 col-md-8">
                                 <label><small><strong>SECONDARY / HIGH SCHOOL <span class="text-danger">*</span></strong></small></label>
@@ -353,7 +392,15 @@ $res = mysqli_fetch_assoc($sql0);
                             </div>
                             <div class="form-group col-lg-4 col-md-4">
                                 <label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-                                <input type="number" id="eb_sec_year" name="eb_sec_year" value="<?php echo $res['eb_sec_year']; ?>" class="form-control" placeholder="e.g. 2018">
+                                <input type="text" id="eb_sec_year" name="eb_sec_year" value="<?php echo $res['eb_sec_year']; ?>" class="form-control" placeholder="e.g. 2011-2015">
+                            </div>
+                            <div class="form-group col-lg-8 col-md-8">
+                                <label><small><strong>SENIOR HIGH SCHOOL <span class="text-danger">*</span></strong></small></label>
+                                <input type="text" id="eb_shs" name="eb_shs" value="<?php echo $res['eb_shs']; ?>" class="form-control" placeholder="e.g. Buenavista National School">
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4">
+                                <label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
+                                <input type="text" id="eb_shs_year" name="eb_shs_year" value="<?php echo $res['eb_shs_year']; ?>" class="form-control" placeholder="e.g. 2015-2017">
                             </div>
                             <div class="form-group col-lg-8 col-md-8">
                                 <label><small><strong>TERTIARY / COLLEGE <span class="text-danger">*</span></strong></small></label>
@@ -361,7 +408,7 @@ $res = mysqli_fetch_assoc($sql0);
                             </div>
                             <div class="form-group col-lg-4 col-md-4">
                                 <label><small><strong>YEAR GRADUATED <span class="text-danger">*</span></strong></small></label>
-                                <input type="number" id="eb_ter_year" name="eb_ter_year" value="<?php echo $res['eb_ter_year']; ?>" class="form-control" placeholder="e.g. 2022">
+                                <input type="text" id="eb_ter_year" name="eb_ter_year" value="<?php echo $res['eb_ter_year']; ?>" class="form-control" placeholder="e.g. 2017-2021">
                             </div>
                             <div class="form-group col-lg-3 col-md-3">
                                 <label><small><strong>COURSE CODE <span class="text-danger">*</span></strong></small></label>
@@ -402,7 +449,7 @@ $res = mysqli_fetch_assoc($sql0);
 
                 <div class="card">
                     <div class="card-header c_header" data-toggle="collapse" data-target="#c6">
-                        <div>7</div><h5><strong>SKILLS</strong></h5>
+                        <div>7</div><h5><strong>COMPUTER KNOWLEDGE AND SKILLS</strong></h5>
                     </div>
 
                     <div id="c6" class="collapse"  data-parent="#c_body">
@@ -410,7 +457,7 @@ $res = mysqli_fetch_assoc($sql0);
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
-                                <textarea type="text" id="i_skills" name="i_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."><?php echo $res['i_skills'] ?></textarea>
+                                <textarea type="text" id="i_comp_knowledge_skills" name="i_comp_knowledge_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."><?php echo $res['i_comp_knowledge_skills'] ?></textarea>
                                 <label><small>Separate each <strong>skill</strong> with <code>semicolon ( ; )</code></small></label>
                             </div>
                         </div>
@@ -478,7 +525,23 @@ $res = mysqli_fetch_assoc($sql0);
     </div>
     <?php include("include/script.php"); ?>
     <script>
-
+    $(document).ready(function() {
+        // Preview the image before uploading
+        $("#profile_image").change(function() {
+            readURL(this);
+        });
+        
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#image_preview').attr('src', e.target.result);
+                    $('#image_preview').show();
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    });
     </script>
 </body>
 </html>

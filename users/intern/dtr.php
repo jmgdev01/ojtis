@@ -2,6 +2,11 @@
     include("../../function/session.php");
     include("../../function/config.php");
     include("include/validate_user_session.php");
+
+    $acc_id = $_SESSION['acc_id'];
+
+    $sql = mysqli_query($db, "SELECT * FROM accounts_tbl WHERE acc_id='$acc_id'");
+    $res = mysqli_fetch_assoc($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +21,7 @@
     <body id="page-top">
         <?php include("include/nav.php"); ?>
         <div class="container pt-5">
-            <h2><strong>DTR</strong></h2>
+            <h2 class="pb-3"><strong>DTR</strong></h2>
             
         </div>
         <?php include("include/script.php"); ?>
