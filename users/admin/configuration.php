@@ -4,48 +4,6 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
-
-    if (isset($_POST['btn_save'])) {
-        $cf_id = $_POST['cf_id'];
-        $cf_period = $_POST['cf_period'];
-        $cf_hours = $_POST['cf_hours'];
-        $cf_hours_inwords = $_POST['cf_hours_inwords'];
-        $cf_week_equivalent = $_POST['cf_week_equivalent'];
-        $cf_start_date = $_POST['cf_start_date'];
-        $cf_address = $_POST['cf_address'];
-        $cf_campus = $_POST['cf_campus'];
-        $cf_school = $_POST['cf_school'];
-        $cf_department = $_POST['cf_department'];
-        $cf_program = $_POST['cf_program'];
-        $cf_subject = $_POST['cf_subject'];
-        $cf_subject_code = $_POST['cf_subject_code'];
-    
-        if (empty($cf_period) || empty($cf_hours) || empty($cf_hours_inwords) || empty($cf_week_equivalent)|| empty($cf_start_date)|| empty($cf_address)|| empty($cf_campus)|| empty($cf_school)|| empty($cf_department)|| empty($cf_program)|| empty($cf_subject)|| empty($cf_subject_code)) {
-            // Alert if text fields are empty
-            echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
-                    All fields are required!
-                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>";
-         } else {
-            // Query for configuration update
-            $sql1 = mysqli_query($db, "UPDATE configuration_tbl SET cf_period='$cf_period', cf_hours='$cf_hours', cf_hours_inwords='$cf_hours_inwords', cf_week_equivalent='$cf_week_equivalent', cf_start_date='$cf_start_date', cf_start_date='$cf_start_date', cf_address='$cf_address', cf_campus='$cf_campus', cf_school='$cf_school', cf_department='$cf_department', cf_program='$cf_program', cf_subject='$cf_subject', cf_subject_code='$cf_subject_code' WHERE cf_id='$cf_id'");
-    
-            // Alert if the query is successful
-            echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
-                    Profile updated successfully!
-                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>";
-                
-         } 
-    }
-
-    $sql0 = mysqli_query($db, "SELECT * FROM configuration_tbl");
-    $res0 = mysqli_fetch_assoc($sql0);
-
 ?>
 
 <!DOCTYPE html>
@@ -56,12 +14,13 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Configuration</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-    <?php include("include/nav.php"); ?>
+    <?php 
+    include("configuration-section/update-configuration.php");
+    include("configuration-section/display-configuration.php");
+    include("include/nav.php"); ?>
     
         <div class="container py-5">
 
@@ -96,13 +55,13 @@
                                                 <label><small><strong>EQUIVALENT IN WEEKS <span class="text-danger">*</span></strong></small></label>
                                                 <input type="text" id="cf_week_equivalent" name="cf_week_equivalent" class="form-control" placeholder="" value="<?php echo $res0['cf_week_equivalent']; ?>">
                                             </div>
-                                            <div class="form-group col-lg-7 col-md-7 col-sm-12">
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                                 <label><small><strong>STARTING DATE <span class="text-danger">*</span></strong></small></label>
-                                                <input type="date" id="cf_start_date" name="cf_start_date" class="form-control" placeholder="" value="<?php echo $res0['cf_start_date']; ?>">
+                                                <input type="date" id="cf_speriod" name="cf_speriod" class="form-control" placeholder="" value="<?php echo $res0['cf_speriod']; ?>">
                                             </div>
-                                            <div class="form-group col-lg-5 col-md-5 col-sm-12">
-                                                <label><small><strong>PERIOD <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_period" name="cf_period" class="form-control" placeholder="" value="<?php echo $res0['cf_period']; ?>">
+                                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                                <label><small><strong>EXPIRATION DATE <span class="text-danger">*</span></strong></small></label>
+                                                <input type="date" id="cf_eperiod" name="cf_eperiod" class="form-control" placeholder="" value="<?php echo $res0['cf_eperiod']; ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -144,8 +103,5 @@
         </div>
 
     <?php include("include/script.php"); ?>
-    <script>
-    
-    </script>
 </body>
 </html>

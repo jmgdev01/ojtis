@@ -290,5 +290,14 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		max-width: 35rem;
 		width: 100%;
 	}
+	.conf_title {
+		margin-top: -10px;
+	}
+	.conf_title strong {
+		background-color: #ffffff !important;
+		padding: 3px 5px;
+		margin-left: -5px;
+	}
 /*  */
+
 </style>

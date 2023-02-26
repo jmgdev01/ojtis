@@ -4,44 +4,8 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
-
-    if(isset($_POST['btn_save'])){
-        $a_id = $_POST['a_id'];
-        $a_fullname = $_POST['a_fullname'];
-        $a_mobile = $_POST['a_mobile'];
-
-        $file_name = $_FILES['profile_image']['name'];
-        $file_tmp = $_FILES['profile_image']['tmp_name'];
-
-        if(empty($a_fullname) || empty($a_mobile) || empty($file_name)) {
-            // Alert if text fields are empty
-            echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
-                All fields are required!
-                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                    <span aria-hidden='true'>&times;</span>
-                </button>
-            </div>";
-        } else {
-
-            move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-            $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
-
-            // Update admin details
-            $sql1 = mysqli_query($db, "UPDATE admin_tbl SET a_fullname='$a_fullname', a_img='$img_store', a_mobile='$a_mobile' WHERE a_id='$a_id'");
-
-            echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
-                    Profile updated successfully!
-                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>";
-        }
-    }
-
-    $sql0 = mysqli_query($db, "SELECT * FROM admin_tbl INNER JOIN accounts_tbl ON admin_tbl.a_id = accounts_tbl.a_id WHERE accounts_tbl.acc_id='$acc_id'");
-    $res0 = mysqli_fetch_assoc($sql0);
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +19,10 @@
     ?>
 </head>
 <body id="page-top">
-    <?php include("include/nav.php"); ?>
+    <?php 
+    include("profile-section/update-profile.php");
+    include("profile-section/display-account.php");
+    include("include/nav.php"); ?>
     
     <div class="container py-5">
             <form method="POST" action="profile.php" enctype="multipart/form-data">
@@ -74,7 +41,8 @@
                                                     <div class="col-lg-12 profile_img_con">
                                                         <img id="image_preview" src="<?php echo $res0['a_img']; ?>">
                                                     </div>
-                                                    <input type="file" name="profile_image" id="profile_image" class="form-control" value="<?php echo $res0['a_img']; ?>">
+                                                    <input type="hidden" name="pi" value="<?php echo $res0['a_img']; ?>">
+                                                    <input type="file" name="profile_image" id="profile_image" class="form-control">
                                                 </div>
                                         </div>
                                     </div>
@@ -102,11 +70,12 @@
 
         </div>
 
-    <?php 
-        include("include/script.php"); 
-    ?>
+    <?php include("include/script.php"); ?>
 <script>
     $(document).ready(function() {
+
+        $("#msg_alert").delay(3000).fadeOut();
+
         // Preview the image before uploading
         $("#profile_image").change(function() {
             readURL(this);

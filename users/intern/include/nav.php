@@ -13,6 +13,12 @@
                     <a class="nav-link" onclick="window.location.href='dtr.php'">DTR</a>
                     <!-- Journal of Daily Activities would be integrated on the DTR module for easy access and managing of accomplishments. -->
                 </li>
+                <?php if ($res['s_id'] == '' || $res['cf_id'] == '' || $res['tr_id'] == '') {?>
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="window.location.href='#'" style="cursor: not-allowed;">Documents</a>
+                    <!-- Journal of Daily Activities would be integrated on the DTR module for easy access and managing of accomplishments. -->
+                </li>
+                <?php } else { ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                         Documents
@@ -32,6 +38,7 @@
                         <li><a class="dropdown-item" onclick="window.location.href='agency-training-performance-evaluation.php'">Agency Training and Performance Evaluation (ATPE)</a></li>
                     </ul>
                 </li>
+                <?php } ?>
                 <li class="nav-item">
                     <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
                 </li>

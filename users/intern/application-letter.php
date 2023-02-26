@@ -4,15 +4,6 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
-
-    $sql = mysqli_query($db, "SELECT * FROM accounts_tbl 
-    INNER JOIN intern_tbl ON accounts_tbl.i_id = intern_tbl.i_id 
-    INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
-    INNER JOIN supervisor_tbl ON accounts_tbl.s_id = supervisor_tbl.s_id 
-    INNER JOIN configuration_tbl ON accounts_tbl.cf_id = configuration_tbl.cf_id 
-    WHERE accounts_tbl.acc_id='$acc_id'");
-    $res = mysqli_fetch_assoc($sql);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +16,10 @@
     <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-    <?php include("include/nav.php"); ?>
+    <?php 
+    include("application-section/display-application.php");
+    include("include/nav.php"); ?>
     <div class="container py-5">
-        <!-- <h3 class="pb-2 d_hide"><strong>REGISTRATION FORM</strong></h3> -->
         <div class="col-lg-12 text-left pb-3">
             <button class="form-btn form-btn-sm btn-teal d_hide" onclick="window.print()"><strong><i class="fa fa-print"></i> PRINT</strong></button>
         </div>
@@ -101,7 +93,7 @@
                 I must do an On-the-Job Training (OJT) for a minimum of 
                 <strong><?php echo $res['cf_hours']; ?> hours</strong>, 
                 or equivalent to <strong><?php echo $res['cf_week_equivalent']; ?></strong>,
-                starting on <strong><?php echo date("F j, Y", strtotime($res['cf_start_date'])); ?></strong>,
+                starting on <strong><?php echo date("F j, Y", strtotime($res['cf_speriod'])); ?></strong>,
                 in order to partially fulfill the requirements for the 
                 <strong><?php echo $res['cf_program']; ?></strong>.
                 <br><br>
@@ -126,15 +118,9 @@
                 <div class="doc_signature_designation">Applicant, OJT Trainee</div>
             </div>
 
-            <!-- <div class="col-lg-12 doc_footer text-center pt-5">
-                <img src="../../assets/header/doc-footer.png" alt="">
-            </div> -->
         </div>
 
     </div>
     <?php include("include/script.php"); ?>
-    <script>
-
-    </script>
 </body>
 </html>

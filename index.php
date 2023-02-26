@@ -9,9 +9,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login | OJT Information System</title>
-	<?php 
-		include('function/style.php'); 
-	?>
+	<?php include('function/style.php'); ?>
 </head>
 <body>
 

@@ -4,9 +4,6 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
-
-    $sql = mysqli_query($db, "SELECT * FROM accounts_tbl INNER JOIN admin_tbl ON accounts_tbl.a_id = admin_tbl.a_id WHERE accounts_tbl.acc_id='$acc_id'");
-    $res = mysqli_fetch_assoc($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +16,9 @@
         <?php include("include/style.php"); ?>
     </head>
     <body id="page-top">
-        <?php include("include/nav.php"); ?>
+        <?php 
+        include("index-section/display-account.php");
+        include("include/nav.php"); ?>
         <div class="container pt-5">
 
             <input type="hidden" id="email_qrcode" value="<?php echo $res['acc_email_address']; ?>" name="email_qrcode">
