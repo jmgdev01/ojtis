@@ -209,15 +209,127 @@
             <div class="col-lg-12 pt-3 pb-2 doc_body">
                 <div class="row">
                     <div class="col-12">
+                    <table width="100%">
+                        <tbody width="100%">
                         <?php 
-                        $trainings_seminars = explode(";", $res['i_training_seminar']);
+                        if($res['i_training_seminar'] != ''){
+                            $training_seminar = explode(";", $res['i_training_seminar']);
 
-                        foreach ($trainings_seminars as $ts) {
-                            if($ts != ''){
-                                echo "• ".$ts."<br>";
+                            foreach ($training_seminar as $ts) {
+                                if($ts != ''){
+                                    $ts_item = explode("(", $ts);
+
+                                    echo "<tr width='100%'><td width='25%'><strong>".$ts_item[0]."</strong></td><td width='75%'>".str_replace(")","",$ts_item[1])."</td><tr>";
+                                }
                             }
+                        } else {
+                            echo "N/A";
                         }
                         ?>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 pt-3 doc_sub_header">
+                <h5><strong>WORK EXPERIENCE</strong></h5>
+            </div>
+
+            <div class="col-lg-12 pt-3 pb-2 doc_body">
+                <div class="row">
+                    <div class="col-12">
+                        <?php 
+                        if($res['i_work_experience'] != ''){
+                            $work_experience = explode(";", $res['i_work_experience']);
+
+                            foreach ($work_experience as $we) {
+                                if($we != ''){
+                                    echo "<strong>• ".$we."</strong><br>";
+                                }
+                            }
+                        } else {
+                            echo "N/A";
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 pt-3 doc_sub_header">
+                <h5><strong>MEMBERSHIP</strong></h5>
+            </div>
+
+            <div class="col-lg-12 pt-3 pb-2 doc_body">
+                <div class="row">
+                    <div class="col-12">
+                        <?php 
+                        if($res['i_membership'] != ''){
+                            $membership = explode(";", $res['i_membership']);
+
+                            foreach ($membership as $m) {
+                                if($m != ''){
+                                    echo "<strong>• ".$m."</strong><br>";
+                                }
+                            }
+                        } else {
+                            echo "N/A";
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 pt-3 doc_sub_header">
+                <h5><strong>COMPUTER KNOWLEDGE AND SKILLS</strong></h5>
+            </div>
+
+            <div class="col-lg-12 pt-3 pb-2 doc_body">
+                <div class="row">
+                    <div class="col-12">
+                        <?php 
+                        if($res['i_comp_knowledge_skills'] != ''){
+                            $comp_knowledge_skills = explode(";", $res['i_comp_knowledge_skills']);
+
+                            foreach ($comp_knowledge_skills as $cks) {
+                                if($cks != ''){
+                                    echo "<strong>• ".$cks."</strong><br>";
+                                }
+                            }
+                        } else {
+                            echo "N/A";
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 pt-3 doc_sub_header">
+                <h5><strong>CHARACTER REFERENCE</strong></h5>
+            </div>
+
+            <div class="col-lg-12 pt-3 pb-2 doc_body">
+                <div class="row">
+                    <div class="col-12">
+                        <table width="100%">
+                            <tbody width="100%">
+                            <?php 
+                            if($res['i_character_reference'] != ''){
+                                $character_reference = explode(";", $res['i_character_reference']);
+
+                                foreach ($character_reference as $cr) {
+                                    if($cr != ''){
+                                        $cr_item = explode("(", $cr);
+
+                                        echo "<tr width='100%'><td width='25%'><strong>".$cr_item[0]."</strong></td><td width='75%'>".str_replace(")","",$cr_item[1])."</td><tr>";
+                                    }
+                                }
+                            } else {
+                                echo "<i class'fa fa-exclamation'></i> Kindly add your character reference on the profile page.";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
