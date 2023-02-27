@@ -49,6 +49,7 @@ include('../function/config.php');
         $i_training_seminar = test_input($_POST['i_training_seminar']);
         $i_work_experience = test_input($_POST['i_work_experience']);
         $i_membership = test_input($_POST['i_membership']);
+        $i_character_reference = test_input($_POST['i_character_reference']);
 
         /*contacts_tbl*/
         $ct_email_address = test_input($_POST['ct_email_address']);
@@ -108,7 +109,7 @@ include('../function/config.php');
         } else {
 
             /* intern_tbl */
-            $sql0 = mysqli_query($db, "INSERT INTO intern_tbl (i_code, i_first_name, i_middle_name, i_last_name, i_suffix_name, i_sex, i_civil_status, i_height, i_weight, i_birth_date, i_age, i_place_birth, i_nationality, i_comp_knowledge_skills, i_training_seminar, i_work_experience, i_membership) VALUES ('$i_code', '$i_first_name', '$i_middle_name', '$i_last_name', '$i_suffix_name', '$i_sex', '$i_civil_status', '$i_height', '$i_weight', '$i_birth_date', '$i_age', '$i_place_birth', '$i_nationality', '$i_comp_knowledge_skills', '$i_training_seminar', '$i_work_experience', '$i_membership')");
+            $sql0 = mysqli_query($db, "INSERT INTO intern_tbl (i_code, i_first_name, i_middle_name, i_last_name, i_suffix_name, i_sex, i_civil_status, i_height, i_weight, i_birth_date, i_age, i_place_birth, i_nationality, i_comp_knowledge_skills, i_training_seminar, i_work_experience, i_membership, i_character_reference) VALUES ('$i_code', '$i_first_name', '$i_middle_name', '$i_last_name', '$i_suffix_name', '$i_sex', '$i_civil_status', '$i_height', '$i_weight', '$i_birth_date', '$i_age', '$i_place_birth', '$i_nationality', '$i_comp_knowledge_skills', '$i_training_seminar', '$i_work_experience', '$i_membership', '$i_character_reference')");
 
             $sql1 = mysqli_query($db, "SELECT * FROM intern_tbl WHERE i_code='$i_code'");
             $res1 = mysqli_fetch_assoc($sql1);

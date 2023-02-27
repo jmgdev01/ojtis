@@ -16,6 +16,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
         /* font-family: 'Roboto', sans-serif; */
 		font-family: 'Poppins', sans-serif;
     }	
+	.dropdown-item.active, .dropdown-item:active {
+		background-color: #ffffff;
+	}
 
     /* Yellow - #fdbd41 */
     /* Blue - #0d9eed */
@@ -76,6 +79,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		background-color: #282828;
 		border: 1px solid #282828;
 		color: #ffffff;
+	}
+	.btn-disabled {
+		cursor: not-allowed;
 	}
 /*  */
 
@@ -184,6 +190,17 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		flex-direction: row;
 		justify-content: space-around;
 	}
+	.text_underline_2 {
+		border-bottom: 2px solid black;
+		width: 100%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	.text_underline_2 h4 {
+		margin-bottom: -1px;
+	}
 	.text_tag {
 		width: 100%;
 
@@ -199,10 +216,10 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	.text_stretch strong {
+	.text_stretch strong, .text_stretch span {
 		white-space: nowrap;
 	}
-	.text_stretch strong {
+	.text_stretch strong, .text_stretch span {
 		margin-right: 5px;
 	}
 	.doc_signature {
@@ -299,24 +316,13 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	}
 /*  */
 
-table {
-	width: 630px;
+#tbl_con {
+	width: 100%;
 	border-collapse: collapse;
 }
-table, th, td {
+#tbl_con th, #tbl_con td {
 	border: 1px solid black;
-}
-th, td {
 	padding: 10px;
-}
-.center {
-	margin-left: auto;
-	margin-right: auto;
-}
-#tbl_con tr, th, td, span, h6 {
-	font-size: 10px;
-}
-#heading h6{
-	font-size: 10px;
+	font-size: 12px;
 }
 </style>

@@ -93,6 +93,14 @@
 				<li class="nav-item" role="presentation">
 					<button 
 					class="nav-link" 
+					id="cr_tab"
+					type="button" 
+					role="tab" 
+					aria-selected="false"><i class="fa fa-vcard-o"></i></button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button 
+					class="nav-link" 
 					id="ac_tab" 
 					type="button" 
 					role="tab" 
@@ -440,6 +448,24 @@
 					</div>
 				</div>
 
+				<div class="tab-pane fade" id="character_reference" role="tabpanel">
+					<div class="row">
+						<div class="form-group col-lg-12 pt-4">
+							<h3><strong>CHARACTER REFERENCE</strong></h3>
+						</div>
+						<div class="form-group col-lg-12 col-md-12">
+							<label><small>Each reference should include <strong>Full Name ( Designation, Company/Agency )</strong>.</small></label>
+							<textarea type="text" id="i_character_reference" rows="5" class="form-control" placeholder="e.g. Pedro Jacinto (ICT Directory, ICT Office); etc."></textarea>
+							<label><small>Separate each <strong>reference</strong> with <code>semicolon ( ; )</code></small></label>
+						</div>
+
+						<div class="col-lg-12 page_nav pb-3 text-right">
+							<button class="form-btn form-btn-sm btn-yellow" id="btn_previous9">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-teal" id="btn_next9" type="button">Next</button>
+						</div>
+					</div>
+				</div>
+
 				<div class="tab-pane fade" id="account" role="tabpanel">
 					<div class="row">
 						<div class="form-group col-lg-12 pt-4">
@@ -462,7 +488,7 @@
 							<small><strong>Password</strong> length shoud be at least <code>6-character long</code></small>
 						</div>
 						<div class="col-lg-12 page_nav pb-3 text-right">
-							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous9">Previous</button>
+							<button type="button" class="form-btn form-btn-sm btn-yellow" id="btn_previous10">Previous</button>
 						</div>
 						<div class="form-group col-lg-12 text-center">
 							<button class="form-btn form-btn-md btn-blue" id="btn_register"><strong><i class="fa fa-sign-in"></i> REGISTER</strong></button>
@@ -502,6 +528,7 @@ $(document).ready(function(){
     var i_training_seminar = $('#i_training_seminar').val();
 	var i_work_experience = $('#i_work_experience').val();
 	var i_membership = $('#i_membership').val();
+	var i_character_reference = $('#i_character_reference').val();
 
 	var ct_email_address = $('#ct_email_address').val();
 	var ct_mobile_no = $('#ct_mobile_no').val();
@@ -558,6 +585,7 @@ $(document).ready(function(){
 		i_age != '' &&
 		i_place_birth != '' &&
 		i_nationality != '' &&
+		i_character_reference != '' &&
 		ct_mobile_no != '' &&
 		ad_barangay != '' &&
 		ad_municipality != '' &&
@@ -634,6 +662,7 @@ $(document).ready(function(){
 			i_training_seminar:i_training_seminar,
 			i_work_experience:i_work_experience,
 			i_membership:i_membership,
+			i_character_reference:i_character_reference,
 			ct_email_address:ct_email_address,
 			ct_mobile_no:ct_mobile_no,
 			ad_street:ad_street,

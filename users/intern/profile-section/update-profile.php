@@ -18,6 +18,7 @@ if (isset($_POST['btn_save'])) {
     $i_training_seminar = $_POST['i_training_seminar'];
     $i_work_experience = $_POST['i_work_experience'];
     $i_membership = $_POST['i_membership'];
+    $i_character_reference = $_POST['i_character_reference'];
 
     // address_tbl 
     $ad_street = $_POST['ad_street'];
@@ -69,7 +70,7 @@ if (isset($_POST['btn_save'])) {
     $file_tmp = $_FILES['profile_image']['tmp_name'];
     $pi = $_POST['pi'];
  
-    if (empty($i_first_name) || empty($i_last_name) || empty($i_sex) || empty($i_civil_status) || empty($i_height) || empty($i_weight) || empty($i_birth_date) || empty($i_age) || empty($i_place_birth) || empty($i_nationality) || empty($ad_barangay) || empty($ad_municipality) || empty($ad_zipcode) || empty($ad_province) || empty($ct_mobile_no) || empty($p_father) || empty($p_father_occupation) || empty($p_mother) || empty($p_mother_occupation) || empty($p_address) || empty($eb_elementary) || empty($eb_elem_year) || empty($eb_secondary) || empty($eb_sec_year) || empty($eb_shs) || empty($eb_shs_year) || empty($eb_tertiary) || empty($eb_ter_year) || empty($eb_course_code) || empty($eb_course_description) || empty($eb_year) || empty($eb_section) || empty($eb_curriculum) || empty($eb_id_number) || empty($i_comp_knowledge_skills) || empty($i_training_seminar) || empty($em_guardian) || empty($em_relationship) || empty($em_address) || empty($em_contact) || empty($pi) && empty($file_name)) {
+    if (empty($i_first_name) || empty($i_last_name) || empty($i_sex) || empty($i_civil_status) || empty($i_height) || empty($i_weight) || empty($i_birth_date) || empty($i_age) || empty($i_place_birth) || empty($i_nationality) || empty($i_character_reference) || empty($ad_barangay) || empty($ad_municipality) || empty($ad_zipcode) || empty($ad_province) || empty($ct_mobile_no) || empty($p_father) || empty($p_father_occupation) || empty($p_mother) || empty($p_mother_occupation) || empty($p_address) || empty($eb_elementary) || empty($eb_elem_year) || empty($eb_secondary) || empty($eb_sec_year) || empty($eb_shs) || empty($eb_shs_year) || empty($eb_tertiary) || empty($eb_ter_year) || empty($eb_course_code) || empty($eb_course_description) || empty($eb_year) || empty($eb_section) || empty($eb_curriculum) || empty($eb_id_number) || empty($i_comp_knowledge_skills) || empty($i_training_seminar) || empty($em_guardian) || empty($em_relationship) || empty($em_address) || empty($em_contact) || empty($pi) && empty($file_name)) {
         echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
                 All fields are required!
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
@@ -93,7 +94,7 @@ if (isset($_POST['btn_save'])) {
             }
 
             // intern_tbl query
-            $sqlintern = mysqli_query($db, "UPDATE intern_tbl SET i_first_name='$i_first_name', i_middle_name='$i_middle_name', i_last_name='$i_last_name', i_suffix_name='$i_suffix_name', i_img='$image', i_sex='$i_sex', i_civil_status='$i_civil_status', i_height='$i_height', i_weight='$i_weight', i_birth_date='$i_birth_date', i_age='$i_age', i_place_birth='$i_place_birth', i_nationality='$i_nationality', i_comp_knowledge_skills='$i_comp_knowledge_skills', i_training_seminar='$i_training_seminar', i_work_experience='$i_work_experience', i_membership='$i_membership' WHERE i_id='$i_id'");
+            $sqlintern = mysqli_query($db, "UPDATE intern_tbl SET i_first_name='$i_first_name', i_middle_name='$i_middle_name', i_last_name='$i_last_name', i_suffix_name='$i_suffix_name', i_img='$image', i_sex='$i_sex', i_civil_status='$i_civil_status', i_height='$i_height', i_weight='$i_weight', i_birth_date='$i_birth_date', i_age='$i_age', i_place_birth='$i_place_birth', i_nationality='$i_nationality', i_comp_knowledge_skills='$i_comp_knowledge_skills', i_training_seminar='$i_training_seminar', i_work_experience='$i_work_experience', i_membership='$i_membership', i_character_reference='$i_character_reference' WHERE i_id='$i_id'");
 
             // address_tbl query
             $sqladdress = mysqli_query($db, "UPDATE address_tbl SET ad_street='$ad_street', ad_barangay='$ad_barangay',   ad_municipality='$ad_municipality', ad_zipcode='$ad_zipcode', ad_province='$ad_province' WHERE i_id='$i_id'");

@@ -392,8 +392,26 @@ $acc_id = $_SESSION['acc_id'];
                 </div>
 
                 <div class="card">
+                    <div class="card-header c_header" data-toggle="collapse" data-target="#c9">
+                        <div>11</div><h5><strong>CHARACTER REFERENCE</strong></h5>
+                    </div>
+
+                    <div id="c9" class="collapse"  data-parent="#c_body">
+                        <div class="card-body pb-0">
+                        <div class="row">
+                            <div class="form-group col-lg-12 col-md-12">
+							<label><small>Each reference should include <strong>Full Name ( Designation, Company/Agency )</strong>.</small></label>
+							<textarea type="text" id="i_character_reference" name="i_character_reference" rows="5" class="form-control" placeholder="e.g. Pedro Jacinto (ICT Directory, ICT Office); etc."><?php echo $res['i_character_reference']; ?></textarea>
+							<label><small>Separate each <strong>reference</strong> with <code>semicolon ( ; )</code></small></label>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
                     <div class="card-header c_header" data-toggle="collapse" data-target="#c10">
-                        <div>11</div><h5><strong>EMERGENCY CONTACT</strong></h5>
+                        <div>12</div><h5><strong>EMERGENCY CONTACT</strong></h5>
                     </div>
 
                     <div id="c10" class="collapse"  data-parent="#c_body">

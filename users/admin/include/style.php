@@ -16,7 +16,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
         /* font-family: 'Roboto', sans-serif; */
 		font-family: 'Poppins', sans-serif;
     }	
-
+	.dropdown-item.active, .dropdown-item:active {
+		background-color: #ffffff;
+	}
     /* Yellow - #fdbd41 */
     /* Blue - #0d9eed */
 	/* Red - #dc3545 */

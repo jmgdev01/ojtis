@@ -20,19 +20,58 @@
     </head>
     <body id="page-top">
         <?php include("include/nav.php"); ?>
-        <div class="container pt-5">
+        <div class="container py-5">
             <h2 class="pb-3 text-center"><strong>Daily Time Record</strong></h2><br>
+
                     <div class="row">
-                        <div class="col-lg-7 center">
-                            <h4 class="text-center" style="border-bottom: 1px solid black;"><strong><span style="font-size: 15px;"><?php echo $res['i_last_name']." ".$res['i_suffix_name']." ".$res['i_first_name'];?></strong></span></h4>
-                            <h6 class="text-center" id="tbl_con">(Name)</h6>
-                            <h6>For the month of <span style="border-bottom: 1px solid black; center"><strong> March, 2023 </strong></span> </h6>
-                            <h6>Official hours for arrival and departure <span style="border-bottom: 1px solid black; center"><strong> Regular Days 07:30am-11:30, 01:00pm-05:00pm
-                            </strong></span></h6>
+                        <div class="col-12">
+                            <div class="text_stretch">
+                                <div class="text_underline_2">
+                                    <h4>
+                                    <strong>
+                                    <span><?php 
+                                    echo $res['i_first_name']; 
+                                    if($res['i_middle_name'] != ''){
+                                        echo $res['i_middle_name'];
+                                    } else {
+                                        echo "N/A";
+                                    }
+                                    echo $res['i_last_name']." ".$res['i_suffix_name'];
+                                    ?></span>
+                                    </strong>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="text_stretch">
+                                <div class="text_tag pt-1">
+                                    (Name)
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="text_stretch">
+                                    <span>For the month of </span>
+                                    <div class="text_underline_2">
+                                        <span><?php echo date("F Y"); ?></span>
+                                    </div>
+                            </div>
+                            <div class="text_stretch">
+                                    <strong class="pr-5 mr-4"></strong>
+                                    <div class="text_tag">
+                                        <small><i>Last Name ~ Suffix</i></small>
+                                        <small><i>First Name</i></small>
+                                        <small><i>Middle Name</i></small>
+                                    </div>
+                            </div>
                         </div>
                     </div>
+
                     <br>
-                    <table class="center" id="tbl_con">
+
+                    <table id="tbl_con">
+                        <tbody width="100%">
                         <tr class="text-center">
                             <th rowspan="2" colspan="2">Day</th>
                             <th colspan="2">A.M</th>
@@ -65,7 +104,8 @@
                                     <td></td>
                                 </tr>';
                             }
-                        ?>   
+                        ?> 
+                        </tbody>  
                     </table>
                 </div> 
             </div>     

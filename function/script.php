@@ -28,6 +28,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
             
@@ -53,6 +55,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
             
@@ -78,6 +82,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
             
@@ -103,6 +109,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
             
@@ -128,6 +136,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
             
@@ -153,6 +163,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
             
@@ -178,6 +190,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -202,6 +216,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -226,6 +242,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -250,6 +268,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -272,6 +292,8 @@
             $("#educational_background").removeClass('show');
             $("#skills_training").removeClass('active');
             $("#skills_training").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -296,6 +318,8 @@
             $("#work_experience_membership").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -320,6 +344,8 @@
             $("#skills_training").removeClass('show');
             $("#work_experience_membership").removeClass('active');
             $("#work_experience_membership").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
@@ -344,15 +370,17 @@
             $("#skills_training").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
         });
         $('#btn_next8').click(function(){
             $("#em_tab").removeClass('active');
-            $("#ac_tab").addClass('active');
+            $("#cr_tab").addClass('active');
 
-            $("#account").addClass('active');
-            $("#account").addClass('show');
+            $("#character_reference").addClass('active');
+            $("#character_reference").addClass('show');
 
             $("#personal_info").removeClass('active');
             $("#personal_info").removeClass('show');
@@ -368,11 +396,13 @@
             $("#skills_training").removeClass('show');
             $("#work_experience_membership").removeClass('active');
             $("#work_experience_membership").removeClass('show');
+            $("#account").removeClass('active');
+            $("#account").removeClass('show');
             $("#emergency").removeClass('active');
             $("#emergency").removeClass('show');
         });
         $('#btn_previous9').click(function(){
-            $("#ac_tab").removeClass('active');
+            $("#cr_tab").removeClass('active');
             $("#em_tab").addClass('active');
 
             $("#emergency").addClass('active');
@@ -392,8 +422,62 @@
             $("#skills_training").removeClass('show');
             $("#work_experience_membership").removeClass('active');
             $("#work_experience_membership").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
             $("#account").removeClass('active');
             $("#account").removeClass('show');
+        });
+        $('#btn_next9').click(function(){
+            $("#cr_tab").removeClass('active');
+            $("#ac_tab").addClass('active');
+
+            $("#account").addClass('active');
+            $("#account").addClass('show');
+
+            $("#personal_info").removeClass('active');
+            $("#personal_info").removeClass('show');
+            $("#address_contact_info").removeClass('active');
+            $("#address_contact_info").removeClass('show');
+            $("#cases_details").removeClass('active');
+            $("#cases_details").removeClass('show');
+            $("#parent_info").removeClass('active');
+            $("#parent_info").removeClass('show');
+            $("#educational_background").removeClass('active');
+            $("#educational_background").removeClass('show');
+            $("#skills_training").removeClass('active');
+            $("#skills_training").removeClass('show');
+            $("#work_experience_membership").removeClass('active');
+            $("#work_experience_membership").removeClass('show');
+            $("#character_reference").removeClass('active');
+            $("#character_reference").removeClass('show');
+            $("#emergency").removeClass('active');
+            $("#emergency").removeClass('show');
+        });
+        $('#btn_previous10').click(function(){
+            $("#ac_tab").removeClass('active');
+            $("#cr_tab").addClass('active');
+
+            $("#character_reference").addClass('active');
+            $("#character_reference").addClass('show');
+
+            $("#personal_info").removeClass('active');
+            $("#personal_info").removeClass('show');
+            $("#address_contact_info").removeClass('active');
+            $("#address_contact_info").removeClass('show');
+            $("#cases_details").removeClass('active');
+            $("#cases_details").removeClass('show');
+            $("#parent_info").removeClass('active');
+            $("#parent_info").removeClass('show');
+            $("#educational_background").removeClass('active');
+            $("#educational_background").removeClass('show');
+            $("#skills_training").removeClass('active');
+            $("#skills_training").removeClass('show');
+            $("#work_experience_membership").removeClass('active');
+            $("#work_experience_membership").removeClass('show');
+            $("#account").removeClass('active');
+            $("#account").removeClass('show');
+            $("#emergency").removeClass('active');
+            $("#emergency").removeClass('show');
         });
     });
 </script>

@@ -325,7 +325,7 @@
                                     }
                                 }
                             } else {
-                                echo "<i class'fa fa-exclamation'></i> Kindly add your character reference on the profile page.";
+                                echo "N/A";
                             }
                             ?>
                             </tbody>
