@@ -16,6 +16,7 @@
     <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
+<?php include("include/nav.php"); ?>
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-12">
