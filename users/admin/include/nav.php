@@ -15,9 +15,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" onclick="window.location.href='#'">Admin</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href='#'">Supervisor</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href='#'">Trainer</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href='#'">Intern</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='supervisor.php'">Supervisor</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='trainer.php'">Trainer</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='intern.php'">Intern</a></li>
                     </ul>
                 </li>
                 <li class="nav-item active">

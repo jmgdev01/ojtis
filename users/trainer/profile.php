@@ -13,11 +13,13 @@
         $tr_suffix_name = $_POST['tr_suffix_name'];
         $tr_sex = $_POST['tr_sex'];
         $tr_mobile = $_POST['tr_mobile'];
-
+        
+        // IMAGE
         $file_name = $_FILES['profile_image']['name'];
         $file_tmp = $_FILES['profile_image']['tmp_name'];
+        $pi = $_POST['pi'];
     
-        if (empty($tr_first_name) || empty($tr_last_name) || empty($tr_sex) || empty($tr_mobile) || empty($file_name)) {
+        if (empty($tr_first_name) || empty($tr_last_name) || empty($tr_sex) || empty($tr_mobile) || empty($pi) && empty($file_name)) {
             // Alert if text fields are empty
             echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
                     All fields are required!
@@ -27,11 +29,19 @@
                 </div>";
          } else {
 
+            // Upload image from your computer to the project directory
             move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
             $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
 
+            $image = '';
+            if($file_name != '') {
+                $image = $img_store;
+            } else {
+                $image = $pi;
+            }
+
             // Update supervisor details
-            $sql1 = mysqli_query($db, "UPDATE trainer_tbl SET tr_first_name='$tr_first_name', tr_middle_name='$tr_middle_name', tr_last_name='$tr_last_name', tr_suffix_name='$tr_suffix_name', tr_img='$img_store', tr_sex='$tr_sex', tr_mobile='$tr_mobile' WHERE tr_id='$tr_id'");
+            $sql1 = mysqli_query($db, "UPDATE trainer_tbl SET tr_first_name='$tr_first_name', tr_middle_name='$tr_middle_name', tr_last_name='$tr_last_name', tr_suffix_name='$tr_suffix_name', tr_img='$image', tr_sex='$tr_sex', tr_mobile='$tr_mobile' WHERE tr_id='$tr_id'");
     
             // Alert if update is successful
             echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
@@ -79,7 +89,8 @@
                                                     <div class="col-lg-12 profile_img_con">
                                                         <img id="image_preview" src="<?php echo $res0['tr_img']; ?>">
                                                     </div>
-                                                    <input type="file" name="profile_image" id="profile_image" class="form-control" value="<?php echo $res0['tr_img']; ?>">
+                                                    <input type="hidden" name="pi" value="<?php echo $res0['tr_img']; ?>">
+                                                    <input type="file" name="profile_image" id="profile_image" class="form-control">
                                                 </div>
                                         </div>
                                     </div>
