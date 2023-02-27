@@ -299,4 +299,24 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	}
 /*  */
 
+table {
+	width: 630px;
+	border-collapse: collapse;
+}
+table, th, td {
+	border: 1px solid black;
+}
+th, td {
+	padding: 10px;
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+#tbl_con tr, th, td, span, h6 {
+	font-size: 10px;
+}
+#heading h6{
+	font-size: 10px;
+}
 </style>
