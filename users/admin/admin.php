@@ -33,20 +33,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
-                                    $count = 1;
-                                    $sql = mysqli_query($db, "SELECT * FROM admin_tbl INNER JOIN accounts_tbl
-                                    ON admin_tbl.a_id = accounts_tbl.a_id")
-                                    while($row = mysqli_fetch_assoc($sql)){}
-                                    ?>
+                                <?php 
+                                $count = 1;
+                                $sql = mysqli_query($db, "SELECT * FROM admin_tbl INNER JOIN accounts_tbl ON admin_tbl.a_id = accounts_tbl.a_id");
+                                while($row = mysqli_fetch_assoc($sql)){
+                                ?>
                                     <tr>
                                         <td><?php echo $count; ?></td>
-                                        <td><?php?>
-                                    <th>1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tbody>
+                                        <td><?php echo $row['a_fullname']; ?></td>
+                                        <td><?php echo $row['acc_email_address']; ?></td>
+                                        <td><?php echo ucfirst($row['acc_role']); ?></td>
+                                        <td>
+                                            <div>
+                                            <button type="button" class="btn btn-primary">Edit</button>
+                                            <button type="button" class="btn btn-danger">Delete</button>
+                                        </td>
+                                    </tr>
+                                <?php 
+                                $count++;
+                            } ?>
+                            </tbody>
                             </table> 
                     </div>
                 </div>    
