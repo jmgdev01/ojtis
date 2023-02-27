@@ -50,16 +50,19 @@
         </div>
         <?php include("include/script.php"); ?>
         <script>
-            $(document).ready(function() {
-                var email_qrcode = $('#email_qrcode').val();
-                $("#qrcode").qrcode({
-                    size: 250,
-                    fill: '#000000',
-                    text: email_qrcode,
-                    mode: 3,
-                    fontcolor: '#000000'
-                });
+        $(document).ready(function() {
+
+            $("#msg_alert").delay(3000).fadeOut();
+            
+            var email_qrcode = $('#email_qrcode').val();
+            $("#qrcode").qrcode({
+                size: 250,
+                fill: '#000000',
+                text: email_qrcode,
+                mode: 3,
+                fontcolor: '#000000'
             });
+        });
         </script>
     </body>
 </html>

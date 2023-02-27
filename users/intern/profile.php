@@ -18,8 +18,8 @@ $acc_id = $_SESSION['acc_id'];
 </head>
 <body id="page-top">
     <?php
-    include("profile-section/display-profile.php");
     include("profile-section/update-profile.php");
+    include("profile-section/display-profile.php");
     include("include/nav.php"); ?>
     <div class="container py-5">
         <h2 class="pb-2"><strong>PROFILE</strong></h2>

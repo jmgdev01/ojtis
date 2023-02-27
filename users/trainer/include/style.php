@@ -1,9 +1,6 @@
 <link rel="icon" type="image/x-icon" href="../../assets/logo/logo-small2.png">
-<link 
-rel="stylesheet" 
-href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
-integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" 
-crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/bootstrap4.css">
+<link rel="stylesheet" type="text/css" href="../../assets/bootstrap/css/dataTables.bootstrap4.min.css">
 <link 
 href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" 
 rel="stylesheet">
@@ -41,6 +38,8 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		border: none;
 		border-radius: 4px;
 		letter-spacing: 1px;
+		outline: none !important;
+		cursor: pointer;
 	}
 	.form-btn-sm {
 		padding: 5px 10px;

@@ -71,7 +71,7 @@
         </div>
 
     <?php include("include/script.php"); ?>
-<script>
+    <script>
     $(document).ready(function() {
 
         $("#msg_alert").delay(3000).fadeOut();
@@ -92,6 +92,6 @@
             }
         }
     });
-</script>
+    </script>
 </body>
 </html>
