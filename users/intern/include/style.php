@@ -44,6 +44,10 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		outline: none !important;
 		cursor: pointer;
 	}
+	.form-btn-xs {
+		padding: 3px 4px 2px 5px;
+		font-size: 12px;
+	}
 	.form-btn-sm {
 		padding: 5px 10px;
 		font-size: 12px;
@@ -202,7 +206,7 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		justify-content: space-around;
 	}
 	.text_underline_3 {
-		border-bottom: 2px solid black;
+		border-bottom: 1px solid black;
 		width: 100%;
 
 		display: flex;
@@ -269,9 +273,21 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	.info_tbl {
 		font-size: 14px;
 	}
+	.d_print_hide {
+		display: none;
+	}
+	.d_show {
+		display: block;
+	}
 	@media print {
 		.d_hide {
 			display: none;
+		}
+		.d_show {
+			display: none;
+		}
+		.d_print_hide {
+			display: block;
 		}
 		.registration_form {
 			margin-top: -70px;

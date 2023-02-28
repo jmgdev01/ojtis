@@ -25,10 +25,14 @@
         <?php include("include/nav.php"); ?>
         <div class="container py-5">
 
+            <div class="col-12 text-center d_show">
+                <h2><strong>Daily Time Record</strong></h2>
+            </div>
+
             <div class="dtr_wrapper">
                 <div class="dtr_con1">
-                    <div class="row">
 
+                    <div class="row d_print_hide">
                         <div class="col-12 text-left pb-4">
                             <small><i>Civil Service Form No. 48</i></small>
                         </div>
@@ -85,9 +89,7 @@
                         </div>
                     </div>
 
-                    <br>
-
-                    <div class="table-responsive">
+                    <div class="table-responsive pt-3">
                         <table id="tbl_con">
                             <tbody width="100%">
                             <tr class="text-center">
@@ -113,7 +115,13 @@
                                 
                                 for($i = 1; $i <= $num_days; $i++){
                                     echo '<tr class="text-center">
-                                        <td>'.$i.'</td>
+                                        <td>';
+                                        if ($i == date("j")) {
+                                            echo "<button class='form-btn form-btn-xs btn-yellow'>".$i."</button>";
+                                        } else {
+                                            echo $i;
+                                        }
+                                    echo '</td>
                                         <td>'.date("D", strtotime($i.'-'.$month_year)).'</td>
                                         <td></td>
                                         <td></td>
@@ -129,7 +137,7 @@
                         </table>
                     </div>
 
-                    <div class="row">
+                    <div class="row d_print_hide">
                         <div class="col-12 text_confirmation pt-4">
                             <span><i>I certify on my honor that the above is a true and correct report of the hours of work performed, record of which was made daily at the time of arrival and departure from office.</i></span>
                         </div>
@@ -168,6 +176,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="dtr_con2">
                     

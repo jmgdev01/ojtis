@@ -216,10 +216,13 @@
                             $training_seminar = explode(";", $res['i_training_seminar']);
 
                             foreach ($training_seminar as $ts) {
-                                if($ts != ''){
-                                    $ts_item = explode("(", $ts);
+                                // if($ts != ''){
+                                //     $ts_item = explode("(", $ts);
 
-                                    echo "<tr width='100%'><td width='25%'><strong>".$ts_item[0]."</strong></td><td width='75%'>".str_replace(")","",$ts_item[1])."</td><tr>";
+                                //     echo "<tr width='100%'><td width='25%'><strong>".$ts_item[0]."</strong></td><td width='75%'>".str_replace(")","",$ts_item[1])."</td><tr>";
+                                // }
+                                if($ts != ''){
+                                    echo "<strong>• ".$ts."</strong><br>";
                                 }
                             }
                         } else {
@@ -318,10 +321,13 @@
                                 $character_reference = explode(";", $res['i_character_reference']);
 
                                 foreach ($character_reference as $cr) {
-                                    if($cr != ''){
-                                        $cr_item = explode("(", $cr);
+                                    // if($cr != '') {
+                                    //     $cr_item = explode("(", $cr);
 
-                                        echo "<tr width='100%'><td width='25%'><strong>".$cr_item[0]."</strong></td><td width='75%'>".str_replace(")","",$cr_item[1])."</td><tr>";
+                                    //     echo "<tr width='100%'><td width='25%'><strong>".$cr_item[0]."</strong></td><td width='75%'>".str_replace(")","",$cr_item[1])."</td><tr>";
+                                    // }
+                                    if($cr != ''){
+                                        echo "<strong>• ".$cr."</strong><br>";
                                     }
                                 }
                             } else {
