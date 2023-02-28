@@ -57,7 +57,10 @@
                                     <td><?php echo ucfirst($row['acc_role']); ?></td>
                                     <td>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="btn btn-blue btn-sm mr-1" type="button" value="Update">Edit</button>
+                                            <div>
+                                                <a href="edit_trainer.php?manage_trainer_id=<?php echo $row['tr_id'] ?>">
+                                                <button class="btn btn-blue btn-sm" type="submit" name="edit">Edit</button></a>
+                                            </div>
                                             <button class="btn btn-red btn-sm" type="button" value="Disable">Deactive</button>
                                         </div>
                                     </td>

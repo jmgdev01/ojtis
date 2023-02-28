@@ -4,6 +4,8 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -57,8 +59,15 @@
                                     <td><?php echo ucfirst($row['acc_role']); ?></td>
                                     <td>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="btn btn-blue btn-sm mr-1" type="button" value="Update">Edit</button>
+                                            <div>
+                                                <a href="edit_intern.php?manage_intern_id=<?php echo $row['i_code'] ?>">
+                                                <button class="btn btn-blue btn-sm" type="submit" name="edit">Edit</button>
+                                            </a>
+                                            </div>
+                                            <div class="col-lg-6">
                                             <button class="btn btn-red btn-sm" type="button" value="Disable">Deactive</button>
+                                            </div>
+                                            
                                         </div>
                                     </td>
                                 </tr>
