@@ -60,5 +60,6 @@
             </div>
         </div>  
     </div>
+    <?php include("include/script.php"); ?>
 </body>
 </html>
