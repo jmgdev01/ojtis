@@ -182,6 +182,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		margin-left: 45px;
 		font-size: 16px;
 	}
+	.text_head {
+		font-size: 14px;
+	}
 	.text_underline {
 		border-bottom: 1px solid black;
 		width: 100%;
@@ -198,8 +201,24 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		flex-direction: row;
 		justify-content: space-around;
 	}
-	.text_underline_2 h4 {
-		margin-bottom: -1px;
+	.text_underline_3 {
+		border-bottom: 2px solid black;
+		width: 100%;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.text_underline_2 h5 {
+		margin-bottom: 5px;
+	}
+	.text_incharge {
+		width: 100%;
+		font-size: 14px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
 	}
 	.text_tag {
 		width: 100%;
@@ -208,18 +227,29 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		flex-direction: row;
 		justify-content: space-around;
 	}
+	.text_confirmation {
+		font-size: 14px;
+	}
 	.text_tag small {
 		font-size: 10px;
 	}
-	.text_stretch {
+	.text_stretch, .text_stretch2 {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	.text_stretch strong, .text_stretch span {
-		white-space: nowrap;
+	@media screen and (max-width: 800px){
+		.text_stretch2 {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		.pad_1 {
+			margin-top: 5px;
+		}
 	}
-	.text_stretch strong, .text_stretch span {
+	.text_stretch strong, .text_stretch span, .text_stretch2 strong, .text_stretch2 span {
+		white-space: nowrap;
 		margin-right: 5px;
 	}
 	.doc_signature {
@@ -253,6 +283,30 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 			bottom: 0;
 			left: 0;
 			margin-left: 50px;
+		}
+		.dtr_wrapper {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin-top: -40px;
+		}
+		.dtr_con1 {
+			width: 50%;
+			padding-right: 40px
+		}
+		.dtr_con2 {
+			width: 50%;
+			padding-left: 40px;
+		}
+		.text_stretch2 {
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		.pad_1 {
+			margin-top: 5px;
 		}
 	}
 	.close {
@@ -316,13 +370,15 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	}
 /*  */
 
-#tbl_con {
-	width: 100%;
-	border-collapse: collapse;
-}
-#tbl_con th, #tbl_con td {
-	border: 1px solid black;
-	padding: 10px;
-	font-size: 12px;
-}
+/* Table */
+	#tbl_con {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	#tbl_con th, #tbl_con td {
+		border: 1px solid black;
+		padding: 3px;
+		font-size: 12px;
+	}
+/*  */
 </style>
