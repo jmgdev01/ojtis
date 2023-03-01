@@ -21,8 +21,9 @@
 
         $file_name = $_FILES['profile_image']['name'];
         $file_tmp = $_FILES['profile_image']['tmp_name'];
+        $pi = $_POST['pi'];
     
-        if (empty($s_first_name) || empty($s_last_name) ||  empty($s_sex) || empty($s_mobile) || empty($s_agency) || empty($s_office) || empty($s_designation) || empty($s_salutation) || empty($file_name)) {
+        if (empty($s_first_name) || empty($s_last_name) ||  empty($s_sex) || empty($s_mobile) || empty($s_agency) || empty($s_office) || empty($s_designation) || empty($s_salutation) ||  empty($pi) && empty($file_name)) {
             // Alert if text fields are empty
             echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
                     All fields are required!
@@ -35,6 +36,13 @@
             // Upload image from your computer to the project directory
             move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
             $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
+
+            $image = '';
+            if($file_name != '') {
+                $image = $img_store;
+            } else {
+                $image = $pi;
+            }
 
             // Update supervisor details
             $sql1 = mysqli_query($db, "UPDATE supervisor_tbl SET s_first_name='$s_first_name', s_middle_name='$s_middle_name', s_last_name='$s_last_name', s_suffix_name='$s_suffix_name', s_extension='$s_extension', s_img='$img_store', s_sex='$s_sex', s_mobile='$s_mobile', s_agency='$s_agency', s_office='$s_office', s_designation='$s_designation', s_salutation='$s_salutation' WHERE s_id='$s_id'");
@@ -85,7 +93,8 @@
                                         <div class="col-lg-12 profile_img_con">
                                             <img id="image_preview" src="<?php echo $res0['s_img']; ?>">
                                         </div>
-                                        <input type="file" name="profile_image" id="profile_image" class="form-control" value="<?php echo $res0['s_img']; ?>">
+                                        <input type="hidden" name="pi" value="<?php echo $res0['s_img']; ?>">
+                                        <input type="file" name="profile_image" id="profile_image" class="form-control">
                                     </div>
                                 </div>
                             </div>
