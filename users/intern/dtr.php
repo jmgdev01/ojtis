@@ -114,23 +114,43 @@
                                 $num_days = cal_days_in_month(CAL_GREGORIAN, $month, $year);
                                 
                                 for($i = 1; $i <= $num_days; $i++){
-                                    echo '<tr class="text-center">
-                                        <td>';
-                                        if ($i == date("j")) {
-                                            echo "<button class='form-btn form-btn-xs btn-yellow'>".$i."</button>";
-                                        } else {
-                                            echo $i;
-                                        }
-                                    echo '</td>
-                                        <td>'.date("D", strtotime($i.'-'.$month_year)).'</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>';
+                                    if(date("D", strtotime($i.'-'.$month_year)) == "Sat" || date("D", strtotime($i.'-'.$month_year)) == "Sun"){
+                                        echo '<tr class="text-center tbl_week_end">
+                                            <td>';
+                                            if ($i == date("j")) {
+                                                echo "<button class='form-btn form-btn-xs btn-teal'>".($i+20)."</button>";
+                                            } else {
+                                                echo $i;
+                                            }
+                                        echo '</td>
+                                            <td><strong>'.date("D", strtotime($i.'-'.$month_year)).'</strong></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>';
+                                    } else {
+                                        echo '<tr class="text-center">
+                                            <td>';
+                                            if ($i == date("j")) {
+                                                echo "<button class='form-btn form-btn-xs btn-teal'>".$i."</button>";
+                                            } else {
+                                                echo $i;
+                                            }
+                                        echo '</td>
+                                            <td><strong>'.date("D", strtotime($i.'-'.$month_year)).'</strong></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>';
+                                    }
                                 }
                             ?> 
                             </tbody>  

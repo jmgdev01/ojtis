@@ -45,8 +45,10 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		cursor: pointer;
 	}
 	.form-btn-xs {
-		padding: 3px 4px 2px 5px;
+		width: 28px;
+		height: 22px;
 		font-size: 12px;
+		text-align: center;
 	}
 	.form-btn-sm {
 		padding: 5px 10px;
@@ -324,6 +326,11 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		.pad_1 {
 			margin-top: 5px;
 		}
+		.form-btn {
+			background-color: none;
+			border: none;
+			color: black;
+		}
 	}
 	.close {
 		color: #ffffff !important;
@@ -395,6 +402,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		border: 1px solid black;
 		padding: 3px;
 		font-size: 12px;
+	}
+	.tbl_week_end {
+		background-color: #f2eddf;
 	}
 /*  */
 </style>
