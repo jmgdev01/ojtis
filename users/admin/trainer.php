@@ -38,7 +38,7 @@
                             <tbody>
                                 <?php 
                                 $count = 1;
-                                $sql = mysqli_query($db, "SELECT * FROM trainer_tbl INNER JOIN accounts_tbl ON trainer_tbl.tr_id = accounts_tbl.tr_id");
+                                $sql = mysqli_query($db, "SELECT * FROM trainer_tbl INNER JOIN accounts_tbl ON trainer_tbl.tr_id = accounts_tbl.tr_id WHERE acc_role = 'trainer'");
                                 while($row = mysqli_fetch_assoc($sql)){
                                 ?>
                                 <tr>
