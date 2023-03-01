@@ -36,7 +36,7 @@
                                 <tbody>
                                 <?php 
                                 $count = 1;
-                                $sql = mysqli_query($db, "SELECT * FROM admin_tbl INNER JOIN accounts_tbl ON admin_tbl.a_id = accounts_tbl.a_id");
+                                $sql = mysqli_query($db, "SELECT * FROM admin_tbl INNER JOIN accounts_tbl ON admin_tbl.a_id = accounts_tbl.a_id WHERE acc_role = 'admin'");
                                 while($row = mysqli_fetch_assoc($sql)){
                                 ?>
                                     <tr>
@@ -45,9 +45,13 @@
                                         <td><?php echo $row['acc_email_address']; ?></td>
                                         <td><?php echo ucfirst($row['acc_role']); ?></td>
                                         <td>
-                                            <div>
-                                            <button type="button" class="btn btn-primary">Edit</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
+                                            <div class="row d-flex justify-content-center">
+                                                <div>
+                                                    <a href="edit_admin.php?manage_admin_id=<?php echo $row['a_id'] ?>">
+                                                    <button class="btn btn-blue btn-sm" type="submit" name="edit">Edit</button></a>
+                                                </div>
+                                                <button class="btn btn-red btn-sm" type="button" value="Disable">Deactive</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php 

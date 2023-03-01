@@ -40,7 +40,7 @@
                             <tbody>
                                 <?php 
                                 $count = 1;
-                                $sql = mysqli_query($db, "SELECT * FROM supervisor_tbl INNER JOIN accounts_tbl ON supervisor_tbl.s_id = accounts_tbl.s_id");
+                                $sql = mysqli_query($db, "SELECT * FROM supervisor_tbl INNER JOIN accounts_tbl ON supervisor_tbl.s_id = accounts_tbl.s_id WHERE acc_role = 'supervisor'");
                                 while($row = mysqli_fetch_assoc($sql)){
                                 ?>
                                 <tr>
@@ -64,7 +64,10 @@
                                     <td><?php echo ucfirst($row['acc_role']); ?></td>
                                     <td>
                                         <div class="row d-flex justify-content-center">
-                                            <button class="btn btn-blue btn-sm mr-1" type="button" value="Update">Edit</button>
+                                            <div>
+                                                <a href="edit_supervisor.php?manage_supervisor_id=<?php echo $row['s_id'] ?>">
+                                                <button class="btn btn-blue btn-sm" type="submit" name="edit">Edit</button></a>
+                                            </div>
                                             <button class="btn btn-red btn-sm" type="button" value="Disable">Deactive</button>
                                         </div>
                                     </td>
