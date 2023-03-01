@@ -40,7 +40,7 @@ if (isset($_POST['update'])) {
         }
 
         // Update supervisor details
-        $sql1 = mysqli_query($db, "UPDATE supervisor_tbl SET s_first_name='$s_first_name', s_middle_name='$s_middle_name', s_last_name='$s_last_name', s_suffix_name='$s_suffix_name', s_extension='$s_extension', s_img='$img_store', s_sex='$s_sex', s_mobile='$s_mobile', s_agency='$s_agency', s_office='$s_office', s_designation='$s_designation', s_salutation='$s_salutation' WHERE s_id='$s_id'");
+        $sql1 = mysqli_query($db, "UPDATE supervisor_tbl SET s_first_name='$s_first_name', s_middle_name='$s_middle_name', s_last_name='$s_last_name', s_suffix_name='$s_suffix_name', s_extension='$s_extension', s_img='$image', s_sex='$s_sex', s_mobile='$s_mobile', s_agency='$s_agency', s_office='$s_office', s_designation='$s_designation', s_salutation='$s_salutation' WHERE s_id='$s_id'");
 
         // Alert if update is successful
         echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
