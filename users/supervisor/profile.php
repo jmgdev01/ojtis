@@ -61,7 +61,6 @@
     INNER JOIN supervisor_tbl ON accounts_tbl.s_id = supervisor_tbl.s_id 
     WHERE accounts_tbl.acc_id='$acc_id'");
     $res0 = mysqli_fetch_assoc($sql0);
-
 ?>
 
 <!DOCTYPE html>
