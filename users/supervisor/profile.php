@@ -121,7 +121,6 @@
     <?php include("include/script.php"); ?>
     <script>
     $(document).ready(function() {
-
         $("#msg_alert").delay(3000).fadeOut();
 
         // Preview the image before uploading
