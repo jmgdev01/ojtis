@@ -5,60 +5,6 @@
 
     $acc_id = $_SESSION['acc_id'];
 
-    $manage_trainer_id = $_GET['manage_trainer_id'];
-    if (isset($_POST['update'])) {
-        $tr_id = $_POST['tr_id'];
-        $tr_first_name = $_POST['tr_first_name'];
-        $tr_middle_name = $_POST['tr_middle_name'];
-        $tr_last_name = $_POST['tr_last_name'];
-        $tr_suffix_name = $_POST['tr_suffix_name'];
-        $tr_sex = $_POST['tr_sex'];
-        $tr_mobile = $_POST['tr_mobile'];
-        
-        // IMAGE
-        $file_name = $_FILES['profile_image']['name'];
-        $file_tmp = $_FILES['profile_image']['tmp_name'];
-        $pi = $_POST['pi'];
-    
-        if (empty($tr_first_name) || empty($tr_last_name) || empty($tr_sex) || empty($tr_mobile) || empty($pi) && empty($file_name)) {
-            // Alert if text fields are empty
-            echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
-                    All fields are required!
-                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>";
-         } else {
-
-            // Upload image from your computer to the project directory
-            move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-            $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
-
-            $image = '';
-            if($file_name != '') {
-                $image = $img_store;
-            } else {
-                $image = $pi;
-            }
-
-            // Update supervisor details
-            $sql1 = mysqli_query($db, "UPDATE trainer_tbl SET tr_first_name='$tr_first_name', tr_middle_name='$tr_middle_name', tr_last_name='$tr_last_name', tr_suffix_name='$tr_suffix_name', tr_img='$image', tr_sex='$tr_sex', tr_mobile='$tr_mobile' WHERE tr_id='$tr_id'");
-    
-            // Alert if update is successful
-            echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
-                    Profile updated successfully!
-                    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                        <span aria-hidden='true'>&times;</span>
-                    </button>
-                </div>";
-        } 
-    }
-
-    $sql0 = mysqli_query($db, "SELECT * FROM accounts_tbl 
-    INNER JOIN trainer_tbl ON accounts_tbl.tr_id = trainer_tbl.tr_id 
-    WHERE accounts_tbl.tr_id='$manage_trainer_id'");
-    $res0 = mysqli_fetch_assoc($sql0);
-
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +18,10 @@
     <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-    <?php include("include/nav.php"); ?>
+    <?php
+    include("edit-trainer-section/update-trainer.php");
+    include("edit-trainer-section/display-trainer.php");
+    include("include/nav.php"); ?>
     <div class="container py-5">
             <form method="post" action="edit_trainer.php?manage_trainer_id=<?php echo $res0['tr_id']; ?>" enctype="multipart/form-data">
                 <input type="hidden" name="tr_id" value="<?php echo $res0['tr_id']; ?>">

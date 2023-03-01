@@ -40,7 +40,7 @@
                             <tbody>
                                 <?php 
                                 $count = 1;
-                                $sql = mysqli_query($db, "SELECT * FROM intern_tbl INNER JOIN accounts_tbl ON intern_tbl.i_id = accounts_tbl.i_id");
+                                $sql = mysqli_query($db, "SELECT * FROM intern_tbl INNER JOIN accounts_tbl ON intern_tbl.i_id = accounts_tbl.i_id WHERE acc_role = 'intern'");
                                 while($row = mysqli_fetch_assoc($sql)){
                                 ?>
                                 <tr>
