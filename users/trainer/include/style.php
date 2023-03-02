@@ -277,4 +277,16 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		width: 100%;
 	}
 /*  */
+
+/* print */
+@media print {
+  .print_hide {
+    display: none;
+  }
+  
+  .print_show {
+    display: block;
+  }
+}
+/*  */
 </style>
