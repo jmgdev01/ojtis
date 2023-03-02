@@ -13,7 +13,7 @@
                     <a class="nav-link" onclick="window.location.href='#'">Remarks</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" onclick="window.location.href='#'">Interns</a>
+                    <a class="nav-link" onclick="window.location.href='intern.php'">Interns</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>
