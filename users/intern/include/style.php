@@ -331,6 +331,9 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 			border: none;
 			color: black;
 		}
+		#dataTable_length, #dataTable_filter, #dataTable_paginate, #dataTable_info {
+			display: none !important;
+		}
 	}
 	.close {
 		color: #ffffff !important;

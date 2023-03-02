@@ -14,9 +14,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Profile</title>
-    <?php 
-        include("include/style.php"); 
-    ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php 
@@ -48,11 +46,11 @@
                                     </div>
                                     <div class="col-lg-7 col-md-12">
                                         <div class="row">
-                                            <div class="form-group col-lg-12 col-md-7">
+                                            <div class="form-group col-lg-7 col-md-7">
                                                 <label><small><strong>FULL NAME <span class="text-danger">*</span></strong></small></label>
                                                 <input type="text" id="a_fullname" name="a_fullname" class="form-control" placeholder="e.g. Juan Dela Cruz" value="<?php echo $res0['a_fullname']; ?>">
                                             </div>
-                                            <div class="form-group col-lg-12 col-md-5">
+                                            <div class="form-group col-lg-5 col-md-5">
                                                 <label><small><strong>CONTACT NO <span class="text-danger">*</span></strong></small></label>
                                                 <input type="text" id="s_mobile_no" name="a_mobile" class="form-control" placeholder="e.g. 09123456789" value="<?php echo $res0['a_mobile']; ?>">
                                             </div>
@@ -71,9 +69,9 @@
         </div>
 
     <?php include("include/script.php"); ?>
+    
     <script>
     $(document).ready(function() {
-
         $("#msg_alert").delay(3000).fadeOut();
 
         // Preview the image before uploading

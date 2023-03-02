@@ -17,8 +17,8 @@ if(isset($_POST['btn_save'])){
             </button>
         </div>";
     } else {
-        move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-        $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
+        move_uploaded_file($file_tmp, "../../assets/profile/admin/" . $file_name);
+        $img_store = "../../assets/profile/admin/" . $_FILES['profile_image']['name'];
 
         $image = '';
         if($file_name != '') {
@@ -35,7 +35,7 @@ if(isset($_POST['btn_save'])){
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
-            </div>";
+              </div>";
     }
 }
 ?>

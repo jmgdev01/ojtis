@@ -23,11 +23,11 @@
     include("include/nav.php"); ?>
     
         <div class="container py-5">
-
             <form method="POST" action="configuration.php">
                 <input type="hidden" name="cf_id" value="<?php echo $res0['cf_id']; ?>">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-12">
+
                         <div class="card">
                             <div class="card-body pb-3 px-4">
                                 <h2 class="pb-2 text-center"><strong>CONFIGURATION</strong></h2>
@@ -96,10 +96,10 @@
                                 </div>  
                             </div>
                         </div>    
+
                     </div>
                 </div>
             </form>  
-
         </div>
 
     <?php include("include/script.php"); ?>

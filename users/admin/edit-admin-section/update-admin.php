@@ -1,6 +1,5 @@
 <?php
-$manage_admin_id = $_GET['manage_admin_id'];
-if(isset($_POST['update'])){
+if(isset($_POST['btn_update'])){
     $a_id = $_POST['a_id'];
     $a_fullname = $_POST['a_fullname'];
     $a_mobile = $_POST['a_mobile'];
@@ -18,8 +17,8 @@ if(isset($_POST['update'])){
             </button>
         </div>";
     } else {
-        move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-        $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
+        move_uploaded_file($file_tmp, "../../assets/profile/admin/" . $file_name);
+        $img_store = "../../assets/profile/admin/" . $_FILES['profile_image']['name'];
 
         $image = '';
         if($file_name != '') {
@@ -33,6 +32,30 @@ if(isset($_POST['update'])){
 
         echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
                 Profile updated successfully!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
+    }
+}
+
+if(isset($_POST['btn_save'])){
+    $acc_id = $_POST['acc_id_reset'];
+    $acc_password_reset = $_POST['acc_password_reset'];
+
+    if (strlen($acc_password_reset) < 6) {
+        echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
+                Password length is less than 6 characters!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
+    } else {
+        // Reset password
+        $sql2 = mysqli_query($db, "UPDATE accounts_tbl SET acc_password='$acc_password_reset' WHERE acc_id='$acc_id'");
+
+        echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
+                Password successfully reset!
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                 </button>

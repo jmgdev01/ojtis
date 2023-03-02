@@ -325,7 +325,7 @@ $acc_id = $_SESSION['acc_id'];
                         <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
-                                <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
+                                <label><small><strong>DESCRIPTION </strong></small></label>
                                 <textarea type="text" id="i_comp_knowledge_skills" name="i_comp_knowledge_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."><?php echo $res['i_comp_knowledge_skills'] ?></textarea>
                                 <label><small>Separate each <strong>skill</strong> with <code>semicolon ( ; )</code></small></label>
                             </div>
@@ -343,7 +343,7 @@ $acc_id = $_SESSION['acc_id'];
                         <div class="card-body pb-0">
                         <div class="row">
                             <div class="form-group col-lg-12 col-md-12">
-                                <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label><br>
+                                <label><small><strong>DESCRIPTION </strong></small></label><br>
                                 <label><small>Each training should include <strong>Title ( Sponsor )</strong>.</small></label>
                                 <textarea type="text" id="i_training_seminar" name="i_training_seminar" rows="5" class="form-control" placeholder="e.g. Python Programming (DICT Region IV); User Experience Design (STI Manila); etc."><?php echo $res['i_training_seminar']; ?></textarea>
                                 <label><small>Separate each <strong>training</strong> or <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
@@ -393,14 +393,14 @@ $acc_id = $_SESSION['acc_id'];
 
                 <div class="card">
                     <div class="card-header c_header" data-toggle="collapse" data-target="#c9">
-                        <div>11</div><h5><strong>CHARACTER REFERENCE</strong></h5>
+                        <div>11</div><h5><strong>CHARACTER REFERENCE </strong></h5>
                     </div>
 
                     <div id="c9" class="collapse"  data-parent="#c_body">
                         <div class="card-body pb-0">
                         <div class="row">
                             <div class="form-group col-lg-12 col-md-12">
-							<label><small>Each reference should include <strong>Full Name ( Designation, Company/Agency )</strong>.</small></label>
+							<label><small>Each reference should include <strong>Full Name ( Designation, Company/Agency )</strong>. </small><span class="text-danger">*</span></label>
 							<textarea type="text" id="i_character_reference" name="i_character_reference" rows="5" class="form-control" placeholder="e.g. Pedro Jacinto (ICT Directory, ICT Office); etc."><?php echo $res['i_character_reference']; ?></textarea>
 							<label><small>Separate each <strong>reference</strong> with <code>semicolon ( ; )</code></small></label>
                             </div>
