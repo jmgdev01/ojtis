@@ -4,6 +4,7 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
+    $user_id = $_GET['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Intern</title>
+    <title>Account Details - OJT Information System</title>
     <?php
     include("edit-intern-section/update-intern.php");
     include("edit-intern-section/display-intern.php");
@@ -21,17 +22,19 @@
 </head>
 <body id="page-top">
     <?php include("include/nav.php"); ?>
-    <div class="container py-5">
-        <h2 class="pb-2"><strong>PROFILE</strong></h2>
 
-        <form method="post" action="edit_intern.php?manage_intern_id=<?php echo $res['i_code']; ?>" enctype="multipart/form-data"> 
+    <div class="container py-5">
+
+        <div class="card mb-4">
+        <div class="card-body pb-3 px-4">
+        <h2 class="pb-2"><strong>ACCOUNT DETAILS</strong></h2>
+        <form method="post" action="edit-intern.php?user_id=<?php echo $res['acc_id']; ?>" enctype="multipart/form-data"> 
             <div class="accordion" id="c_body"> 
                 <input type="hidden" name="i_id" value="<?php echo $res['i_id']; ?>">
                 <div class="card">
                     <div class="card-header c_header" data-toggle="collapse" data-target="#c1">
                         <div>1</div><h5><strong>PERSONAL INFORMATION</strong></h5>
                     </div>
-
                     <div id="c1" class="collapse show"  data-parent="#c_body">
                         <div class="card-body"> 
                             <div class="row">
@@ -325,7 +328,7 @@
                         <div class="card-body">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
-                                <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label>
+                                <label><small><strong>DESCRIPTION </strong></small></label>
                                 <textarea type="text" id="i_comp_knowledge_skills" name="i_comp_knowledge_skills" rows="5" class="form-control" placeholder="e.g. Playing Basketball, Developing Applications, etc."><?php echo $res['i_comp_knowledge_skills'] ?></textarea>
                                 <label><small>Separate each <strong>skill</strong> with <code>semicolon ( ; )</code></small></label>
                             </div>
@@ -343,7 +346,7 @@
                         <div class="card-body pb-0">
                         <div class="row">
                             <div class="form-group col-lg-12 col-md-12">
-                                <label><small><strong>DESCRIPTION <span class="text-danger">*</span></strong></small></label><br>
+                                <label><small><strong>DESCRIPTION </strong></small></label><br>
                                 <label><small>Each training should include <strong>Title ( Sponsor )</strong>.</small></label>
                                 <textarea type="text" id="i_training_seminar" name="i_training_seminar" rows="5" class="form-control" placeholder="e.g. Python Programming (DICT Region IV); User Experience Design (STI Manila); etc."><?php echo $res['i_training_seminar']; ?></textarea>
                                 <label><small>Separate each <strong>training</strong> or <strong>seminar</strong> with <code>semicolon ( ; )</code></small></label>
@@ -440,14 +443,42 @@
             </div>
 
             <div class="form-group pt-3 text-center">
-                <button class="form-btn form-btn-md btn-blue" type="submit" name="update" id="update">
+                <button class="form-btn form-btn-md btn-blue" type="submit" name="btn_update" id="btn_update">
                     <strong>
                         <i class="fa fa-floppy-o" aria-hidden="true"></i> SAVE
                     </strong>
                 </button>
             </div>
         </form> 
+        </div>
+        </div>
+
+        <div class="card">
+        <div class="card-body pb-3 px-4">
+        <h2 class="pb-2 pt-1 text-left"><strong>RESET PASSWORD</strong></h2>
+        <div class="d-flex justify-content-start pb-2">
+            <div class="row">
+                <form method="post" action="edit-intern.php?user_id=<?php echo $res['acc_id']; ?>">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <input type="hidden" name="acc_id_reset" value="<?php echo $res['acc_id']; ?>">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-red btn_reset" id="btn_reset" type="button"><i class="fa fa-qrcode"></i> <strong>GENERATE</strong></button>
+                            </div>
+                            <input type="text" class="form-control text-center" name="acc_password_reset" id="acc_password_reset" placeholder="e.g. d1O8BpJm" readonly>
+                            <div class="input-group-append">
+                                <button class="btn btn-blue" type="submit" id="btn_save" name="btn_save"><i class="fa fa-refresh" aria-hidden="true"></i> <strong>RESET</strong></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+
     </div>
+
     <?php include("include/script.php"); ?>
     <script>
     $(document).ready(function() {
@@ -468,6 +499,27 @@
                 }
                 reader.readAsDataURL(input.files[0]);
             }
+        }
+
+        $('#btn_reset').click(function(){
+            randomString();
+        });
+
+        function randomString() {
+            var code = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789";
+                    
+            //specify the length for the new string
+            var lenString = 8;
+            var randomstring = '';
+
+            //loop to select a new character in each iteration
+            for (var i=0; i<lenString; i++) {
+                var rnum = Math.floor(Math.random() * code.length);
+                randomstring += code.substring(rnum, rnum+1);
+            }
+
+            //display the generated string 
+            $("#acc_password_reset").val(randomstring);
         }
     });
     </script>

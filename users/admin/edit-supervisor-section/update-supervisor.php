@@ -1,5 +1,4 @@
 <?php
-$manage_supervisor_id = $_GET['manage_supervisor_id'];
 if (isset($_POST['update'])) {
     $s_id = $_POST['s_id'];
     $s_first_name = $_POST['s_first_name'];
@@ -52,4 +51,27 @@ if (isset($_POST['update'])) {
     } 
 }
 
+if(isset($_POST['btn_save'])){
+    $acc_id = $_POST['acc_id_reset'];
+    $acc_password_reset = $_POST['acc_password_reset'];
+
+    if (strlen($acc_password_reset) < 6) {
+        echo "<div id='msg_alert' class='alert bg-danger alert-dismissible fade show' role='alert'>
+                Password length is less than 6 characters!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
+    } else {
+        // Reset password
+        $sql2 = mysqli_query($db, "UPDATE accounts_tbl SET acc_password='$acc_password_reset' WHERE acc_id='$acc_id'");
+
+        echo "<div id='msg_alert' class='alert bg-success alert-dismissible fade show' role='alert'>
+                Password successfully reset!
+                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                    <span aria-hidden='true'>&times;</span>
+                </button>
+            </div>";
+    }
+}
 ?>

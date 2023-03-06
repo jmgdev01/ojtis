@@ -237,6 +237,13 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	.info_tbl {
 		font-size: 14px;
 	}
+	.card_logo_con, .card_footer {
+		display: none;
+	}
+	.card_logo {
+		width: 100px;
+		display: none;
+	}
 	@media print {
 		.d_hide {
 			display: none;
@@ -257,6 +264,22 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		}
 		table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before, table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after {
 			content: "";
+		}
+		.card, .card_title {
+			border: none;
+		}
+		.card_logo, .card_footer {
+			display: block;
+		}
+		.card_logo_con {
+			display: block;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.remove_margin_top {
+			margin-top: -60px;
 		}
 	}
 	.close {

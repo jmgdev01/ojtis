@@ -4,11 +4,7 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
-
-
-
-    
-
+    $user_id = $_GET['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -18,25 +14,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Profile - OJT Information System</title>
-    <?php
-    include("edit-supervisor-section/update-supervisor.php");
-    include("edit-supervisor-section/display-supervisor.php");
-    include("include/style.php");
-     ?>
+    <title>Account Details - OJT Information System</title>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-    <?php include("include/nav.php"); ?>
-    <div class="container py-5">
-        <form method="post" action="edit_supervisor.php?manage_supervisor_id=<?php echo $res0['s_id']; ?>" enctype="multipart/form-data">
-            <input type="hidden" name="s_id" value="<?php echo $res0['s_id']; ?>">
+    <?php 
+    include("edit-supervisor-section/update-supervisor.php");
+    include("edit-supervisor-section/display-supervisor.php");
+    include("include/nav.php"); ?>
 
+    <div class="container py-5">
+
+        <div class="row d-flex justify-content-center">
             <div class="col-lg-12">
+                <div class="row pb-3">
+                    <div class="col-lg-12">
+                        <button class="form-btn form-btn-sm btn-dark" onclick="window.location.href='view-supervisor.php'"><i class="fa fa-arrow-left"></i> Back</button>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-body pb-3 px-4">
-                        <h2 class="pb-2 text-center"><strong>PROFILE</strong></h2>
-                        <div class="row">
+                        <h2 class="pb-2 text-left"><strong>ACCOUNT DETAILS</strong></h2>
 
+                        <form method="post" action="edit-supervisor.php?user_id=<?php echo $res0['acc_id']; ?>" enctype="multipart/form-data">
+                        <input type="hidden" name="s_id" value="<?php echo $res0['s_id']; ?>">
+                        <div class="row">
                             <div class="col-lg-4 col-md-12">
                                 <div class="row">
                                     <div class="col-md-12 pb-3">
@@ -99,7 +102,7 @@
                                     </div>
                                     <div class="form-group col-lg-4 col-md-6">
                                         <label><small><strong>MOBILE NUMBER <span class="text-danger">*</span></strong></small></label>
-                                        <input type="text" id="s_mobile" name="s_mobile" class="form-control" placeholder="e.g. 0956424564" value="<?php echo $res0['s_mobile']; ?>">
+                                        <input type="text" id="s_mobile" name="s_mobile" class="form-control" placeholder="e.g. 0956424564" value="<?php echo $res0['s_mobile']; ?>" maxlength="14">
                                     </div>
                                     <div class="form-group col-lg-7 col-md-7">
                                         <label><small><strong>AGENCY <span class="text-danger">*</span></strong></small></label>
@@ -110,22 +113,45 @@
                                         <input type="text" id="s_office" name="s_office" class="form-control" placeholder="e.g. ICTO" value="<?php echo $res0['s_office']; ?>">
                                     </div>
                                     <div class="form-group col-lg-12 text-center">
-                                        <button class="form-btn form-btn-md btn-blue" type="submit" id="update" name="update"><strong><i class="fa fa-floppy-o" aria-hidden="true"></i> SAVE</strong></button>
+                                        <button class="form-btn form-btn-md btn-blue" type="submit" id="btn_update" name="btn_update"><strong><i class="fa fa-floppy-o" aria-hidden="true"></i> SAVE</strong></button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        </form>  
 
+                        <h2 class="pb-2 pt-3 text-left"><strong>RESET PASSWORD</strong></h2>
+                        <div class="d-flex justify-content-start pb-2">
+                            <div class="row">
+                                <form method="post" action="edit-supervisor.php?user_id=<?php echo $res0['acc_id']; ?>">
+                                    <div class="col-lg-12">
+                                        <div class="input-group">
+                                            <input type="hidden" name="acc_id_reset" value="<?php echo $res0['acc_id']; ?>">
+                                            <div class="input-group-prepend">
+                                                <button class="btn btn-red btn_reset" id="btn_reset" type="button"><i class="fa fa-qrcode"></i> <strong>GENERATE</strong></button>
+                                            </div>
+                                            <input type="text" class="form-control text-center" name="acc_password_reset" id="acc_password_reset" placeholder="e.g. d1O8BpJm" readonly>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-blue" type="submit" id="btn_save" name="btn_save"><i class="fa fa-refresh" aria-hidden="true"></i> <strong>RESET</strong></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>    
             </div>
+        </div>
 
-        </form>  
     </div>
     
     <?php include("include/script.php"); ?>
     <script>
     $(document).ready(function() {
+
+        $("#msg_alert").delay(3000).fadeOut();
+
         // Preview the image before uploading
         $("#profile_image").change(function() {
             readURL(this);
@@ -140,6 +166,27 @@
                 }
                 reader.readAsDataURL(input.files[0]);
             }
+        }
+
+        $('#btn_reset').click(function(){
+            randomString();
+        });
+
+        function randomString() {
+            var code = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789";
+                    
+            //specify the length for the new string
+            var lenString = 8;
+            var randomstring = '';
+
+            //loop to select a new character in each iteration
+            for (var i=0; i<lenString; i++) {
+                var rnum = Math.floor(Math.random() * code.length);
+                randomstring += code.substring(rnum, rnum+1);
+            }
+
+            //display the generated string 
+            $("#acc_password_reset").val(randomstring);
         }
     });
     </script>
