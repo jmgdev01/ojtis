@@ -20,13 +20,13 @@
 <body id="page-top">
     <?php 
     include("include/nav.php");
-    include("edit-admin-section/action-admin.php");
+    include("configuration-section/delete-configuration.php");
     ?>
 
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-12 d-flex justify-content-between pb-3">
-                <button class="form-btn form-btn-sm btn-blue d_hide" onclick="window.location.href='add-configuration.php'"><strong><i class="fa fa-plus"></i> ADD</strong></button>
+                <button class="form-btn form-btn-sm btn-yellow d_hide" onclick="window.location.href='add-configuration.php'"><strong><i class="fa fa-plus"></i> ADD</strong></button>
                 <button class="form-btn form-btn-sm btn-teal d_hide" onclick="window.print()"><strong><i class="fa fa-print"></i> PRINT</strong></button>
             </div>
             <div class="col-lg-12">
@@ -48,8 +48,8 @@
                                     <th width="5%" class="text-center">#</th>
                                     <th width="30%">Subject</th>
                                     <th width="15%">Hours</th>
-                                    <th width="40%">Program</th>
-                                    <th width="10%" class="text-center d_hide">Action</th>
+                                    <th width="35%">Program</th>
+                                    <th width="15%" class="text-center d_hide">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -70,6 +70,12 @@
                                                     onclick="window.location.href='edit-configuration.php?cf_id=<?php echo $res['cf_id']; ?>'"
                                                     class="form-btn form-btn-sm btn-blue mr-1" 
                                                     type="button"><i class="fa fa-pencil-square-o"></i></button>
+                                                    <form method="POST" action="view-configuration.php">
+                                                    <input type="hidden" name="cf_id_delete" value="<?php echo $res['cf_id']; ?>">
+                                                    <button 
+                                                    class="form-btn form-btn-sm btn-red mr-1" 
+                                                    type="submit" name="btn_delete"><i class="fa fa-trash"></i></button>
+                                                    </form>
                                                 </div>
                                             </td>
                                         </tr>

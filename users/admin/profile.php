@@ -35,14 +35,14 @@
 
                                     <div class="col-lg-5 col-md-12">
                                         <div class="row">
-                                                <div class="col-md-12 pb-3">
-                                                    <label><small><strong>PROFILE IMAGE</strong></small></label>
-                                                    <div class="col-lg-12 profile_img_con">
-                                                        <img id="image_preview" src="<?php echo $res0['a_img']; ?>">
-                                                    </div>
-                                                    <input type="hidden" name="pi" value="<?php echo $res0['a_img']; ?>">
-                                                    <input type="file" name="profile_image" id="profile_image" class="form-control">
+                                            <div class="col-md-12 pb-3">
+                                                <label><small><strong>PROFILE IMAGE</strong></small></label>
+                                                <div class="col-lg-12 profile_img_con">
+                                                    <img id="image_preview" src="<?php echo $res0['a_img']; ?>">
                                                 </div>
+                                                <input type="hidden" name="pi" value="<?php echo $res0['a_img']; ?>">
+                                                <input type="file" name="profile_image" id="profile_image" class="form-control">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-7 col-md-12">

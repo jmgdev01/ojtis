@@ -25,7 +25,8 @@
 
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
-            <div class="col-lg-12 text-left pb-3">
+            <div class="col-lg-12 d-flex justify-content-between pb-3">
+                <button class="form-btn form-btn-sm btn-yellow d_hide" onclick="window.location.href='add-admin.php'"><strong><i class="fa fa-plus"></i> ADD</strong></button>
                 <button class="form-btn form-btn-sm btn-teal d_hide" onclick="window.print()"><strong><i class="fa fa-print"></i> PRINT</strong></button>
             </div>
             <div class="col-lg-12">

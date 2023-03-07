@@ -18,7 +18,7 @@
 </head>
 <body id="page-top">
     <?php 
-    include("include/nav.php"); 
+    include("include/nav.php");
     include("configuration-section/insert-configuration.php");
     ?>
     
