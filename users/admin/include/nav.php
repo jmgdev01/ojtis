@@ -21,7 +21,7 @@
                     </ul>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" onclick="window.location.href='configuration.php'">Configuration</a>
+                    <a class="nav-link" onclick="window.location.href='view-configuration.php'">Configuration</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>

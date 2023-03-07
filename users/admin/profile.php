@@ -18,9 +18,10 @@
 </head>
 <body id="page-top">
     <?php 
+    include("include/nav.php"); 
     include("profile-section/update-profile.php");
     include("profile-section/display-account.php");
-    include("include/nav.php"); ?>
+    ?>
     
     <div class="container py-5">
             <form method="POST" action="profile.php" enctype="multipart/form-data">

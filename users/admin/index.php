@@ -18,7 +18,9 @@
     <body id="page-top">
         <?php 
         include("index-section/display-account.php");
-        include("include/nav.php"); ?>
+        include("include/nav.php"); 
+        ?>
+        
         <div class="container pt-5">
 
             <input type="hidden" id="email_qrcode" value="<?php echo $res['acc_email_address']; ?>" name="email_qrcode">

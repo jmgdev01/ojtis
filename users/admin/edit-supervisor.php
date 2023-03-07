@@ -19,9 +19,10 @@
 </head>
 <body id="page-top">
     <?php 
+    include("include/nav.php");
     include("edit-supervisor-section/update-supervisor.php");
     include("edit-supervisor-section/display-supervisor.php");
-    include("include/nav.php"); ?>
+    ?>
 
     <div class="container py-5">
 

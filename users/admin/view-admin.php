@@ -18,10 +18,10 @@
     <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-<?php 
+    <?php 
     include("include/nav.php");
     include("edit-admin-section/action-admin.php");
-?>
+    ?>
 
     <div class="container py-5">
         <div class="row d-flex justify-content-center">

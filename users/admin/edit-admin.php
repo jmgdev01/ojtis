@@ -19,9 +19,10 @@
 </head>
 <body id="page-top">
     <?php 
+    include("include/nav.php");
     include("edit-admin-section/update-admin.php");
-    include("edit-admin-section/display-admin.php");
-    include("include/nav.php"); ?>
+    include("edit-admin-section/display-admin.php"); 
+    ?>
     
     <div class="container py-5">
 

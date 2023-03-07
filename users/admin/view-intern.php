@@ -18,10 +18,10 @@
     <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-<?php 
+    <?php 
     include("include/nav.php");
     include("edit-intern-section/action-intern.php");
-?>
+    ?>
 
     <div class="container py-5">
         <div class="row d-flex justify-content-center">
@@ -45,10 +45,10 @@
                                 <thead>
                                     <tr>
                                     <th width="10%" class="text-center">#</th>
-                                    <th width="20%">Name</th>
+                                    <th width="30%">Name</th>
                                     <th width="30%">Email Address</th>
                                     <th width="15%">Role</th>
-                                    <th width="25%" class="text-center d_hide">Action</th>
+                                    <th width="15%" class="text-center d_hide">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

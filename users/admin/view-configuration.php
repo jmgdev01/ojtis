@@ -4,8 +4,9 @@
     include("include/validate_user_session.php");
 
     $acc_id = $_SESSION['acc_id'];
+    $get_user = mysqli_query($db, "SELECT * FROM admin_tbl INNER JOIN accounts_tbl ON admin_tbl.a_id = accounts_tbl.a_id WHERE accounts_tbl.acc_id='$acc_id'");
+    $retrieve_info = mysqli_fetch_assoc($get_user);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,98 +14,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Configuration - OJT Information System</title>
+    <title>List of Configurations - OJT Information System</title>
     <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
     <?php 
-    include("configuration-section/update-configuration.php");
-    include("configuration-section/display-configuration.php");
-    include("include/nav.php"); ?>
-    
-        <div class="container py-5">
-            <form method="POST" action="configuration.php">
-                <input type="hidden" name="cf_id" value="<?php echo $res0['cf_id']; ?>">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-12">
+    include("include/nav.php");
+    include("edit-admin-section/action-admin.php");
+    ?>
 
-                        <div class="card">
-                            <div class="card-body pb-3 px-4">
-                                <h2 class="pb-2 text-center"><strong>CONFIGURATION</strong></h2>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                    <h5 class="pb-1 pt-2"><strong>SUBJECT DETAILS</strong></h5>
-                                        <div class="row">
-                                            <div class="form-group col-lg-5 col-md-5 col-sm-12">
-                                                <label><small><strong>CODE <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_subject_code" name="cf_subject_code" class="form-control" placeholder="" value="<?php echo $res0['cf_subject_code']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-7 col-md-7 col-sm-12">
-                                                <label><small><strong>NAME <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_subject" name="cf_subject" class="form-control" placeholder="" value="<?php echo $res0['cf_subject']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-3 col-md-3 col-sm-12">
-                                                <label><small><strong>HOURS <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_hours" name="cf_hours" class="form-control" placeholder="" value="<?php echo $res0['cf_hours']; ?>">
-                                            </div> 
-                                            <div class="form-group col-lg-4 col-md-4 col-sm-12">
-                                                <label><small><strong>HOURS IN WORDS <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_hours_inwords" name="cf_hours_inwords" class="form-control" placeholder="" value="<?php echo $res0['cf_hours_inwords']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-5 col-md-5 col-sm-12">
-                                                <label><small><strong>EQUIVALENT IN WEEKS <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_week_equivalent" name="cf_week_equivalent" class="form-control" placeholder="" value="<?php echo $res0['cf_week_equivalent']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                                <label><small><strong>STARTING DATE <span class="text-danger">*</span></strong></small></label>
-                                                <input type="date" id="cf_speriod" name="cf_speriod" class="form-control" placeholder="" value="<?php echo $res0['cf_speriod']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                                <label><small><strong>EXPIRATION DATE <span class="text-danger">*</span></strong></small></label>
-                                                <input type="date" id="cf_eperiod" name="cf_eperiod" class="form-control" placeholder="" value="<?php echo $res0['cf_eperiod']; ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <h5 class="pb-1 pt-3"><strong>SCHOOL DETAILS</strong></h5>
-                                        <div class="row">
-                                            <div class="form-group col-lg-7 col-md-12 col-sm-12">
-                                                <label><small><strong>PROGRAM/COURSE <span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_program" name="cf_program" class="form-control" placeholder="" value="<?php echo $res0['cf_program']; ?>">
-                                            </div> 
-                                            <div class="form-group col-lg-5 col-md-6 col-sm-12">
-                                                <label><small><strong>DEPARTMENT<span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_department" name="cf_department" class="form-control" placeholder="" value="<?php echo $res0['cf_department']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                                <label><small><strong>SCHOOL<span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_school" name="cf_school" class="form-control" placeholder="" value="<?php echo $res0['cf_school']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                                <label><small><strong>CAMPUS<span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_campus" name="cf_campus" class="form-control" placeholder="" value="<?php echo $res0['cf_campus']; ?>">
-                                            </div>
-                                            <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                                <label><small><strong>ADDRESS<span class="text-danger">*</span></strong></small></label>
-                                                <input type="text" id="cf_address" name="cf_address" class="form-control" placeholder="" value="<?php echo $res0['cf_address']; ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-lg-12 text-center">
-                                        <button class="form-btn form-btn-md btn-blue" type="submit" id="btn_save" name="btn_save"><strong><i class="fa fa-floppy-o" aria-hidden="true"></i> SAVE</strong></button>
-                                    </div>
-                                </div>  
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-12 d-flex justify-content-between pb-3">
+                <button class="form-btn form-btn-sm btn-blue d_hide" onclick="window.location.href='add-configuration.php'"><strong><i class="fa fa-plus"></i> ADD</strong></button>
+                <button class="form-btn form-btn-sm btn-teal d_hide" onclick="window.print()"><strong><i class="fa fa-print"></i> PRINT</strong></button>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body pb-3 px-4">
+                        <div class="card_logo_con remove_margin_top">
+                            <img src="../../assets/logo/logo-small.png" class="card_logo" alt="">
+                            <label><strong>OJT Information System</strong></label>
+                        </div>
+                        <h2 class="text-center card_title"><strong>LIST OF CONFIGURATIONS</strong></h2>
+                        <div class="card_logo_con pb-3">
+                            <label><?php echo date("F j, Y h:i A"); ?></label>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 table-responsive">
+                            <table class="table table-condensed table-sm" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                    <th width="5%" class="text-center">#</th>
+                                    <th width="30%">Subject</th>
+                                    <th width="15%">Hours</th>
+                                    <th width="40%">Program</th>
+                                    <th width="10%" class="text-center d_hide">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php 
+                                    $count = 1;
+                                    $sql = mysqli_query($db, "SELECT * FROM configuration_tbl");
+                                    if(mysqli_num_rows($sql) > 0){
+                                    while($res = mysqli_fetch_assoc($sql)){
+                                    ?>
+                                        <tr>
+                                            <td class="text-center"><?php echo $count; ?></td>
+                                            <td><?php echo "<strong>".$res['cf_subject_code']."</strong> <br> <small>".$res['cf_subject']."</small>"; ?></td>
+                                            <td><?php echo $res['cf_hours']; ?></td>
+                                            <td><?php echo "<strong>".$res['cf_program']."</strong><br><small>".$res['cf_program']."</small>"; ?></td>
+                                            <td class="d_hide">
+                                                <div class="row d-flex justify-content-center">
+                                                    <button 
+                                                    onclick="window.location.href='edit-configuration.php?cf_id=<?php echo $res['cf_id']; ?>'"
+                                                    class="form-btn form-btn-sm btn-blue mr-1" 
+                                                    type="button"><i class="fa fa-pencil-square-o"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php 
+                                    $count++;
+                                    } 
+                                    }
+                                ?>
+                                </tbody>
+                            </table> 
                             </div>
-                        </div>    
-
+                        </div>
+                        <div class="card_footer">
+                            <br><br>
+                            <label>Prepared by</label>
+                            <br><br>
+                            <h4 style="margin-bottom: 0;"><strong><?php echo strtoupper($retrieve_info['a_fullname']); ?></strong></h4>
+                            <label>Administrator</label>
+                        </div>
                     </div>
-                </div>
-            </form>  
-        </div>
+                </div>  
+
+            </div>
+        </div>  
+    </div>
 
     <?php include("include/script.php"); ?>
-    <script>
-    $(document).ready(function() {
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#dataTable').DataTable();
 
         $("#msg_alert").delay(3000).fadeOut();
     });

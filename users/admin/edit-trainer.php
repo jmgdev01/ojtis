@@ -19,9 +19,10 @@
 </head>
 <body id="page-top">
     <?php
+    include("include/nav.php");
     include("edit-trainer-section/update-trainer.php");
     include("edit-trainer-section/display-trainer.php");
-    include("include/nav.php"); ?>
+    ?>
 
     <div class="container py-5">
 

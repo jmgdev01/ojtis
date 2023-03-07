@@ -15,15 +15,22 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Account Details - OJT Information System</title>
-    <?php
-    include("edit-intern-section/update-intern.php");
-    include("edit-intern-section/display-intern.php");
-    include("include/style.php"); ?>
+    <?php include("include/style.php"); ?>
 </head>
 <body id="page-top">
-    <?php include("include/nav.php"); ?>
+    <?php 
+    include("include/nav.php"); 
+    include("edit-intern-section/update-intern.php");
+    include("edit-intern-section/display-intern.php");
+    ?>
 
     <div class="container py-5">
+
+        <div class="row pb-3">
+            <div class="col-lg-12">
+                <button class="form-btn form-btn-sm btn-dark" onclick="window.location.href='view-intern.php'"><i class="fa fa-arrow-left"></i> Back</button>
+            </div>
+        </div>
 
         <div class="card mb-4">
         <div class="card-body pb-3 px-4">
@@ -456,7 +463,7 @@
         <div class="card">
         <div class="card-body pb-3 px-4">
         <h2 class="pb-2 pt-1 text-left"><strong>RESET PASSWORD</strong></h2>
-        <div class="d-flex justify-content-start pb-2">
+        <div class="d-flex justify-content-start pb-3">
             <div class="row">
                 <form method="post" action="edit-intern.php?user_id=<?php echo $res['acc_id']; ?>">
                     <div class="col-lg-12">
