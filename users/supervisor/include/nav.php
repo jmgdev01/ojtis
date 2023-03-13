@@ -15,7 +15,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" onclick="window.location.href='view-trainer.php'">Trainer</a></li>
-                        <li><a class="dropdown-item" onclick="window.location.href='intern.php'">Intern</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='view-intern.php'">Intern</a></li>
                     </ul>
                 <li class="nav-item">
                     <a class="nav-link" onclick="window.location.href='profile.php'">Profile</a>

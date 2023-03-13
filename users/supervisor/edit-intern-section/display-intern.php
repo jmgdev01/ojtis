@@ -7,7 +7,6 @@ INNER JOIN case_tbl ON intern_tbl.i_id = case_tbl.i_id
 INNER JOIN parent_tbl ON intern_tbl.i_id = parent_tbl.i_id
 INNER JOIN educational_background_tbl ON intern_tbl.i_id = educational_background_tbl.i_id 
 INNER JOIN emergency_tbl ON intern_tbl.i_id = emergency_tbl.i_id 
-WHERE intern_tbl.i_code='$manage_intern_id'");
-$res = mysqli_fetch_assoc($sql); 
-
+WHERE accounts_tbl.acc_id='$user_id'");
+$res = mysqli_fetch_assoc($sql);
 ?>
