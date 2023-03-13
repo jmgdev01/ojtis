@@ -30,8 +30,8 @@
          } else {
 
             // Upload image from your computer to the project directory
-            move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-            $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
+            move_uploaded_file($file_tmp, "../../assets/profile/trainer/" . $file_name);
+            $img_store = "../../assets/profile/trainer/" . $_FILES['profile_image']['name'];
 
             $image = '';
             if($file_name != '') {

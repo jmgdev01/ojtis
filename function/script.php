@@ -1,5 +1,4 @@
 <script src="assets/js/jquery/jquery.min.js"></script>
-<script src="assets/js/jquery/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery/jquery3.dataTables.min.js"></script>
 <script src="assets/js/jquery/dataTables.bootstrap4.min.js"></script>

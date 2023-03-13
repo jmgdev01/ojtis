@@ -409,5 +409,8 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 	.tbl_week_end {
 		background-color: #f2eddf;
 	}
+	.dropdown-toggle::after {
+		display: none;
+	}
 /*  */
 </style>

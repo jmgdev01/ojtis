@@ -276,5 +276,8 @@ href="../../assets/css/font-awesome/css/font-awesome.min.css">
 		max-width: 35rem;
 		width: 100%;
 	}
+	.dropdown-toggle::after {
+		display: none;
+	}
 /*  */
 </style>

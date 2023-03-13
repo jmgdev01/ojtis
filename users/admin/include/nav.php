@@ -29,9 +29,16 @@
                 <li class="nav-item">
                     <a class="nav-link" onclick="window.location.href='account.php'">Account</a>
                 </li>
-                <li class="nav-item" id="nav_logout">
-                    <a class="nav-link" 
-                    onclick="window.location.href='../../function/logout.php'"><i class="fa fa-power-off"></i></a>
+                <li class="nav-item dropdown" id="nav_logout">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                        <i class="fa fa-power-off"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item">
+                        <h6 class="text-dark"><strong>Do you really want<br>to end your <span class="text-danger">SESSION</span>?</strong></h6>
+                        <button class="form-btn form-btn-md btn-red" onclick="window.location.href='../../function/logout.php'">SIGN OUT</button>
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>

@@ -86,8 +86,8 @@
          if(preg_match($email_regex, $ct_email_address)){
              
              // Upload image from your computer to the project directory
-             move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-             $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
+             move_uploaded_file($file_tmp, "../../assets/profile/intern/" . $file_name);
+             $img_store = "../../assets/profile/intern/" . $_FILES['profile_image']['name'];
  
              $image = '';
              if($file_name != '') {

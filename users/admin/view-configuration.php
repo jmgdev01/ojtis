@@ -46,9 +46,10 @@
                                 <thead>
                                     <tr>
                                     <th width="5%" class="text-center">#</th>
-                                    <th width="30%">Subject</th>
-                                    <th width="15%">Hours</th>
-                                    <th width="35%">Program</th>
+                                    <th width="20%">Subject</th>
+                                    <th width="10%">Hours</th>
+                                    <th width="20%">Schedule</th>
+                                    <th width="30%">Program</th>
                                     <th width="15%" class="text-center d_hide">Action</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,7 @@
                                             <td class="text-center"><?php echo $count; ?></td>
                                             <td><?php echo "<strong>".$res['cf_subject_code']."</strong> <br> <small>".$res['cf_subject']."</small>"; ?></td>
                                             <td><?php echo $res['cf_hours']; ?></td>
+                                            <td><?php echo "<strong>".date("M j, Y", strtotime($res['cf_speriod']))."</strong> - ".date("M j, Y", strtotime($res['cf_eperiod'])); ?></td>
                                             <td><?php echo "<strong>".$res['cf_program']."</strong><br><small>".$res['cf_program']."</small>"; ?></td>
                                             <td class="d_hide">
                                                 <div class="row d-flex justify-content-center">

@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['update'])) {
+if (isset($_POST['btn_update'])) {
     $s_id = $_POST['s_id'];
     $s_first_name = $_POST['s_first_name'];
     $s_middle_name = $_POST['s_middle_name'];
@@ -28,8 +28,8 @@ if (isset($_POST['update'])) {
      } else {
 
         // Upload image from your computer to the project directory
-        move_uploaded_file($file_tmp, "../../assets/profile/" . $file_name);
-        $img_store = "../../assets/profile/" . $_FILES['profile_image']['name'];
+        move_uploaded_file($file_tmp, "../../assets/profile/supervisor/" . $file_name);
+        $img_store = "../../assets/profile/supervisor/" . $_FILES['profile_image']['name'];
 
         $image = '';
         if($file_name != '') {
