@@ -26,7 +26,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body pb-3 px-4">
-                            <h2 class="pb-2 text-center"><strong>LIST OF TRAINER</strong></h2>
+                            <h2 class="pb-2 text-center"><strong>LIST OF INTERNS</strong></h2>
                             <table class="table table-sm">
                             <thead>
                                 <tr>
@@ -34,6 +34,7 @@
                                     <th style="width:10%;">Name</th>
                                     <th style="width:10%;">Email Address</th>
                                     <th style="width:10%;">Role</th>
+                                    <th style="width:10%;">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,6 +57,9 @@
                                     ?></td>
                                     <td><?php echo $row['acc_email_address']; ?></td>
                                     <td><?php echo ucfirst($row['acc_role']); ?></td>
+                                    <td style="color:<?php echo $row['acc_status'] == 'deactivated' ? 'red' : 'green'; ?>">
+                                        <span class="badge <?php echo $row['acc_status'] == 'deactivated' ? 'badge-danger' : 'badge-success'; ?>"><?php echo ucfirst($row['acc_status']); ?></span>
+                                    </td>
                                 </tr>
                                 <?php 
                                 $count++;

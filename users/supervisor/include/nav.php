@@ -14,7 +14,7 @@
                         Users
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" onclick="window.location.href='trainer.php'">Trainer</a></li>
+                        <li><a class="dropdown-item" onclick="window.location.href='view-trainer.php'">Trainer</a></li>
                         <li><a class="dropdown-item" onclick="window.location.href='intern.php'">Intern</a></li>
                     </ul>
                 <li class="nav-item">
