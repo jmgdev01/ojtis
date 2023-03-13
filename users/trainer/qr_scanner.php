@@ -17,6 +17,12 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Account - OJT Information System</title>
+        <style>
+    #preview {
+        display: block;
+        margin: auto;
+    }
+</style>
         <?php 
             include("include/style.php"); 
         ?>
@@ -26,7 +32,7 @@
     <body id="page-top">
         <?php include("include/nav.php"); ?>
        
-        <video id="video" width="320" height="240" autoplay></video>
+        <video id="preview" width="350" height="240" autoplay></video>
 
         <?php include("include/script.php"); ?>
         <script>
