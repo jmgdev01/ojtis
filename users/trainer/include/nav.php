@@ -13,6 +13,9 @@
                     <a class="nav-link" onclick="window.location.href='#'">Remarks</a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link" onclick="window.location.href='qr_scanner.php'">QR Scanner</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" onclick="window.location.href='intern.php'">Interns</a>
                 </li>
                 <li class="nav-item">
