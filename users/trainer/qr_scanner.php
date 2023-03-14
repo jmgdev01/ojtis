@@ -36,8 +36,8 @@
 
         <?php include("include/script.php"); ?>
         <script>
-            function onScanSuccess(decodedText, decodedResult) {
-                console.log(`Code scanned = ${decodedText}`, decodedResult);
+            function onScanSuccess(decodedText) {
+                alert(decodedText);
             }
             var html5QrcodeScanner = new Html5QrcodeScanner(
                 "qr-reader", { fps: 10, qrbox: 250 });
