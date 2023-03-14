@@ -1,12 +1,3 @@
-<?php
-    include("../../function/session.php");
-    include("../../function/config.php");
-    include("include/validate_user_session.php");
-
-    $acc_id = $_SESSION['acc_id'];
-
-    
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,23 +8,22 @@
         <meta name="author" content="" />
         <title>Account - OJT Information System</title>
         <style>
-    #preview {
-        display: block;
-        margin: auto;
-    }
-</style>
+            #preview {
+                display: block;
+                margin: auto;
+            }
+            body{
+                background-color: white !important;
+            }
+        </style>
         <?php 
-            include("include/style.php"); 
+            include("function/style.php"); 
         ?>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
     </head>
-    <body id="page-top">
-        <?php include("include/nav.php"); ?>
-       
+    <body id="page-top">   
         <div id="qr-reader" style="width: 600px"></div>
-
-        <?php include("include/script.php"); ?>
         <script>
             function onScanSuccess(decodedText) {
                 alert(decodedText);
