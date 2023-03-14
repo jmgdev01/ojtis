@@ -17,6 +17,12 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Account - OJT Information System</title>
+        <style>
+    #preview {
+        display: block;
+        margin: auto;
+    }
+</style>
         <?php 
             include("include/style.php"); 
         ?>
