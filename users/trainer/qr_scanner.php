@@ -21,28 +21,21 @@
             include("include/style.php"); 
         ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+        <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
     </head>
     <body id="page-top">
         <?php include("include/nav.php"); ?>
        
-        <video id="video" width="320" height="240" autoplay></video>
+        <div id="qr-reader" style="width: 600px"></div>
 
         <?php include("include/script.php"); ?>
         <script>
-            let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
-            scanner.addListener('scan', function (content) {
-            alert('Scanned content: ' + content);
-            });
-            Instascan.Camera.getCameras().then(function (cameras) {
-            if (cameras.length > 0) {
-                scanner.start(cameras[0]);
-            } else {
-                console.error('No cameras found.');
+            function onScanSuccess(decodedText, decodedResult) {
+                console.log(`Code scanned = ${decodedText}`, decodedResult);
             }
-            }).catch(function (e) {
-            console.error(e);
-            });
+            var html5QrcodeScanner = new Html5QrcodeScanner(
+                "qr-reader", { fps: 10, qrbox: 250 });
+            html5QrcodeScanner.render(onScanSuccess);
         </script>
     </body>
 </html>
