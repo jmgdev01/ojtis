@@ -27,45 +27,47 @@
                     <div class="card">
                         <div class="card-body pb-3 px-4">
                             <h2 class="pb-2 text-center"><strong>LIST OF INTERNS</strong></h2>
-                            <table class="table table-sm">
-                            <thead>
-                                <tr>
-                                    <th style="width:5%;">#</th>
-                                    <th style="width:10%;">Name</th>
-                                    <th style="width:10%;">Email Address</th>
-                                    <th style="width:10%;">Role</th>
-                                    <th style="width:10%;">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                $count = 1;
-                                $sql = mysqli_query($db, "SELECT * FROM trainer_tbl INNER JOIN accounts_tbl ON trainer_tbl.tr_id = accounts_tbl.tr_id WHERE acc_role = 'trainer'");
-                                while($row = mysqli_fetch_assoc($sql)){
-                                ?>
-                                <tr>
-                                    <td><?php echo $count; ?></td>
-                                    <td><?php 
-                                    echo ucfirst($row['tr_first_name'])." ";
-                                    if($row['tr_middle_name'] != ''){
-                                        echo ucfirst(substr($row['tr_middle_name'], 0, 1)).". ";
-                                    }
-                                    echo ucfirst($row['tr_last_name']); 
-                                    if($row['tr_suffix_name'] != ''){
-                                        echo " ".$row['tr_suffix_name'];
-                                    }
-                                    ?></td>
-                                    <td><?php echo $row['acc_email_address']; ?></td>
-                                    <td><?php echo ucfirst($row['acc_role']); ?></td>
-                                    <td style="color:<?php echo $row['acc_status'] == 'deactivated' ? 'red' : 'green'; ?>">
-                                        <span class="badge <?php echo $row['acc_status'] == 'deactivated' ? 'badge-danger' : 'badge-success'; ?>"><?php echo ucfirst($row['acc_status']); ?></span>
-                                    </td>
-                                </tr>
-                                <?php 
-                                $count++;
-                            } ?>
-                            </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                         <tr>
+                                            <th style="width:5%;">#</th>
+                                            <th style="width:10%;">Name</th>
+                                            <th style="width:10%;">Email Address</th>
+                                            <th style="width:10%;">Role</th>
+                                            <th style="width:10%;">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                        $count = 1;
+                                        $sql = mysqli_query($db, "SELECT * FROM trainer_tbl INNER JOIN accounts_tbl ON trainer_tbl.tr_id = accounts_tbl.tr_id WHERE acc_role = 'trainer'");
+                                        while($row = mysqli_fetch_assoc($sql)){
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $count; ?></td>
+                                            <td><?php 
+                                            echo ucfirst($row['tr_first_name'])." ";
+                                            if($row['tr_middle_name'] != ''){
+                                                echo ucfirst(substr($row['tr_middle_name'], 0, 1)).". ";
+                                            }
+                                            echo ucfirst($row['tr_last_name']); 
+                                            if($row['tr_suffix_name'] != ''){
+                                                echo " ".$row['tr_suffix_name'];
+                                            }
+                                            ?></td>
+                                            <td><?php echo $row['acc_email_address']; ?></td>
+                                            <td><?php echo ucfirst($row['acc_role']); ?></td>
+                                            <td style="color:<?php echo $row['acc_status'] == 'deactivated' ? 'red' : 'green'; ?>">
+                                                <span class="badge <?php echo $row['acc_status'] == 'deactivated' ? 'badge-danger' : 'badge-success'; ?>"><?php echo ucfirst($row['acc_status']); ?></span>
+                                            </td>
+                                        </tr>
+                                        <?php 
+                                        $count++;
+                                    } ?>
+                                    </tbody>
+                                </table>
+                             </div>
                         </div>
                     </div>    
                 </div>
